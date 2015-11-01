@@ -1,20 +1,23 @@
-#ifndef MY_EPOLL.H
-#define My_EPOLL.H
-
+#ifndef MY_EPOLL_H
+#define My_EPOLL_H
 #include <sys/epoll.h>
 
 class Epoll
 {
 public:
-	Epoll();
+	Epoll(int event_nums = 1024);
 	~Epoll();
 
 	int EpollWait(int timeout_ms);
+	int AddReadEvent(int fd, void* data);
+	int AddWriteEvent(int fd, void* data);
+	int DelEvent(int fd);
+	
 private:
 	int m_epoll_fd;
 	struct epoll_event m_ev;
-	struct eopll_event* m_pEvents;
+	struct epoll_event* m_pEvents;
 	int m_iEventsNum;
-}
+};
 
 #endif

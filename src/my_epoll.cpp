@@ -1,21 +1,84 @@
+#include <iostream>
+#include <cerrno>
 #include <stdio.h>
 
 #include "my_epoll.h"
+#include "epoll_handler.h"
 
-Epoll::Epoll()
+using namespace std;
+
+Epoll::Epoll(int event_nums)
 {
-	m_epoll_fd = create_epoll2(EPOLL_CLOEXEC);
-	if (epollfd == -1) {
-        printf("error:epoll_create\n");
-	    exit(1);
-	}
+	m_epoll_fd = epoll_create(event_nums);
+	m_pEvents = new struct epoll_event[event_nums];
+	m_iEventsNum = event_nums;
 }
 
 Epoll::~Epoll()
-{}
-
-int EpollWait(int timeout_ms)
 {
+	delete[] m_pEvents;
+	close(m_epoll_fd);
+}
 
-	return 0;
+int Epoll::EpollWait(int timeout_ms)
+{
+	if (m_epoll_fd == -1) 
+	{
+		cout<<"error:epoll_create"<<endl;
+		return -1;
+	}
+	
+	int nfds = epoll_wait(m_epoll_fd, m_pEvents, m_iEventsNum, timeout_ms);
+	
+	if(nfds < 0)
+	{
+		perror("epoll_wait");
+		return nfds;
+	}
+	for ( int i=0; i<nfds; ++i)
+	{
+		EpollHandler* handler = (EpollHandler*)m_pEvents[i].data.ptr;
+		if(NULL == handler)
+		{
+			return -1;
+		}
+		handler->Handle(m_pEvents[i].events);
+	}
+	return nfds;
+}
+
+int Epoll::AddReadEvent(int fd, void* data)
+{
+	m_ev.data.ptr = data;
+	m_ev.events = EPOLLIN;
+	int ret = epoll_ctl(m_epoll_fd, EPOLL_CTL_ADD, fd, &m_ev);
+	if ( ret < 0 )
+	{
+		perror("epoll_ctl add");
+	}
+	
+	return ret;
+}
+
+int Epoll::AddWriteEvent(int fd, void* data)
+{
+	m_ev.data.ptr = data;
+	m_ev.events = EPOLLOUT;
+	int ret = epoll_ctl(m_epoll_fd, EPOLL_CTL_ADD, fd, &m_ev);
+	if ( ret < 0 )
+	{
+		perror("epoll_ctl add");
+	}
+	
+	return ret;
+}
+
+int Epoll::DelEvent(int fd)
+{
+	int ret = epoll_ctl(m_epoll_fd, EPOLL_CTL_DEL, fd, &m_ev);	
+	if ( ret < 0 )
+	{
+		perror("epoll_ctl del");
+	}
+	return ret;
 }
