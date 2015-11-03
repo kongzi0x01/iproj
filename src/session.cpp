@@ -111,6 +111,22 @@ int Session::OnSockWrite()
 	return iSend;
 }
 
+int Session::Send(const char* pszData, uint32_t uBytes)
+{
+	int iSend = m_pSock->Send(pszData, uBytes);
+	if(iSend < 0)
+	{
+		if (errno == EAGAIN || errno == EWOULDBLOCK || errno == EINPROGRESS )
+		{
+			return 0;
+		}
+		Close();
+		return iSend;
+	}
+	m_pSendBuffer->RemoveData(iSend);
+	return iSend;
+}
+
 int Session::Handle(int events)
 {
 	if ( events & EPOLLIN )
@@ -120,3 +136,4 @@ int Session::Handle(int events)
 
 	return 0;
 }
+
