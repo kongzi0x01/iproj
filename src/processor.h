@@ -13,6 +13,7 @@ public:
 	
 public:
 	int Deal(Session& pSession);
+	int HandleRequest(const char* pszRequeset, uint32_t uSize, Session& session);	
 };
 
 #endif

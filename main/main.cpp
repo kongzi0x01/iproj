@@ -1,5 +1,6 @@
 #include "server.h"
 #include "accepter.h"
+#include "regist_cmd_handle.h"
 
 #include <iostream>
 #include <string>
