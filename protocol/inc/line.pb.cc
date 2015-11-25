@@ -23,6 +23,9 @@ namespace {
 const ::google::protobuf::Descriptor* LoginReq_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   LoginReq_reflection_ = NULL;
+const ::google::protobuf::Descriptor* LoginRsp_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  LoginRsp_reflection_ = NULL;
 
 }  // namespace
 
@@ -49,6 +52,21 @@ void protobuf_AssignDesc_line_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(LoginReq));
+  LoginRsp_descriptor_ = file->message_type(1);
+  static const int LoginRsp_offsets_[1] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LoginRsp, result_),
+  };
+  LoginRsp_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      LoginRsp_descriptor_,
+      LoginRsp::default_instance_,
+      LoginRsp_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LoginRsp, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LoginRsp, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(LoginRsp));
 }
 
 namespace {
@@ -63,6 +81,8 @@ void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     LoginReq_descriptor_, &LoginReq::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    LoginRsp_descriptor_, &LoginRsp::default_instance());
 }
 
 }  // namespace
@@ -70,6 +90,8 @@ void protobuf_RegisterTypes(const ::std::string&) {
 void protobuf_ShutdownFile_line_2eproto() {
   delete LoginReq::default_instance_;
   delete LoginReq_reflection_;
+  delete LoginRsp::default_instance_;
+  delete LoginRsp_reflection_;
 }
 
 void protobuf_AddDesc_line_2eproto() {
@@ -80,11 +102,14 @@ void protobuf_AddDesc_line_2eproto() {
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\nline.proto\022\004line\"4\n\010LoginReq\022\021\n\tuser_n"
-    "ame\030\001 \001(\t\022\025\n\rencrypted_psw\030\002 \001(\t", 72);
+    "ame\030\001 \001(\t\022\025\n\rencrypted_psw\030\002 \001(\t\"\032\n\010Logi"
+    "nRsp\022\016\n\006result\030\001 \001(\r", 100);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "line.proto", &protobuf_RegisterTypes);
   LoginReq::default_instance_ = new LoginReq();
+  LoginRsp::default_instance_ = new LoginRsp();
   LoginReq::default_instance_->InitAsDefaultInstance();
+  LoginRsp::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_line_2eproto);
 }
 
@@ -373,6 +398,214 @@ void LoginReq::Swap(LoginReq* other) {
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = LoginReq_descriptor_;
   metadata.reflection = LoginReq_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int LoginRsp::kResultFieldNumber;
+#endif  // !_MSC_VER
+
+LoginRsp::LoginRsp()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+}
+
+void LoginRsp::InitAsDefaultInstance() {
+}
+
+LoginRsp::LoginRsp(const LoginRsp& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+}
+
+void LoginRsp::SharedCtor() {
+  _cached_size_ = 0;
+  result_ = 0u;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+LoginRsp::~LoginRsp() {
+  SharedDtor();
+}
+
+void LoginRsp::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void LoginRsp::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* LoginRsp::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return LoginRsp_descriptor_;
+}
+
+const LoginRsp& LoginRsp::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_line_2eproto();
+  return *default_instance_;
+}
+
+LoginRsp* LoginRsp::default_instance_ = NULL;
+
+LoginRsp* LoginRsp::New() const {
+  return new LoginRsp;
+}
+
+void LoginRsp::Clear() {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    result_ = 0u;
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool LoginRsp::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
+  ::google::protobuf::uint32 tag;
+  while ((tag = input->ReadTag()) != 0) {
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional uint32 result = 1;
+      case 1: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &result_)));
+          set_has_result();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectAtEnd()) return true;
+        break;
+      }
+
+      default: {
+      handle_uninterpreted:
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          return true;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+  return true;
+#undef DO_
+}
+
+void LoginRsp::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // optional uint32 result = 1;
+  if (has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->result(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+}
+
+::google::protobuf::uint8* LoginRsp::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // optional uint32 result = 1;
+  if (has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->result(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  return target;
+}
+
+int LoginRsp::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional uint32 result = 1;
+    if (has_result()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->result());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void LoginRsp::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const LoginRsp* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const LoginRsp*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void LoginRsp::MergeFrom(const LoginRsp& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_result()) {
+      set_result(from.result());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void LoginRsp::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void LoginRsp::CopyFrom(const LoginRsp& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool LoginRsp::IsInitialized() const {
+
+  return true;
+}
+
+void LoginRsp::Swap(LoginRsp* other) {
+  if (other != this) {
+    std::swap(result_, other->result_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata LoginRsp::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = LoginRsp_descriptor_;
+  metadata.reflection = LoginRsp_reflection_;
   return metadata;
 }
 

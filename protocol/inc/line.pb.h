@@ -34,6 +34,7 @@ void protobuf_AssignDesc_line_2eproto();
 void protobuf_ShutdownFile_line_2eproto();
 
 class LoginReq;
+class LoginRsp;
 
 // ===================================================================
 
@@ -136,6 +137,88 @@ class LoginReq : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static LoginReq* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class LoginRsp : public ::google::protobuf::Message {
+ public:
+  LoginRsp();
+  virtual ~LoginRsp();
+
+  LoginRsp(const LoginRsp& from);
+
+  inline LoginRsp& operator=(const LoginRsp& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const LoginRsp& default_instance();
+
+  void Swap(LoginRsp* other);
+
+  // implements Message ----------------------------------------------
+
+  LoginRsp* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const LoginRsp& from);
+  void MergeFrom(const LoginRsp& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint32 result = 1;
+  inline bool has_result() const;
+  inline void clear_result();
+  static const int kResultFieldNumber = 1;
+  inline ::google::protobuf::uint32 result() const;
+  inline void set_result(::google::protobuf::uint32 value);
+
+  // @@protoc_insertion_point(class_scope:line.LoginRsp)
+ private:
+  inline void set_has_result();
+  inline void clear_has_result();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 result_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
+
+  friend void  protobuf_AddDesc_line_2eproto();
+  friend void protobuf_AssignDesc_line_2eproto();
+  friend void protobuf_ShutdownFile_line_2eproto();
+
+  void InitAsDefaultInstance();
+  static LoginRsp* default_instance_;
 };
 // ===================================================================
 
@@ -282,6 +365,32 @@ inline void LoginReq::set_allocated_encrypted_psw(::std::string* encrypted_psw) 
     clear_has_encrypted_psw();
     encrypted_psw_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   }
+}
+
+// -------------------------------------------------------------------
+
+// LoginRsp
+
+// optional uint32 result = 1;
+inline bool LoginRsp::has_result() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void LoginRsp::set_has_result() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void LoginRsp::clear_has_result() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void LoginRsp::clear_result() {
+  result_ = 0u;
+  clear_has_result();
+}
+inline ::google::protobuf::uint32 LoginRsp::result() const {
+  return result_;
+}
+inline void LoginRsp::set_result(::google::protobuf::uint32 value) {
+  set_has_result();
+  result_ = value;
 }
 
 

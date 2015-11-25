@@ -1,7 +1,8 @@
 package protocol;
+option java_outer_classname = "IprojHeader";
 
 message Header
 {
 	optional uint64 id = 1;
 	optional string msg_full_name = 2;
-}
+};

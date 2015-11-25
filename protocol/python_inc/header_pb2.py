@@ -13,7 +13,7 @@ from google.protobuf import descriptor_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='header.proto',
   package='protocol',
-  serialized_pb='\n\x0cheader.proto\x12\x08protocol\"+\n\x06Header\x12\n\n\x02id\x18\x01 \x01(\x04\x12\x15\n\rmsg_full_name\x18\x02 \x01(\t')
+  serialized_pb='\n\x0cheader.proto\x12\x08protocol\"+\n\x06Header\x12\n\n\x02id\x18\x01 \x01(\x04\x12\x15\n\rmsg_full_name\x18\x02 \x01(\tB\rB\x0bIprojHeader')
 
 
 
@@ -61,4 +61,6 @@ class Header(_message.Message):
   # @@protoc_insertion_point(class_scope:protocol.Header)
 
 
+DESCRIPTOR.has_options = True
+DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), 'B\013IprojHeader')
 # @@protoc_insertion_point(module_scope)

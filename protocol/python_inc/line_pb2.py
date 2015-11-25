@@ -13,7 +13,7 @@ from google.protobuf import descriptor_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='line.proto',
   package='line',
-  serialized_pb='\n\nline.proto\x12\x04line\"4\n\x08LoginReq\x12\x11\n\tuser_name\x18\x01 \x01(\t\x12\x15\n\rencrypted_psw\x18\x02 \x01(\t')
+  serialized_pb='\n\nline.proto\x12\x04line\"4\n\x08LoginReq\x12\x11\n\tuser_name\x18\x01 \x01(\t\x12\x15\n\rencrypted_psw\x18\x02 \x01(\t\"\x1a\n\x08LoginRsp\x12\x0e\n\x06result\x18\x01 \x01(\r')
 
 
 
@@ -52,13 +52,48 @@ _LOGINREQ = _descriptor.Descriptor(
   serialized_end=72,
 )
 
+
+_LOGINRSP = _descriptor.Descriptor(
+  name='LoginRsp',
+  full_name='line.LoginRsp',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='result', full_name='line.LoginRsp.result', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=74,
+  serialized_end=100,
+)
+
 DESCRIPTOR.message_types_by_name['LoginReq'] = _LOGINREQ
+DESCRIPTOR.message_types_by_name['LoginRsp'] = _LOGINRSP
 
 class LoginReq(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _LOGINREQ
 
   # @@protoc_insertion_point(class_scope:line.LoginReq)
+
+class LoginRsp(_message.Message):
+  __metaclass__ = _reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _LOGINRSP
+
+  # @@protoc_insertion_point(class_scope:line.LoginRsp)
 
 
 # @@protoc_insertion_point(module_scope)

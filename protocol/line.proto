@@ -4,4 +4,9 @@ message LoginReq
 {
 	optional string user_name = 1;
 	optional string encrypted_psw = 2;
-}
+};
+
+message LoginRsp
+{
+	optional uint32 result = 1;	//正常则为0
+};

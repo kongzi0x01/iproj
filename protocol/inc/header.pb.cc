@@ -80,7 +80,8 @@ void protobuf_AddDesc_header_2eproto() {
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\014header.proto\022\010protocol\"+\n\006Header\022\n\n\002id"
-    "\030\001 \001(\004\022\025\n\rmsg_full_name\030\002 \001(\t", 69);
+    "\030\001 \001(\004\022\025\n\rmsg_full_name\030\002 \001(\tB\rB\013IprojHe"
+    "ader", 84);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "header.proto", &protobuf_RegisterTypes);
   Header::default_instance_ = new Header();
