@@ -560,11 +560,679 @@ public final class IprojHeader {
     // @@protoc_insertion_point(class_scope:protocol.Header)
   }
 
+  public interface MsgOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // optional .protocol.Header header = 1;
+    /**
+     * <code>optional .protocol.Header header = 1;</code>
+     */
+    boolean hasHeader();
+    /**
+     * <code>optional .protocol.Header header = 1;</code>
+     */
+    protocol.IprojHeader.Header getHeader();
+    /**
+     * <code>optional .protocol.Header header = 1;</code>
+     */
+    protocol.IprojHeader.HeaderOrBuilder getHeaderOrBuilder();
+
+    // optional string serialized_msg = 2;
+    /**
+     * <code>optional string serialized_msg = 2;</code>
+     */
+    boolean hasSerializedMsg();
+    /**
+     * <code>optional string serialized_msg = 2;</code>
+     */
+    java.lang.String getSerializedMsg();
+    /**
+     * <code>optional string serialized_msg = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getSerializedMsgBytes();
+  }
+  /**
+   * Protobuf type {@code protocol.Msg}
+   */
+  public static final class Msg extends
+      com.google.protobuf.GeneratedMessage
+      implements MsgOrBuilder {
+    // Use Msg.newBuilder() to construct.
+    private Msg(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private Msg(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final Msg defaultInstance;
+    public static Msg getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public Msg getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Msg(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              protocol.IprojHeader.Header.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = header_.toBuilder();
+              }
+              header_ = input.readMessage(protocol.IprojHeader.Header.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(header_);
+                header_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              serializedMsg_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return protocol.IprojHeader.internal_static_protocol_Msg_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return protocol.IprojHeader.internal_static_protocol_Msg_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              protocol.IprojHeader.Msg.class, protocol.IprojHeader.Msg.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<Msg> PARSER =
+        new com.google.protobuf.AbstractParser<Msg>() {
+      public Msg parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Msg(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Msg> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // optional .protocol.Header header = 1;
+    public static final int HEADER_FIELD_NUMBER = 1;
+    private protocol.IprojHeader.Header header_;
+    /**
+     * <code>optional .protocol.Header header = 1;</code>
+     */
+    public boolean hasHeader() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional .protocol.Header header = 1;</code>
+     */
+    public protocol.IprojHeader.Header getHeader() {
+      return header_;
+    }
+    /**
+     * <code>optional .protocol.Header header = 1;</code>
+     */
+    public protocol.IprojHeader.HeaderOrBuilder getHeaderOrBuilder() {
+      return header_;
+    }
+
+    // optional string serialized_msg = 2;
+    public static final int SERIALIZED_MSG_FIELD_NUMBER = 2;
+    private java.lang.Object serializedMsg_;
+    /**
+     * <code>optional string serialized_msg = 2;</code>
+     */
+    public boolean hasSerializedMsg() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional string serialized_msg = 2;</code>
+     */
+    public java.lang.String getSerializedMsg() {
+      java.lang.Object ref = serializedMsg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          serializedMsg_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string serialized_msg = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSerializedMsgBytes() {
+      java.lang.Object ref = serializedMsg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        serializedMsg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      header_ = protocol.IprojHeader.Header.getDefaultInstance();
+      serializedMsg_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeMessage(1, header_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getSerializedMsgBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, header_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getSerializedMsgBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static protocol.IprojHeader.Msg parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static protocol.IprojHeader.Msg parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static protocol.IprojHeader.Msg parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static protocol.IprojHeader.Msg parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static protocol.IprojHeader.Msg parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static protocol.IprojHeader.Msg parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static protocol.IprojHeader.Msg parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static protocol.IprojHeader.Msg parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static protocol.IprojHeader.Msg parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static protocol.IprojHeader.Msg parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(protocol.IprojHeader.Msg prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code protocol.Msg}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements protocol.IprojHeader.MsgOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return protocol.IprojHeader.internal_static_protocol_Msg_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return protocol.IprojHeader.internal_static_protocol_Msg_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                protocol.IprojHeader.Msg.class, protocol.IprojHeader.Msg.Builder.class);
+      }
+
+      // Construct using protocol.IprojHeader.Msg.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getHeaderFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        if (headerBuilder_ == null) {
+          header_ = protocol.IprojHeader.Header.getDefaultInstance();
+        } else {
+          headerBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        serializedMsg_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return protocol.IprojHeader.internal_static_protocol_Msg_descriptor;
+      }
+
+      public protocol.IprojHeader.Msg getDefaultInstanceForType() {
+        return protocol.IprojHeader.Msg.getDefaultInstance();
+      }
+
+      public protocol.IprojHeader.Msg build() {
+        protocol.IprojHeader.Msg result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public protocol.IprojHeader.Msg buildPartial() {
+        protocol.IprojHeader.Msg result = new protocol.IprojHeader.Msg(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        if (headerBuilder_ == null) {
+          result.header_ = header_;
+        } else {
+          result.header_ = headerBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.serializedMsg_ = serializedMsg_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof protocol.IprojHeader.Msg) {
+          return mergeFrom((protocol.IprojHeader.Msg)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(protocol.IprojHeader.Msg other) {
+        if (other == protocol.IprojHeader.Msg.getDefaultInstance()) return this;
+        if (other.hasHeader()) {
+          mergeHeader(other.getHeader());
+        }
+        if (other.hasSerializedMsg()) {
+          bitField0_ |= 0x00000002;
+          serializedMsg_ = other.serializedMsg_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        protocol.IprojHeader.Msg parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (protocol.IprojHeader.Msg) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // optional .protocol.Header header = 1;
+      private protocol.IprojHeader.Header header_ = protocol.IprojHeader.Header.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          protocol.IprojHeader.Header, protocol.IprojHeader.Header.Builder, protocol.IprojHeader.HeaderOrBuilder> headerBuilder_;
+      /**
+       * <code>optional .protocol.Header header = 1;</code>
+       */
+      public boolean hasHeader() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional .protocol.Header header = 1;</code>
+       */
+      public protocol.IprojHeader.Header getHeader() {
+        if (headerBuilder_ == null) {
+          return header_;
+        } else {
+          return headerBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .protocol.Header header = 1;</code>
+       */
+      public Builder setHeader(protocol.IprojHeader.Header value) {
+        if (headerBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          header_ = value;
+          onChanged();
+        } else {
+          headerBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>optional .protocol.Header header = 1;</code>
+       */
+      public Builder setHeader(
+          protocol.IprojHeader.Header.Builder builderForValue) {
+        if (headerBuilder_ == null) {
+          header_ = builderForValue.build();
+          onChanged();
+        } else {
+          headerBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>optional .protocol.Header header = 1;</code>
+       */
+      public Builder mergeHeader(protocol.IprojHeader.Header value) {
+        if (headerBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              header_ != protocol.IprojHeader.Header.getDefaultInstance()) {
+            header_ =
+              protocol.IprojHeader.Header.newBuilder(header_).mergeFrom(value).buildPartial();
+          } else {
+            header_ = value;
+          }
+          onChanged();
+        } else {
+          headerBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>optional .protocol.Header header = 1;</code>
+       */
+      public Builder clearHeader() {
+        if (headerBuilder_ == null) {
+          header_ = protocol.IprojHeader.Header.getDefaultInstance();
+          onChanged();
+        } else {
+          headerBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+      /**
+       * <code>optional .protocol.Header header = 1;</code>
+       */
+      public protocol.IprojHeader.Header.Builder getHeaderBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getHeaderFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .protocol.Header header = 1;</code>
+       */
+      public protocol.IprojHeader.HeaderOrBuilder getHeaderOrBuilder() {
+        if (headerBuilder_ != null) {
+          return headerBuilder_.getMessageOrBuilder();
+        } else {
+          return header_;
+        }
+      }
+      /**
+       * <code>optional .protocol.Header header = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          protocol.IprojHeader.Header, protocol.IprojHeader.Header.Builder, protocol.IprojHeader.HeaderOrBuilder> 
+          getHeaderFieldBuilder() {
+        if (headerBuilder_ == null) {
+          headerBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              protocol.IprojHeader.Header, protocol.IprojHeader.Header.Builder, protocol.IprojHeader.HeaderOrBuilder>(
+                  header_,
+                  getParentForChildren(),
+                  isClean());
+          header_ = null;
+        }
+        return headerBuilder_;
+      }
+
+      // optional string serialized_msg = 2;
+      private java.lang.Object serializedMsg_ = "";
+      /**
+       * <code>optional string serialized_msg = 2;</code>
+       */
+      public boolean hasSerializedMsg() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string serialized_msg = 2;</code>
+       */
+      public java.lang.String getSerializedMsg() {
+        java.lang.Object ref = serializedMsg_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          serializedMsg_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string serialized_msg = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSerializedMsgBytes() {
+        java.lang.Object ref = serializedMsg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          serializedMsg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string serialized_msg = 2;</code>
+       */
+      public Builder setSerializedMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        serializedMsg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string serialized_msg = 2;</code>
+       */
+      public Builder clearSerializedMsg() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        serializedMsg_ = getDefaultInstance().getSerializedMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string serialized_msg = 2;</code>
+       */
+      public Builder setSerializedMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        serializedMsg_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:protocol.Msg)
+    }
+
+    static {
+      defaultInstance = new Msg(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:protocol.Msg)
+  }
+
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_protocol_Header_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_protocol_Header_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_protocol_Msg_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_protocol_Msg_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -575,8 +1243,9 @@ public final class IprojHeader {
   static {
     java.lang.String[] descriptorData = {
       "\n\014header.proto\022\010protocol\"+\n\006Header\022\n\n\002id" +
-      "\030\001 \001(\004\022\025\n\rmsg_full_name\030\002 \001(\tB\rB\013IprojHe" +
-      "ader"
+      "\030\001 \001(\004\022\025\n\rmsg_full_name\030\002 \001(\t\"?\n\003Msg\022 \n\006" +
+      "header\030\001 \001(\0132\020.protocol.Header\022\026\n\016serial" +
+      "ized_msg\030\002 \001(\tB\rB\013IprojHeader"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -589,6 +1258,12 @@ public final class IprojHeader {
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_protocol_Header_descriptor,
               new java.lang.String[] { "Id", "MsgFullName", });
+          internal_static_protocol_Msg_descriptor =
+            getDescriptor().getMessageTypes().get(1);
+          internal_static_protocol_Msg_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_protocol_Msg_descriptor,
+              new java.lang.String[] { "Header", "SerializedMsg", });
           return null;
         }
       };
