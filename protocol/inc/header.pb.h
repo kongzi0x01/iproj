@@ -34,6 +34,7 @@ void protobuf_AssignDesc_header_2eproto();
 void protobuf_ShutdownFile_header_2eproto();
 
 class Header;
+class Msg;
 
 // ===================================================================
 
@@ -132,6 +133,105 @@ class Header : public ::google::protobuf::Message {
   void InitAsDefaultInstance();
   static Header* default_instance_;
 };
+// -------------------------------------------------------------------
+
+class Msg : public ::google::protobuf::Message {
+ public:
+  Msg();
+  virtual ~Msg();
+
+  Msg(const Msg& from);
+
+  inline Msg& operator=(const Msg& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Msg& default_instance();
+
+  void Swap(Msg* other);
+
+  // implements Message ----------------------------------------------
+
+  Msg* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const Msg& from);
+  void MergeFrom(const Msg& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional .protocol.Header header = 1;
+  inline bool has_header() const;
+  inline void clear_header();
+  static const int kHeaderFieldNumber = 1;
+  inline const ::protocol::Header& header() const;
+  inline ::protocol::Header* mutable_header();
+  inline ::protocol::Header* release_header();
+  inline void set_allocated_header(::protocol::Header* header);
+
+  // optional string serialized_msg = 2;
+  inline bool has_serialized_msg() const;
+  inline void clear_serialized_msg();
+  static const int kSerializedMsgFieldNumber = 2;
+  inline const ::std::string& serialized_msg() const;
+  inline void set_serialized_msg(const ::std::string& value);
+  inline void set_serialized_msg(const char* value);
+  inline void set_serialized_msg(const char* value, size_t size);
+  inline ::std::string* mutable_serialized_msg();
+  inline ::std::string* release_serialized_msg();
+  inline void set_allocated_serialized_msg(::std::string* serialized_msg);
+
+  // @@protoc_insertion_point(class_scope:protocol.Msg)
+ private:
+  inline void set_has_header();
+  inline void clear_has_header();
+  inline void set_has_serialized_msg();
+  inline void clear_has_serialized_msg();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::protocol::Header* header_;
+  ::std::string* serialized_msg_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
+
+  friend void  protobuf_AddDesc_header_2eproto();
+  friend void protobuf_AssignDesc_header_2eproto();
+  friend void protobuf_ShutdownFile_header_2eproto();
+
+  void InitAsDefaultInstance();
+  static Msg* default_instance_;
+};
 // ===================================================================
 
 
@@ -228,6 +328,118 @@ inline void Header::set_allocated_msg_full_name(::std::string* msg_full_name) {
   } else {
     clear_has_msg_full_name();
     msg_full_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  }
+}
+
+// -------------------------------------------------------------------
+
+// Msg
+
+// optional .protocol.Header header = 1;
+inline bool Msg::has_header() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void Msg::set_has_header() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void Msg::clear_has_header() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void Msg::clear_header() {
+  if (header_ != NULL) header_->::protocol::Header::Clear();
+  clear_has_header();
+}
+inline const ::protocol::Header& Msg::header() const {
+  return header_ != NULL ? *header_ : *default_instance_->header_;
+}
+inline ::protocol::Header* Msg::mutable_header() {
+  set_has_header();
+  if (header_ == NULL) header_ = new ::protocol::Header;
+  return header_;
+}
+inline ::protocol::Header* Msg::release_header() {
+  clear_has_header();
+  ::protocol::Header* temp = header_;
+  header_ = NULL;
+  return temp;
+}
+inline void Msg::set_allocated_header(::protocol::Header* header) {
+  delete header_;
+  header_ = header;
+  if (header) {
+    set_has_header();
+  } else {
+    clear_has_header();
+  }
+}
+
+// optional string serialized_msg = 2;
+inline bool Msg::has_serialized_msg() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void Msg::set_has_serialized_msg() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void Msg::clear_has_serialized_msg() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void Msg::clear_serialized_msg() {
+  if (serialized_msg_ != &::google::protobuf::internal::kEmptyString) {
+    serialized_msg_->clear();
+  }
+  clear_has_serialized_msg();
+}
+inline const ::std::string& Msg::serialized_msg() const {
+  return *serialized_msg_;
+}
+inline void Msg::set_serialized_msg(const ::std::string& value) {
+  set_has_serialized_msg();
+  if (serialized_msg_ == &::google::protobuf::internal::kEmptyString) {
+    serialized_msg_ = new ::std::string;
+  }
+  serialized_msg_->assign(value);
+}
+inline void Msg::set_serialized_msg(const char* value) {
+  set_has_serialized_msg();
+  if (serialized_msg_ == &::google::protobuf::internal::kEmptyString) {
+    serialized_msg_ = new ::std::string;
+  }
+  serialized_msg_->assign(value);
+}
+inline void Msg::set_serialized_msg(const char* value, size_t size) {
+  set_has_serialized_msg();
+  if (serialized_msg_ == &::google::protobuf::internal::kEmptyString) {
+    serialized_msg_ = new ::std::string;
+  }
+  serialized_msg_->assign(reinterpret_cast<const char*>(value), size);
+}
+inline ::std::string* Msg::mutable_serialized_msg() {
+  set_has_serialized_msg();
+  if (serialized_msg_ == &::google::protobuf::internal::kEmptyString) {
+    serialized_msg_ = new ::std::string;
+  }
+  return serialized_msg_;
+}
+inline ::std::string* Msg::release_serialized_msg() {
+  clear_has_serialized_msg();
+  if (serialized_msg_ == &::google::protobuf::internal::kEmptyString) {
+    return NULL;
+  } else {
+    ::std::string* temp = serialized_msg_;
+    serialized_msg_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    return temp;
+  }
+}
+inline void Msg::set_allocated_serialized_msg(::std::string* serialized_msg) {
+  if (serialized_msg_ != &::google::protobuf::internal::kEmptyString) {
+    delete serialized_msg_;
+  }
+  if (serialized_msg) {
+    set_has_serialized_msg();
+    serialized_msg_ = serialized_msg;
+  } else {
+    clear_has_serialized_msg();
+    serialized_msg_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   }
 }
 

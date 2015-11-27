@@ -1,7 +1,5 @@
 #include "idle_session_mgr.h"
-
-#include <iostream>
-using namespace std;
+#include "logger_macro.h"
 
 IdleSessionMgr::IdleSessionMgr()
 {
@@ -41,7 +39,7 @@ bool IdleSessionMgr::PutSession(Session* pSession)
 
 bool IdleSessionMgr::Grow(int num)
 {
-	cout << "IdleSessionMgr::Grow" << endl;
+	LOG_DEBUG( "IdleSessionMgr::Grow" );
 	int failed_num = 0;
 	for(int i = 0; i < num; i++)
 	{
@@ -55,6 +53,6 @@ bool IdleSessionMgr::Grow(int num)
 		m_iTotalNum++;
 	}
 	
-	cout << "total:" << m_iTotalNum << " failed:" << failed_num << endl;
+	LOG_DEBUG( "total:" << m_iTotalNum << " failed:" << failed_num );
 	return true;
 }

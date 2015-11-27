@@ -13,7 +13,7 @@ from google.protobuf import descriptor_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='header.proto',
   package='protocol',
-  serialized_pb='\n\x0cheader.proto\x12\x08protocol\"+\n\x06Header\x12\n\n\x02id\x18\x01 \x01(\x04\x12\x15\n\rmsg_full_name\x18\x02 \x01(\tB\rB\x0bIprojHeader')
+  serialized_pb='\n\x0cheader.proto\x12\x08protocol\"+\n\x06Header\x12\n\n\x02id\x18\x01 \x01(\x04\x12\x15\n\rmsg_full_name\x18\x02 \x01(\t\"?\n\x03Msg\x12 \n\x06header\x18\x01 \x01(\x0b\x32\x10.protocol.Header\x12\x16\n\x0eserialized_msg\x18\x02 \x01(\tB\rB\x0bIprojHeader')
 
 
 
@@ -52,13 +52,56 @@ _HEADER = _descriptor.Descriptor(
   serialized_end=69,
 )
 
+
+_MSG = _descriptor.Descriptor(
+  name='Msg',
+  full_name='protocol.Msg',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='header', full_name='protocol.Msg.header', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='serialized_msg', full_name='protocol.Msg.serialized_msg', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=71,
+  serialized_end=134,
+)
+
+_MSG.fields_by_name['header'].message_type = _HEADER
 DESCRIPTOR.message_types_by_name['Header'] = _HEADER
+DESCRIPTOR.message_types_by_name['Msg'] = _MSG
 
 class Header(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _HEADER
 
   # @@protoc_insertion_point(class_scope:protocol.Header)
+
+class Msg(_message.Message):
+  __metaclass__ = _reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _MSG
+
+  # @@protoc_insertion_point(class_scope:protocol.Msg)
 
 
 DESCRIPTOR.has_options = True

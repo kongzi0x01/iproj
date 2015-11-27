@@ -1,9 +1,7 @@
 #include "accepter.h"
 #include "server.h"
 #include "accepted_session_mgr.h"
-
-#include <iostream>
-using namespace std;
+#include "logger_macro.h"
 
 Accepter::Accepter()
 {
@@ -21,7 +19,7 @@ Accepter::~Accepter()
 
 int Accepter::Init(const char* pszIP, int port)
 {
-	cout << "ip:" << pszIP << " port:" << port << endl;
+	LOG_DEBUG( "ip:" << pszIP << " port:" << port);
 	int ret = 0;
 	if(0 == strlen(pszIP))
 	{
@@ -40,18 +38,18 @@ int Accepter::Init(const char* pszIP, int port)
 
 int Accepter::Handle(int event)
 {	
-	cout << "Accepter::Handle" << endl;
+	LOG_DEBUG( "Accepter::Handle" );
 	Session* pSession = Server::Instance().GetIdleSessionMgr()->GetSession();
 	if(NULL == pSession)
 	{
-		cout << "get idle session failed" <<endl;
+		LOG_DEBUG( "get idle session failed" );
 		Server::Instance().GetIdleSessionMgr()->PutSession(pSession);
 		return -1;
 	}
 	
 	if( 0 > m_pTcpSock->Accept(pSession->GetTcpSocket()))
 	{
-		cout<< "Accepter::Handle: accept error" <<endl;
+		LOG_DEBUG("Accepter::Handle: accept error" );
 		Server::Instance().GetIdleSessionMgr()->PutSession(pSession);
 		return -1;
 	}

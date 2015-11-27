@@ -1,8 +1,8 @@
 #include "circle_buffer.h"
+#include "logger_macro.h"
+
 #include <string.h>
 #include <stdio.h>
-#include <iostream>
-using namespace std;
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -63,7 +63,7 @@ bool CircleBuffer::MigrateDataToHead()
 		return true;
 	}
 
-	cout << "CircleBuffer::MigrateDataToHead" << m_uDataOffset << " => 0" <<endl;
+	LOG_DEBUG( "CircleBuffer::MigrateDataToHead" << m_uDataOffset << " => 0");
 	//printf("%s %d %u => %u\n", __FILE__, __LINE__, m_uDataOffset, 0);
 
 	if ( m_uDataSize <= m_uDataOffset )
@@ -107,7 +107,7 @@ void CircleBuffer::Grow(uint32_t uSize)
 	m_pData = pNewData;
 
 	//printf("%s %d grow %u => %u\n", __FILE__, __LINE__, m_uSize/2, m_uSize);
-	cout <<"CircleBuffer::Grow " << m_uSize << " => " << m_uSize+uSize << endl; 
+	LOG_DEBUG( "CircleBuffer::Grow " << m_uSize << " => " << m_uSize+uSize ); 
 }
 
 void CircleBuffer::Init(uint32_t uBytes)

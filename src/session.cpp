@@ -1,10 +1,9 @@
 #include "session.h"
 #include "server.h"
+#include "logger_macro.h"
 
 #include <cerrno>
 #include <unistd.h>
-#include <iostream>
-using namespace std;
 
 Session::Session()
 {
@@ -47,8 +46,8 @@ void Session::Close()
 	Server::Instance().GetIdleSessionMgr()->PutSession(this);
 	Server::Instance().GetAcceptedSessionMgr()->DelSession(this);
 	Server::Instance().GetEpoll().DelEvent(GetFd());
-	cout << "idle session num : " << Server::Instance().GetIdleSessionMgr()->GetTotalNum() << endl; 
-	cout << "accepted session num : " << Server::Instance().GetAcceptedSessionMgr()->GetCurAcceptedNum() << endl; 
+	LOG_DEBUG("idle session num : " << Server::Instance().GetIdleSessionMgr()->GetTotalNum()); 
+	LOG_DEBUG("accepted session num : " << Server::Instance().GetAcceptedSessionMgr()->GetCurAcceptedNum()); 
 	
 	m_pSendBuffer->Reset();
 	m_pRecvBuffer->Reset();
@@ -74,7 +73,7 @@ int Session::OnSockRead()
 	}
 	else if ( iRecv == -1 )
 	{
-	    cout << "Session::Read errno: " << errno << endl;
+	    LOG_DEBUG("Session::Read errno: " << errno);
 		// Blocking errors are okay, just move on
 		if (errno == EAGAIN || errno == EWOULDBLOCK)
 		{
@@ -95,7 +94,7 @@ int Session::OnSockWrite()
 		return 0;
 	}
 	int iSend = m_pSock->Send(m_pSendBuffer->GetData(), m_pSendBuffer->GetDataSize());
-	cout << "Session::OnSockWrite send : " << iSend << " fd : " <<  GetFd() << endl;
+	LOG_DEBUG("Session::OnSockWrite send : " << iSend << " fd : " <<  GetFd());
 	if ( iSend < 0 )
 	{
 		// Blocking errors are okay, just move on

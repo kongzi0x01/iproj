@@ -1,10 +1,9 @@
 #include "proto_util.h"
 #include "server.h"
+#include "logger_macro.h"
 
 #include <string.h>
 #include <stdlib.h>
-#include <iostream>
-
 using namespace google::protobuf;
 
 ProtoBasic::ProtoBasic(uint32_t uPackLen, uint32_t uHeaderLen)
@@ -23,7 +22,7 @@ int ProtoBasic::Decode(const char* pszData, uint32_t uSize)
 
 	uPackLen = *((uint32_t*)pszData);
 	uHeaderLen = *((uint32_t*)(pszData+sizeof(uint32_t)));
-	cout << "uPackLen : " << uPackLen << ", uHeaderLen : " << uHeaderLen << endl;	
+	LOG_DEBUG( "uPackLen : " << uPackLen << ", uHeaderLen : " << uHeaderLen );	
 	return 0;	
 }
 
@@ -74,7 +73,7 @@ Message* ProtoUtil::CreateMessage(const string& sFullName)
 
 	if ( pDesc == NULL )
 	{
-		cout << "can't find descriptor : " << sFullName << endl;
+		LOG_DEBUG( "can't find descriptor : " << sFullName );
 		return NULL;
 	}
 	return CreateMessage(pDesc);
@@ -86,7 +85,7 @@ Message* ProtoUtil::CreateMessage(const Descriptor* pDesc)
 	const Message* pProtoType = MessageFactory::generated_factory()->GetPrototype(pDesc);
 	if ( pProtoType == NULL)
 	{	
-		cout << "can't find message proto type : " << pDesc->full_name();
+		LOG_DEBUG( "can't find message proto type : " << pDesc->full_name());
 		return NULL;
 	}
  	
@@ -108,9 +107,9 @@ bool ProtoUtil::MakeData(Header* pHeader, Message* pMsg, string& sData)
 	pHeader->AppendToString(&sData);
 	pMsg->AppendToString(&sData);
 
-	cout << __FUNCTION__ << " ,uPackLen : " << basic.uPackLen << " ,data_size : " << sData.size()
+	LOG_DEBUG( __FUNCTION__ << " ,uPackLen : " << basic.uPackLen << " ,data_size : " << sData.size()
 		<< " , header len : " << basic.uHeaderLen
-		<< " ,cmd : " << pHeader->msg_full_name() <<endl;
+		<< " ,cmd : " << pHeader->msg_full_name() );
 
 	return true;
 }

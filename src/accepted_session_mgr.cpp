@@ -1,8 +1,6 @@
 #include "accepted_session_mgr.h"
 #include "server.h"
-
-#include "iostream"
-using namespace std;
+#include "logger_macro.h"
 
 AcceptedSessionMgr::AcceptedSessionMgr(uint64_t iInitIdent)
 {
@@ -28,14 +26,14 @@ bool AcceptedSessionMgr::AddSession(Session* pSession)
 {
 	if(NULL == pSession)
 	{
-		cout << "accepted session is null" <<endl;
+		LOG_DEBUG( "accepted session is null" );
 		return false;
 	}
 	
 	Session2IdentMap::iterator iter = m_Session2IdentMap.find(pSession);
 	if(m_Session2IdentMap.end() != iter)
 	{
-		cout << "accepted session all ready exists " << endl;
+		LOG_DEBUG( "accepted session all ready exists " );
 		return false;
 	}
 	
@@ -51,7 +49,7 @@ bool AcceptedSessionMgr::DelSession(uint64_t ident)
 	Ident2SessionMap::iterator iter = m_Ident2SessionMap.find(ident);
 	if(m_Ident2SessionMap.end() == iter)
 	{
-		cout << "AcceptedSessionMgr::DelSession: session not exists " << endl;
+		LOG_DEBUG( "AcceptedSessionMgr::DelSession: session not exists " );
 		return false;
 	}
 	m_Ident2SessionMap.erase(iter);
@@ -65,7 +63,7 @@ bool AcceptedSessionMgr::DelSession(Session* pSession)
 	Session2IdentMap::iterator iter = m_Session2IdentMap.find(pSession);
 	if(m_Session2IdentMap.end() == iter)
 	{
-		cout << "AcceptedSessionMgr::DelSession: session not exists " << endl;
+		LOG_DEBUG( "AcceptedSessionMgr::DelSession: session not exists " );
 		return false;
 	}
 	m_Ident2SessionMap.erase(iter->second);
@@ -78,7 +76,7 @@ Session* AcceptedSessionMgr::GetSessionByIdent(uint64_t ident)
 	Ident2SessionMap::iterator iter = m_Ident2SessionMap.find(ident);
 	if(m_Ident2SessionMap.end() == iter)
 	{
-		cout << "AcceptedSessionMgr::GetSessionByIdent: session not exists " << endl;
+		LOG_DEBUG( "AcceptedSessionMgr::GetSessionByIdent: session not exists " );
 		return NULL;
 	}
 	return iter->second;
@@ -89,7 +87,7 @@ uint64_t AcceptedSessionMgr::GetIdentBySession(Session* pSession)
 	Session2IdentMap::iterator iter = m_Session2IdentMap.find(pSession);
 	if(m_Session2IdentMap.end() == iter)
 	{
-		cout << "AcceptedSessionMgr::GetIdentBySession: session not exists " << endl;
+		LOG_DEBUG( "AcceptedSessionMgr::GetIdentBySession: session not exists " );
 		return 0;
 	}
 	return iter->second;

@@ -9,22 +9,19 @@ import binascii
 
 class GenerateProtocol:
 	def __init__(self):
-		self.packet_len = 0
-		self.header_len = 0
 		self.header_pb = ""
 		self.packet_pb = ""
 	
 	def set(self, header_pb, packet_pb):
 		self.header_pb = header_pb
 		self.packet_pb = packet_pb
-		self.packet_len = len(packet_pb) + len(header_pb) + 8
-		self.header_len = len(header_pb)
 		
 	def encode(self, buffer):
-		buffer.put_int(self.packet_len)
-		buffer.put_int(self.header_len)
-		buffer.put_string(self.header_pb)
-		buffer.put_string(self.packet_pb)
+		msg = header_pb2.Msg()
+		msg.header.id = self.header_pb.id
+		msg.header.msg_full_name = self.header_pb.msg_full_name
+		msg.serialized_msg = self.packet_pb
+		buffer.put_string(msg.SerializeToString())
 		# print "packet_len:", self.packet_len
 		# print "header_len:", self.header_len
 		# print "header_pb:", binascii.b2a_hex(self.header_pb)
@@ -63,7 +60,7 @@ class Connector:
 		str_msg_pb_pb = msg_pb.SerializeToString()
 		#print "str_msg_pb_pb len:", len(str_msg_pb_pb)
 		to_send = GenerateProtocol()
-		to_send.set(self.get_header_pb_str(), str_msg_pb_pb)
+		to_send.set(self.header_pb, str_msg_pb_pb)
 		self.buf = Xlbuf()
 		to_send.encode(self.buf)
 		#print "send len:", len(self.buf.buf)

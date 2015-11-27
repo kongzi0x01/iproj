@@ -14,3 +14,7 @@ login_req.user_name = "jack"
 login_req.encrypted_psw = "ASDF"
 
 conn.send(login_req)
+
+#rsp = line_pb2.LoginRsp()
+#conn.recv(rsp)
+#print "rsp.result :",rsp.result

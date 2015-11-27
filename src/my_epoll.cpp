@@ -1,11 +1,9 @@
-#include <iostream>
 #include <cerrno>
 #include <stdio.h>
 
 #include "my_epoll.h"
 #include "epoll_handler.h"
-
-using namespace std;
+#include "logger_macro.h"
 
 Epoll::Epoll(int event_nums)
 {
@@ -24,7 +22,7 @@ int Epoll::EpollWait(int timeout_ms)
 {
 	if (m_epoll_fd == -1) 
 	{
-		cout<<"error:epoll_create"<<endl;
+		LOG_DEBUG( "error:epoll_create" );
 		return -1;
 	}
 	
@@ -32,7 +30,7 @@ int Epoll::EpollWait(int timeout_ms)
 	
 	if(nfds < 0)
 	{
-		perror("epoll_wait");
+		LOG_DEBUG("epoll_wait");
 		return nfds;
 	}
 	for ( int i=0; i<nfds; ++i)
@@ -54,7 +52,7 @@ int Epoll::AddReadEvent(int fd, void* data)
 	int ret = epoll_ctl(m_epoll_fd, EPOLL_CTL_ADD, fd, &m_ev);
 	if ( ret < 0 )
 	{
-		perror("epoll_ctl add");
+		LOG_DEBUG("epoll_ctl add");
 	}
 	
 	return ret;
@@ -67,7 +65,7 @@ int Epoll::AddWriteEvent(int fd, void* data)
 	int ret = epoll_ctl(m_epoll_fd, EPOLL_CTL_ADD, fd, &m_ev);
 	if ( ret < 0 )
 	{
-		perror("epoll_ctl add");
+		LOG_DEBUG("epoll_ctl add");
 	}
 	
 	return ret;
@@ -78,7 +76,7 @@ int Epoll::DelEvent(int fd)
 	int ret = epoll_ctl(m_epoll_fd, EPOLL_CTL_DEL, fd, &m_ev);	
 	if ( ret < 0 )
 	{
-		perror("epoll_ctl del");
+		LOG_DEBUG("epoll_ctl del");
 	}
 	return ret;
 }

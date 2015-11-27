@@ -19,7 +19,7 @@ public:
 	uint32_t GetTotalNum(){	return m_SessionList.size();}
 	
 private:
-	bool Grow(int num = 2);
+	bool Grow(int num = 100);
 
 private:
 	list<Session*> m_SessionList;
