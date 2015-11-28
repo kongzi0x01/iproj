@@ -4,7 +4,23 @@ Server::Server()
 {}
 
 Server::~Server()
-{}
+{
+	if(m_pAcceptedSessionMgr != NULL)
+	{
+		delete m_pAcceptedSessionMgr;
+		m_pAcceptedSessionMgr = NULL;
+	}
+	if(m_pIdleSessionMgr != NULL)
+	{
+		delete m_pIdleSessionMgr;
+		m_pIdleSessionMgr = NULL;
+	}
+	if(m_pConnectorMgr != NULL)
+	{
+		delete m_pConnectorMgr;
+		m_pConnectorMgr = NULL;
+	}
+}
 
 Server& Server::Instance()
 {
@@ -16,6 +32,7 @@ int Server::Init(Accepter& accepter, const char* pszIP, int port)
 {
 	m_pAcceptedSessionMgr = new AcceptedSessionMgr();
 	m_pIdleSessionMgr = new IdleSessionMgr();
+	m_pConnectorMgr = new ConnectorMgr();
 	
 	return accepter.Init(pszIP, port);
 }

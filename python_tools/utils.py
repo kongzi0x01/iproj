@@ -68,16 +68,18 @@ class Connector:
 		
 	def recv(self, msg_pb):
 		response = self.sock.recv(1024*50)
-		buf = Xlbuf(response)	
-		packet_len = buf.get_int_from_pos(0)
-		print "recv packet_len:", packet_len
-		header_len = buf.get_int_from_pos(4)
+		#buf = Xlbuf(response)	
+		#packet_len = buf.get_int_from_pos(0)
+		#print "recv packet_len:", packet_len
+		#header_len = buf.get_int_from_pos(4)
 		#print "recv header_len:", header_len
-		self.header = buf.get_string(8, 8 + header_len)
-		self.msg = buf.get_string(8 + header_len, packet_len)
+		#self.header = buf.get_string(8, 8 + header_len)
+		#self.msg = buf.get_string(8 + header_len, packet_len)
 		#print "recv:", binascii.b2a_hex(self.msg)
 		
-		msg_pb.ParseFromString(self.msg)
+		msg = header_pb2.Msg()
+		msg.ParseFromString(response)
+		msg_pb.ParseFromString(msg.serialized_msg)
 	
 	def get_header(self):
 		return self.header

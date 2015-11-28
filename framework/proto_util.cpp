@@ -6,7 +6,7 @@
 #include <stdlib.h>
 using namespace google::protobuf;
 
-ProtoBasic::ProtoBasic(uint32_t uPackLen, uint32_t uHeaderLen)
+/*ProtoBasic::ProtoBasic(uint32_t uPackLen, uint32_t uHeaderLen)
 {
 	this->uPackLen = uPackLen;
 	this->uHeaderLen = uHeaderLen;
@@ -25,7 +25,7 @@ int ProtoBasic::Decode(const char* pszData, uint32_t uSize)
 	LOG_DEBUG( "uPackLen : " << uPackLen << ", uHeaderLen : " << uHeaderLen );	
 	return 0;	
 }
-
+*/
 int ProtoUtil::SendToSession(Header* pHeader, Message* pMsg, Session* pSession)
 {
 	string sData;
@@ -33,7 +33,7 @@ int ProtoUtil::SendToSession(Header* pHeader, Message* pMsg, Session* pSession)
 	return pSession->Send(sData.data(), sData.size());
 }
 
-int ProtoUtil::Code(const char* pszHeader, uint32_t uHeaderLen, const char* pszCmd, uint32_t uCmdLen, string& sOut)
+/*int ProtoUtil::Code(const char* pszHeader, uint32_t uHeaderLen, const char* pszCmd, uint32_t uCmdLen, string& sOut)
 {
 	ProtoBasic basic;
 	uint16_t uBasicLen = sizeof(basic);
@@ -45,9 +45,9 @@ int ProtoUtil::Code(const char* pszHeader, uint32_t uHeaderLen, const char* pszC
 	sOut.append(pszHeader, uHeaderLen);
 	sOut.append(pszCmd, uCmdLen);
 	return 0;
-}
+}*/
 
-int ProtoUtil::Decode(const char* pszPackData, uint32_t uPackLen, string& sOutHeader, string& sOutCmd)
+/*int ProtoUtil::Decode(const char* pszPackData, uint32_t uPackLen, string& sOutHeader, string& sOutCmd)
 {
 	ProtoBasic basic;
 	uint16_t uBasicLen = sizeof(basic);
@@ -65,7 +65,7 @@ int ProtoUtil::Decode(const char* pszPackData, uint32_t uPackLen, string& sOutHe
 	sOutCmd.assign(pszCmd, uCmdLen);
 	
 	return 0;
-}
+}*/
 
 Message* ProtoUtil::CreateMessage(const string& sFullName)
 {
@@ -94,22 +94,13 @@ Message* ProtoUtil::CreateMessage(const Descriptor* pDesc)
 }
 
 bool ProtoUtil::MakeData(Header* pHeader, Message* pMsg, string& sData)
-{
-	ProtoBasic basic;
-
-	uint32_t uCmdLen = pMsg->ByteSize();
-	pHeader->set_msg_full_name(pMsg->GetDescriptor()->full_name());
-
-	basic.uHeaderLen = pHeader->ByteSize();
-	basic.uPackLen = sizeof(basic) + uCmdLen + basic.uHeaderLen;
-
-	sData.assign((const char*)&basic, sizeof(basic));
-	pHeader->AppendToString(&sData);
-	pMsg->AppendToString(&sData);
-
-	LOG_DEBUG( __FUNCTION__ << " ,uPackLen : " << basic.uPackLen << " ,data_size : " << sData.size()
-		<< " , header len : " << basic.uHeaderLen
-		<< " ,cmd : " << pHeader->msg_full_name() );
+{	
+	protocol::Msg return_msg;
+	return_msg.mutable_header()->CopyFrom(*pHeader);
+	string str_serialized_msg;
+	pMsg->SerializeToString(&str_serialized_msg);
+	return_msg.set_serialized_msg(str_serialized_msg);
+	return_msg.SerializeToString(&sData);
 
 	return true;
 }

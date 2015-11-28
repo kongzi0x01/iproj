@@ -46,12 +46,15 @@ void Session::Close()
 	Server::Instance().GetIdleSessionMgr()->PutSession(this);
 	Server::Instance().GetAcceptedSessionMgr()->DelSession(this);
 	Server::Instance().GetEpoll().DelEvent(GetFd());
-	LOG_DEBUG("idle session num : " << Server::Instance().GetIdleSessionMgr()->GetTotalNum()); 
-	LOG_DEBUG("accepted session num : " << Server::Instance().GetAcceptedSessionMgr()->GetCurAcceptedNum()); 
 	
 	m_pSendBuffer->Reset();
 	m_pRecvBuffer->Reset();
 	m_pSock->Close();
+}
+
+int Session::Connect(const string& sHost, int iPort, bool bNoBlocking)
+{
+	return m_pSock->Connect(sHost.c_str(), iPort, bNoBlocking);
 }
 
 int Session::OnSockRead()

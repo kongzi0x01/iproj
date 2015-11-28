@@ -16,14 +16,6 @@ using namespace __gnu_cxx;
 
 const uint32_t MAX_PACKAGE_LEN = 1024*1024;
 
-struct ProtoBasic
-{
-	ProtoBasic(uint32_t uPackLen=0, uint32_t uHeaderLen=0);
-	int Decode(const char* pData, uint32_t uSize);
-	uint32_t uPackLen;	//整个协议包的总长度
-	uint32_t uHeaderLen;	//头部的长度
-};
-
 class ProtoUtil
 {
 public:

@@ -5,6 +5,7 @@
 #include "accepter.h"
 #include "accepted_session_mgr.h"
 #include "idle_session_mgr.h"
+#include "connector_mgr.h"
 
 class Server
 {
@@ -20,11 +21,13 @@ public:
 	Epoll& GetEpoll(){	return m_epoll;}
 	AcceptedSessionMgr* GetAcceptedSessionMgr(){	return m_pAcceptedSessionMgr;}
 	IdleSessionMgr* GetIdleSessionMgr(){	return m_pIdleSessionMgr;}
+	ConnectorMgr* GetConnectorMgr(){	return m_pConnectorMgr;}
 	
 private:
 	Epoll m_epoll;
 	AcceptedSessionMgr* m_pAcceptedSessionMgr;
 	IdleSessionMgr* m_pIdleSessionMgr;
+	ConnectorMgr* m_pConnectorMgr;
 };
 
 #endif
