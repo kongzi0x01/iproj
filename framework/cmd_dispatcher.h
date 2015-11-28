@@ -5,7 +5,6 @@
 
 #include <map>
 #include <stdint.h>
-#include <ext/hash_map>
 #include "header.pb.h"
 #include "proto_util.h"
 

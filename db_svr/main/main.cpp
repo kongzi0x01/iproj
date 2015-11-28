@@ -1,10 +1,8 @@
 #include "server.h"
 #include "accepter.h"
 #include "cmd_dispatcher.h"
-#include "service_cmd_handle.h"
 #include "line.pb.h"
 #include "logger_macro.h"
-#include "processor.h"
 
 #include <iostream>
 #include <string>
@@ -17,7 +15,7 @@ int RegistCmdHandle();
 int main()
 {
 	string sListenAddr = "";
-	int iListenPort = 8989;
+	int iListenPort = 7979;
 	
 	//注册消息响应函数
 	RegistCmdHandle();
@@ -36,8 +34,9 @@ int main()
 		LOG_ERROR("Server init failed!");
 		return -1;
 	}
+	
 	Processor connector_processor;
-	Server::Instance().GetConnectorMgr()->AddConnector("db_svr", "192.168.1.120", 7979, &connector_processor);
+	Server::Instance().GetConnectorMgr()->AddConnector("service_svr", "127.0.0.1", 8989, &connector_processor);
 	
 	Server::Instance().Run(10);
 	return 0;
@@ -45,7 +44,6 @@ int main()
 
 int RegistCmdHandle()
 {
-	REGIST_CMD_HANDLE(line::LoginReq, LoginReqHandle);
 	
 	return 0;
 }
