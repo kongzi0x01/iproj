@@ -15,6 +15,7 @@ public:
 	virtual int Handle(google::protobuf::Message* pMsg) = 0;
 
 	int SendMsgBack(google::protobuf::Message* pCmdMsg);
+	int SendMsgToSessionByIdent(google::protobuf::Message* pCmdMsg, uint64_t ident);
 	
 	//主动通知客户端消息，不能保证一定到达客户端
 	int NotifyMsgBack(google::protobuf::Message* pCmdMsg);

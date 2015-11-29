@@ -76,7 +76,7 @@ int CmdDispatcher::Dispatch(const char* pszRequest, uint32_t uSize, Session* pRe
 	//set some data, and dispatch cmd
 	iter->second->SetSourceSession(pRequestSourceSession);
 	iter->second->SetHeader(msg.mutable_header());
-	LOG_DEBUG("msg.serialized_msg(): " << msg.serialized_msg());
+
 	if ( !pMsg->ParseFromString(msg.serialized_msg()) )
 	{
 		LOG_DEBUG( "message parse error " << pDesc->full_name() );

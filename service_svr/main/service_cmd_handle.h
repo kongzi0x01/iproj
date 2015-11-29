@@ -9,4 +9,9 @@ public:
 	int Handle(google::protobuf::Message* pMsg);
 };
 
+class LoginRspHandle : public ServiceSvrCmdHandle
+{
+public:
+	int Handle(google::protobuf::Message* pMsg);
+};
 #endif

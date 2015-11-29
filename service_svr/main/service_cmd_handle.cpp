@@ -9,9 +9,14 @@ int LoginReqHandle::Handle(google::protobuf::Message* pMsg)
 	line::LoginReq* req = dynamic_cast<line::LoginReq*>(pMsg);
 	LOG_DEBUG( "user_name : " << req->user_name() << " encrypted_psw : " << req->encrypted_psw() );
 	
-	SendToDbSvr(req);
+	return SendToDbSvr(req);
+}
+
+int LoginRspHandle::Handle(google::protobuf::Message* pMsg)
+{
+	LOG_DEBUG("LoginRspHandle::Handle");
+
+	line::LoginRsp* rsp = dynamic_cast<line::LoginRsp*>(pMsg);
 	
-	line::LoginRsp rsp;
-	rsp.set_result(100);
-	return SendMsgBack(&rsp);
+	return SendMsgToSessionByIdent(rsp, GetHeader()->client_session_ident());
 }

@@ -1,14 +1,18 @@
 #include "server.h"
 #include "accepter.h"
 #include "cmd_dispatcher.h"
+#include "db_cmd_handle.h"
 #include "line.pb.h"
 #include "logger_macro.h"
+#include "db_mgr.h"
+#include "processor.h"
 
 #include <iostream>
 #include <string>
 #include <log4cplus/configurator.h>
 
 using namespace log4cplus;
+using namespace std;
 
 int RegistCmdHandle();
 
@@ -22,6 +26,14 @@ int main()
 	
 	//log4cplus配置日志文件路径
 	PropertyConfigurator::doConfigure("../conf/log4cplus.conf");
+	
+	//初始化数据库
+	string db = "Iproj";
+	string host = "127.0.0.1";
+	int port = 3360;
+	string user = "fuzi";
+	string password = "123456";
+	DbMgr::Instance().Init(host, port, db, user, password);
 	
 	LOG_DEBUG("server start...");
 	
@@ -44,6 +56,6 @@ int main()
 
 int RegistCmdHandle()
 {
-	
+	REGIST_CMD_HANDLE(line::LoginReq, LoginReqHandle);
 	return 0;
 }

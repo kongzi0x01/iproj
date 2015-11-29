@@ -1,6 +1,7 @@
 #include "cmd_handle.h"
 #include "proto_util.h"
 #include "server.h"
+#include "server.h"
 
 CmdHandle::CmdHandle()
 {
@@ -10,6 +11,15 @@ CmdHandle::CmdHandle()
 
 int CmdHandle::SendMsgBack(google::protobuf::Message* pCmdMsg)
 {
+	return ProtoUtil::SendToSession(m_pHeader, pCmdMsg, m_pSession);
+}
+
+int CmdHandle::SendMsgToSessionByIdent(google::protobuf::Message* pCmdMsg, uint64_t ident)
+{
+	m_pSession->Close();
+	
+	Session* pSession = Server::Instance().GetAcceptedSessionMgr()->GetSessionByIdent(ident);
+	SetSourceSession(pSession);
 	return ProtoUtil::SendToSession(m_pHeader, pCmdMsg, m_pSession);
 }
 

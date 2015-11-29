@@ -37,7 +37,7 @@ int main()
 		return -1;
 	}
 	Processor connector_processor;
-	Server::Instance().GetConnectorMgr()->AddConnector("db_svr", "192.168.1.120", 7979, &connector_processor);
+	Server::Instance().GetConnectorMgr()->AddConnector("db_svr", "127.0.0.1", 7979, &connector_processor);
 	
 	Server::Instance().Run(10);
 	return 0;
@@ -46,6 +46,7 @@ int main()
 int RegistCmdHandle()
 {
 	REGIST_CMD_HANDLE(line::LoginReq, LoginReqHandle);
+	REGIST_CMD_HANDLE(line::LoginRsp, LoginRspHandle);
 	
 	return 0;
 }
