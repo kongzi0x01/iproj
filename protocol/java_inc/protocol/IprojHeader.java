@@ -35,6 +35,16 @@ public final class IprojHeader {
      */
     com.google.protobuf.ByteString
         getMsgFullNameBytes();
+
+    // optional uint64 client_session_ident = 3;
+    /**
+     * <code>optional uint64 client_session_ident = 3;</code>
+     */
+    boolean hasClientSessionIdent();
+    /**
+     * <code>optional uint64 client_session_ident = 3;</code>
+     */
+    long getClientSessionIdent();
   }
   /**
    * Protobuf type {@code protocol.Header}
@@ -95,6 +105,11 @@ public final class IprojHeader {
             case 18: {
               bitField0_ |= 0x00000002;
               msgFullName_ = input.readBytes();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              clientSessionIdent_ = input.readUInt64();
               break;
             }
           }
@@ -196,9 +211,26 @@ public final class IprojHeader {
       }
     }
 
+    // optional uint64 client_session_ident = 3;
+    public static final int CLIENT_SESSION_IDENT_FIELD_NUMBER = 3;
+    private long clientSessionIdent_;
+    /**
+     * <code>optional uint64 client_session_ident = 3;</code>
+     */
+    public boolean hasClientSessionIdent() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional uint64 client_session_ident = 3;</code>
+     */
+    public long getClientSessionIdent() {
+      return clientSessionIdent_;
+    }
+
     private void initFields() {
       id_ = 0L;
       msgFullName_ = "";
+      clientSessionIdent_ = 0L;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -218,6 +250,9 @@ public final class IprojHeader {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBytes(2, getMsgFullNameBytes());
       }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeUInt64(3, clientSessionIdent_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -234,6 +269,10 @@ public final class IprojHeader {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, getMsgFullNameBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, clientSessionIdent_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -355,6 +394,8 @@ public final class IprojHeader {
         bitField0_ = (bitField0_ & ~0x00000001);
         msgFullName_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
+        clientSessionIdent_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -391,6 +432,10 @@ public final class IprojHeader {
           to_bitField0_ |= 0x00000002;
         }
         result.msgFullName_ = msgFullName_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.clientSessionIdent_ = clientSessionIdent_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -414,6 +459,9 @@ public final class IprojHeader {
           bitField0_ |= 0x00000002;
           msgFullName_ = other.msgFullName_;
           onChanged();
+        }
+        if (other.hasClientSessionIdent()) {
+          setClientSessionIdent(other.getClientSessionIdent());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -545,6 +593,39 @@ public final class IprojHeader {
   }
   bitField0_ |= 0x00000002;
         msgFullName_ = value;
+        onChanged();
+        return this;
+      }
+
+      // optional uint64 client_session_ident = 3;
+      private long clientSessionIdent_ ;
+      /**
+       * <code>optional uint64 client_session_ident = 3;</code>
+       */
+      public boolean hasClientSessionIdent() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional uint64 client_session_ident = 3;</code>
+       */
+      public long getClientSessionIdent() {
+        return clientSessionIdent_;
+      }
+      /**
+       * <code>optional uint64 client_session_ident = 3;</code>
+       */
+      public Builder setClientSessionIdent(long value) {
+        bitField0_ |= 0x00000004;
+        clientSessionIdent_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 client_session_ident = 3;</code>
+       */
+      public Builder clearClientSessionIdent() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        clientSessionIdent_ = 0L;
         onChanged();
         return this;
       }
@@ -1242,10 +1323,11 @@ public final class IprojHeader {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014header.proto\022\010protocol\"+\n\006Header\022\n\n\002id" +
-      "\030\001 \001(\004\022\025\n\rmsg_full_name\030\002 \001(\t\"?\n\003Msg\022 \n\006" +
-      "header\030\001 \001(\0132\020.protocol.Header\022\026\n\016serial" +
-      "ized_msg\030\002 \001(\tB\rB\013IprojHeader"
+      "\n\014header.proto\022\010protocol\"I\n\006Header\022\n\n\002id" +
+      "\030\001 \001(\004\022\025\n\rmsg_full_name\030\002 \001(\t\022\034\n\024client_" +
+      "session_ident\030\003 \001(\004\"?\n\003Msg\022 \n\006header\030\001 \001" +
+      "(\0132\020.protocol.Header\022\026\n\016serialized_msg\030\002" +
+      " \001(\tB\rB\013IprojHeader"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -1257,7 +1339,7 @@ public final class IprojHeader {
           internal_static_protocol_Header_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_protocol_Header_descriptor,
-              new java.lang.String[] { "Id", "MsgFullName", });
+              new java.lang.String[] { "Id", "MsgFullName", "ClientSessionIdent", });
           internal_static_protocol_Msg_descriptor =
             getDescriptor().getMessageTypes().get(1);
           internal_static_protocol_Msg_fieldAccessorTable = new

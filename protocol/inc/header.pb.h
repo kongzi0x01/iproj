@@ -111,20 +111,30 @@ class Header : public ::google::protobuf::Message {
   inline ::std::string* release_msg_full_name();
   inline void set_allocated_msg_full_name(::std::string* msg_full_name);
 
+  // optional uint64 client_session_ident = 3;
+  inline bool has_client_session_ident() const;
+  inline void clear_client_session_ident();
+  static const int kClientSessionIdentFieldNumber = 3;
+  inline ::google::protobuf::uint64 client_session_ident() const;
+  inline void set_client_session_ident(::google::protobuf::uint64 value);
+
   // @@protoc_insertion_point(class_scope:protocol.Header)
  private:
   inline void set_has_id();
   inline void clear_has_id();
   inline void set_has_msg_full_name();
   inline void clear_has_msg_full_name();
+  inline void set_has_client_session_ident();
+  inline void clear_has_client_session_ident();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint64 id_;
   ::std::string* msg_full_name_;
+  ::google::protobuf::uint64 client_session_ident_;
 
   mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
+  ::google::protobuf::uint32 _has_bits_[(3 + 31) / 32];
 
   friend void  protobuf_AddDesc_header_2eproto();
   friend void protobuf_AssignDesc_header_2eproto();
@@ -329,6 +339,28 @@ inline void Header::set_allocated_msg_full_name(::std::string* msg_full_name) {
     clear_has_msg_full_name();
     msg_full_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   }
+}
+
+// optional uint64 client_session_ident = 3;
+inline bool Header::has_client_session_ident() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void Header::set_has_client_session_ident() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void Header::clear_has_client_session_ident() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void Header::clear_client_session_ident() {
+  client_session_ident_ = GOOGLE_ULONGLONG(0);
+  clear_has_client_session_ident();
+}
+inline ::google::protobuf::uint64 Header::client_session_ident() const {
+  return client_session_ident_;
+}
+inline void Header::set_client_session_ident(::google::protobuf::uint64 value) {
+  set_has_client_session_ident();
+  client_session_ident_ = value;
 }
 
 // -------------------------------------------------------------------

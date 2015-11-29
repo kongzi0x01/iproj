@@ -13,7 +13,7 @@ from google.protobuf import descriptor_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='header.proto',
   package='protocol',
-  serialized_pb='\n\x0cheader.proto\x12\x08protocol\"+\n\x06Header\x12\n\n\x02id\x18\x01 \x01(\x04\x12\x15\n\rmsg_full_name\x18\x02 \x01(\t\"?\n\x03Msg\x12 \n\x06header\x18\x01 \x01(\x0b\x32\x10.protocol.Header\x12\x16\n\x0eserialized_msg\x18\x02 \x01(\tB\rB\x0bIprojHeader')
+  serialized_pb='\n\x0cheader.proto\x12\x08protocol\"I\n\x06Header\x12\n\n\x02id\x18\x01 \x01(\x04\x12\x15\n\rmsg_full_name\x18\x02 \x01(\t\x12\x1c\n\x14\x63lient_session_ident\x18\x03 \x01(\x04\"?\n\x03Msg\x12 \n\x06header\x18\x01 \x01(\x0b\x32\x10.protocol.Header\x12\x16\n\x0eserialized_msg\x18\x02 \x01(\tB\rB\x0bIprojHeader')
 
 
 
@@ -39,6 +39,13 @@ _HEADER = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='client_session_ident', full_name='protocol.Header.client_session_ident', index=2,
+      number=3, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -49,7 +56,7 @@ _HEADER = _descriptor.Descriptor(
   is_extendable=False,
   extension_ranges=[],
   serialized_start=26,
-  serialized_end=69,
+  serialized_end=99,
 )
 
 
@@ -83,8 +90,8 @@ _MSG = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=71,
-  serialized_end=134,
+  serialized_start=101,
+  serialized_end=164,
 )
 
 _MSG.fields_by_name['header'].message_type = _HEADER

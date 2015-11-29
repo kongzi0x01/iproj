@@ -37,9 +37,10 @@ void protobuf_AssignDesc_header_2eproto() {
       "header.proto");
   GOOGLE_CHECK(file != NULL);
   Header_descriptor_ = file->message_type(0);
-  static const int Header_offsets_[2] = {
+  static const int Header_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Header, id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Header, msg_full_name_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Header, client_session_ident_),
   };
   Header_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -102,10 +103,11 @@ void protobuf_AddDesc_header_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\014header.proto\022\010protocol\"+\n\006Header\022\n\n\002id"
-    "\030\001 \001(\004\022\025\n\rmsg_full_name\030\002 \001(\t\"\?\n\003Msg\022 \n\006"
-    "header\030\001 \001(\0132\020.protocol.Header\022\026\n\016serial"
-    "ized_msg\030\002 \001(\tB\rB\013IprojHeader", 149);
+    "\n\014header.proto\022\010protocol\"I\n\006Header\022\n\n\002id"
+    "\030\001 \001(\004\022\025\n\rmsg_full_name\030\002 \001(\t\022\034\n\024client_"
+    "session_ident\030\003 \001(\004\"\?\n\003Msg\022 \n\006header\030\001 \001"
+    "(\0132\020.protocol.Header\022\026\n\016serialized_msg\030\002"
+    " \001(\tB\rB\013IprojHeader", 179);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "header.proto", &protobuf_RegisterTypes);
   Header::default_instance_ = new Header();
@@ -127,6 +129,7 @@ struct StaticDescriptorInitializer_header_2eproto {
 #ifndef _MSC_VER
 const int Header::kIdFieldNumber;
 const int Header::kMsgFullNameFieldNumber;
+const int Header::kClientSessionIdentFieldNumber;
 #endif  // !_MSC_VER
 
 Header::Header()
@@ -147,6 +150,7 @@ void Header::SharedCtor() {
   _cached_size_ = 0;
   id_ = GOOGLE_ULONGLONG(0);
   msg_full_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  client_session_ident_ = GOOGLE_ULONGLONG(0);
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -191,6 +195,7 @@ void Header::Clear() {
         msg_full_name_->clear();
       }
     }
+    client_session_ident_ = GOOGLE_ULONGLONG(0);
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
@@ -230,6 +235,22 @@ bool Header::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
+        if (input->ExpectTag(24)) goto parse_client_session_ident;
+        break;
+      }
+
+      // optional uint64 client_session_ident = 3;
+      case 3: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_client_session_ident:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
+                 input, &client_session_ident_)));
+          set_has_client_session_ident();
+        } else {
+          goto handle_uninterpreted;
+        }
         if (input->ExpectAtEnd()) return true;
         break;
       }
@@ -266,6 +287,11 @@ void Header::SerializeWithCachedSizes(
       2, this->msg_full_name(), output);
   }
 
+  // optional uint64 client_session_ident = 3;
+  if (has_client_session_ident()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(3, this->client_session_ident(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -287,6 +313,11 @@ void Header::SerializeWithCachedSizes(
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->msg_full_name(), target);
+  }
+
+  // optional uint64 client_session_ident = 3;
+  if (has_client_session_ident()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(3, this->client_session_ident(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -312,6 +343,13 @@ int Header::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->msg_full_name());
+    }
+
+    // optional uint64 client_session_ident = 3;
+    if (has_client_session_ident()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt64Size(
+          this->client_session_ident());
     }
 
   }
@@ -347,6 +385,9 @@ void Header::MergeFrom(const Header& from) {
     if (from.has_msg_full_name()) {
       set_msg_full_name(from.msg_full_name());
     }
+    if (from.has_client_session_ident()) {
+      set_client_session_ident(from.client_session_ident());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -372,6 +413,7 @@ void Header::Swap(Header* other) {
   if (other != this) {
     std::swap(id_, other->id_);
     std::swap(msg_full_name_, other->msg_full_name_);
+    std::swap(client_session_ident_, other->client_session_ident_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

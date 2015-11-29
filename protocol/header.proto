@@ -5,6 +5,7 @@ message Header
 {
 	optional uint64 id = 1;
 	optional string msg_full_name = 2;
+	optional uint64 client_session_ident = 3;
 };
 
 message Msg
