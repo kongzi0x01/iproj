@@ -1,5 +1,14 @@
 package line;
 
+//用户信息
+message UserData
+{
+	optional uint64 user_id = 1;
+	optional string user_name = 2;
+	optional uint64 lover_id = 3;
+}
+
+//登录请求
 message LoginReq
 {
 	optional string user_name = 1;
@@ -10,3 +19,15 @@ message LoginRsp
 {
 	optional uint32 result = 1;	//正常则为0
 };
+
+//注册用户请求
+message RegistUserReq
+{
+	optional string user_name = 1;
+	optional string encrypted_psw = 2;
+}
+
+message RegistUserRsp
+{
+	optional uint32 result = 1;	//正常则为0
+}

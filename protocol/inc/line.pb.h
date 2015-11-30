@@ -33,10 +33,120 @@ void  protobuf_AddDesc_line_2eproto();
 void protobuf_AssignDesc_line_2eproto();
 void protobuf_ShutdownFile_line_2eproto();
 
+class UserData;
 class LoginReq;
 class LoginRsp;
+class RegistUserReq;
+class RegistUserRsp;
 
 // ===================================================================
+
+class UserData : public ::google::protobuf::Message {
+ public:
+  UserData();
+  virtual ~UserData();
+
+  UserData(const UserData& from);
+
+  inline UserData& operator=(const UserData& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const UserData& default_instance();
+
+  void Swap(UserData* other);
+
+  // implements Message ----------------------------------------------
+
+  UserData* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const UserData& from);
+  void MergeFrom(const UserData& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint64 user_id = 1;
+  inline bool has_user_id() const;
+  inline void clear_user_id();
+  static const int kUserIdFieldNumber = 1;
+  inline ::google::protobuf::uint64 user_id() const;
+  inline void set_user_id(::google::protobuf::uint64 value);
+
+  // optional string user_name = 2;
+  inline bool has_user_name() const;
+  inline void clear_user_name();
+  static const int kUserNameFieldNumber = 2;
+  inline const ::std::string& user_name() const;
+  inline void set_user_name(const ::std::string& value);
+  inline void set_user_name(const char* value);
+  inline void set_user_name(const char* value, size_t size);
+  inline ::std::string* mutable_user_name();
+  inline ::std::string* release_user_name();
+  inline void set_allocated_user_name(::std::string* user_name);
+
+  // optional uint64 lover_id = 3;
+  inline bool has_lover_id() const;
+  inline void clear_lover_id();
+  static const int kLoverIdFieldNumber = 3;
+  inline ::google::protobuf::uint64 lover_id() const;
+  inline void set_lover_id(::google::protobuf::uint64 value);
+
+  // @@protoc_insertion_point(class_scope:line.UserData)
+ private:
+  inline void set_has_user_id();
+  inline void clear_has_user_id();
+  inline void set_has_user_name();
+  inline void clear_has_user_name();
+  inline void set_has_lover_id();
+  inline void clear_has_lover_id();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint64 user_id_;
+  ::std::string* user_name_;
+  ::google::protobuf::uint64 lover_id_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(3 + 31) / 32];
+
+  friend void  protobuf_AddDesc_line_2eproto();
+  friend void protobuf_AssignDesc_line_2eproto();
+  friend void protobuf_ShutdownFile_line_2eproto();
+
+  void InitAsDefaultInstance();
+  static UserData* default_instance_;
+};
+// -------------------------------------------------------------------
 
 class LoginReq : public ::google::protobuf::Message {
  public:
@@ -220,10 +330,312 @@ class LoginRsp : public ::google::protobuf::Message {
   void InitAsDefaultInstance();
   static LoginRsp* default_instance_;
 };
+// -------------------------------------------------------------------
+
+class RegistUserReq : public ::google::protobuf::Message {
+ public:
+  RegistUserReq();
+  virtual ~RegistUserReq();
+
+  RegistUserReq(const RegistUserReq& from);
+
+  inline RegistUserReq& operator=(const RegistUserReq& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const RegistUserReq& default_instance();
+
+  void Swap(RegistUserReq* other);
+
+  // implements Message ----------------------------------------------
+
+  RegistUserReq* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const RegistUserReq& from);
+  void MergeFrom(const RegistUserReq& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional string user_name = 1;
+  inline bool has_user_name() const;
+  inline void clear_user_name();
+  static const int kUserNameFieldNumber = 1;
+  inline const ::std::string& user_name() const;
+  inline void set_user_name(const ::std::string& value);
+  inline void set_user_name(const char* value);
+  inline void set_user_name(const char* value, size_t size);
+  inline ::std::string* mutable_user_name();
+  inline ::std::string* release_user_name();
+  inline void set_allocated_user_name(::std::string* user_name);
+
+  // optional string encrypted_psw = 2;
+  inline bool has_encrypted_psw() const;
+  inline void clear_encrypted_psw();
+  static const int kEncryptedPswFieldNumber = 2;
+  inline const ::std::string& encrypted_psw() const;
+  inline void set_encrypted_psw(const ::std::string& value);
+  inline void set_encrypted_psw(const char* value);
+  inline void set_encrypted_psw(const char* value, size_t size);
+  inline ::std::string* mutable_encrypted_psw();
+  inline ::std::string* release_encrypted_psw();
+  inline void set_allocated_encrypted_psw(::std::string* encrypted_psw);
+
+  // @@protoc_insertion_point(class_scope:line.RegistUserReq)
+ private:
+  inline void set_has_user_name();
+  inline void clear_has_user_name();
+  inline void set_has_encrypted_psw();
+  inline void clear_has_encrypted_psw();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::std::string* user_name_;
+  ::std::string* encrypted_psw_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
+
+  friend void  protobuf_AddDesc_line_2eproto();
+  friend void protobuf_AssignDesc_line_2eproto();
+  friend void protobuf_ShutdownFile_line_2eproto();
+
+  void InitAsDefaultInstance();
+  static RegistUserReq* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class RegistUserRsp : public ::google::protobuf::Message {
+ public:
+  RegistUserRsp();
+  virtual ~RegistUserRsp();
+
+  RegistUserRsp(const RegistUserRsp& from);
+
+  inline RegistUserRsp& operator=(const RegistUserRsp& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const RegistUserRsp& default_instance();
+
+  void Swap(RegistUserRsp* other);
+
+  // implements Message ----------------------------------------------
+
+  RegistUserRsp* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const RegistUserRsp& from);
+  void MergeFrom(const RegistUserRsp& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint32 result = 1;
+  inline bool has_result() const;
+  inline void clear_result();
+  static const int kResultFieldNumber = 1;
+  inline ::google::protobuf::uint32 result() const;
+  inline void set_result(::google::protobuf::uint32 value);
+
+  // @@protoc_insertion_point(class_scope:line.RegistUserRsp)
+ private:
+  inline void set_has_result();
+  inline void clear_has_result();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 result_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
+
+  friend void  protobuf_AddDesc_line_2eproto();
+  friend void protobuf_AssignDesc_line_2eproto();
+  friend void protobuf_ShutdownFile_line_2eproto();
+
+  void InitAsDefaultInstance();
+  static RegistUserRsp* default_instance_;
+};
 // ===================================================================
 
 
 // ===================================================================
+
+// UserData
+
+// optional uint64 user_id = 1;
+inline bool UserData::has_user_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void UserData::set_has_user_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void UserData::clear_has_user_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void UserData::clear_user_id() {
+  user_id_ = GOOGLE_ULONGLONG(0);
+  clear_has_user_id();
+}
+inline ::google::protobuf::uint64 UserData::user_id() const {
+  return user_id_;
+}
+inline void UserData::set_user_id(::google::protobuf::uint64 value) {
+  set_has_user_id();
+  user_id_ = value;
+}
+
+// optional string user_name = 2;
+inline bool UserData::has_user_name() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void UserData::set_has_user_name() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void UserData::clear_has_user_name() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void UserData::clear_user_name() {
+  if (user_name_ != &::google::protobuf::internal::kEmptyString) {
+    user_name_->clear();
+  }
+  clear_has_user_name();
+}
+inline const ::std::string& UserData::user_name() const {
+  return *user_name_;
+}
+inline void UserData::set_user_name(const ::std::string& value) {
+  set_has_user_name();
+  if (user_name_ == &::google::protobuf::internal::kEmptyString) {
+    user_name_ = new ::std::string;
+  }
+  user_name_->assign(value);
+}
+inline void UserData::set_user_name(const char* value) {
+  set_has_user_name();
+  if (user_name_ == &::google::protobuf::internal::kEmptyString) {
+    user_name_ = new ::std::string;
+  }
+  user_name_->assign(value);
+}
+inline void UserData::set_user_name(const char* value, size_t size) {
+  set_has_user_name();
+  if (user_name_ == &::google::protobuf::internal::kEmptyString) {
+    user_name_ = new ::std::string;
+  }
+  user_name_->assign(reinterpret_cast<const char*>(value), size);
+}
+inline ::std::string* UserData::mutable_user_name() {
+  set_has_user_name();
+  if (user_name_ == &::google::protobuf::internal::kEmptyString) {
+    user_name_ = new ::std::string;
+  }
+  return user_name_;
+}
+inline ::std::string* UserData::release_user_name() {
+  clear_has_user_name();
+  if (user_name_ == &::google::protobuf::internal::kEmptyString) {
+    return NULL;
+  } else {
+    ::std::string* temp = user_name_;
+    user_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    return temp;
+  }
+}
+inline void UserData::set_allocated_user_name(::std::string* user_name) {
+  if (user_name_ != &::google::protobuf::internal::kEmptyString) {
+    delete user_name_;
+  }
+  if (user_name) {
+    set_has_user_name();
+    user_name_ = user_name;
+  } else {
+    clear_has_user_name();
+    user_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  }
+}
+
+// optional uint64 lover_id = 3;
+inline bool UserData::has_lover_id() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void UserData::set_has_lover_id() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void UserData::clear_has_lover_id() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void UserData::clear_lover_id() {
+  lover_id_ = GOOGLE_ULONGLONG(0);
+  clear_has_lover_id();
+}
+inline ::google::protobuf::uint64 UserData::lover_id() const {
+  return lover_id_;
+}
+inline void UserData::set_lover_id(::google::protobuf::uint64 value) {
+  set_has_lover_id();
+  lover_id_ = value;
+}
+
+// -------------------------------------------------------------------
 
 // LoginReq
 
@@ -389,6 +801,176 @@ inline ::google::protobuf::uint32 LoginRsp::result() const {
   return result_;
 }
 inline void LoginRsp::set_result(::google::protobuf::uint32 value) {
+  set_has_result();
+  result_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// RegistUserReq
+
+// optional string user_name = 1;
+inline bool RegistUserReq::has_user_name() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void RegistUserReq::set_has_user_name() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void RegistUserReq::clear_has_user_name() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void RegistUserReq::clear_user_name() {
+  if (user_name_ != &::google::protobuf::internal::kEmptyString) {
+    user_name_->clear();
+  }
+  clear_has_user_name();
+}
+inline const ::std::string& RegistUserReq::user_name() const {
+  return *user_name_;
+}
+inline void RegistUserReq::set_user_name(const ::std::string& value) {
+  set_has_user_name();
+  if (user_name_ == &::google::protobuf::internal::kEmptyString) {
+    user_name_ = new ::std::string;
+  }
+  user_name_->assign(value);
+}
+inline void RegistUserReq::set_user_name(const char* value) {
+  set_has_user_name();
+  if (user_name_ == &::google::protobuf::internal::kEmptyString) {
+    user_name_ = new ::std::string;
+  }
+  user_name_->assign(value);
+}
+inline void RegistUserReq::set_user_name(const char* value, size_t size) {
+  set_has_user_name();
+  if (user_name_ == &::google::protobuf::internal::kEmptyString) {
+    user_name_ = new ::std::string;
+  }
+  user_name_->assign(reinterpret_cast<const char*>(value), size);
+}
+inline ::std::string* RegistUserReq::mutable_user_name() {
+  set_has_user_name();
+  if (user_name_ == &::google::protobuf::internal::kEmptyString) {
+    user_name_ = new ::std::string;
+  }
+  return user_name_;
+}
+inline ::std::string* RegistUserReq::release_user_name() {
+  clear_has_user_name();
+  if (user_name_ == &::google::protobuf::internal::kEmptyString) {
+    return NULL;
+  } else {
+    ::std::string* temp = user_name_;
+    user_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    return temp;
+  }
+}
+inline void RegistUserReq::set_allocated_user_name(::std::string* user_name) {
+  if (user_name_ != &::google::protobuf::internal::kEmptyString) {
+    delete user_name_;
+  }
+  if (user_name) {
+    set_has_user_name();
+    user_name_ = user_name;
+  } else {
+    clear_has_user_name();
+    user_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  }
+}
+
+// optional string encrypted_psw = 2;
+inline bool RegistUserReq::has_encrypted_psw() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void RegistUserReq::set_has_encrypted_psw() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void RegistUserReq::clear_has_encrypted_psw() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void RegistUserReq::clear_encrypted_psw() {
+  if (encrypted_psw_ != &::google::protobuf::internal::kEmptyString) {
+    encrypted_psw_->clear();
+  }
+  clear_has_encrypted_psw();
+}
+inline const ::std::string& RegistUserReq::encrypted_psw() const {
+  return *encrypted_psw_;
+}
+inline void RegistUserReq::set_encrypted_psw(const ::std::string& value) {
+  set_has_encrypted_psw();
+  if (encrypted_psw_ == &::google::protobuf::internal::kEmptyString) {
+    encrypted_psw_ = new ::std::string;
+  }
+  encrypted_psw_->assign(value);
+}
+inline void RegistUserReq::set_encrypted_psw(const char* value) {
+  set_has_encrypted_psw();
+  if (encrypted_psw_ == &::google::protobuf::internal::kEmptyString) {
+    encrypted_psw_ = new ::std::string;
+  }
+  encrypted_psw_->assign(value);
+}
+inline void RegistUserReq::set_encrypted_psw(const char* value, size_t size) {
+  set_has_encrypted_psw();
+  if (encrypted_psw_ == &::google::protobuf::internal::kEmptyString) {
+    encrypted_psw_ = new ::std::string;
+  }
+  encrypted_psw_->assign(reinterpret_cast<const char*>(value), size);
+}
+inline ::std::string* RegistUserReq::mutable_encrypted_psw() {
+  set_has_encrypted_psw();
+  if (encrypted_psw_ == &::google::protobuf::internal::kEmptyString) {
+    encrypted_psw_ = new ::std::string;
+  }
+  return encrypted_psw_;
+}
+inline ::std::string* RegistUserReq::release_encrypted_psw() {
+  clear_has_encrypted_psw();
+  if (encrypted_psw_ == &::google::protobuf::internal::kEmptyString) {
+    return NULL;
+  } else {
+    ::std::string* temp = encrypted_psw_;
+    encrypted_psw_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    return temp;
+  }
+}
+inline void RegistUserReq::set_allocated_encrypted_psw(::std::string* encrypted_psw) {
+  if (encrypted_psw_ != &::google::protobuf::internal::kEmptyString) {
+    delete encrypted_psw_;
+  }
+  if (encrypted_psw) {
+    set_has_encrypted_psw();
+    encrypted_psw_ = encrypted_psw;
+  } else {
+    clear_has_encrypted_psw();
+    encrypted_psw_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  }
+}
+
+// -------------------------------------------------------------------
+
+// RegistUserRsp
+
+// optional uint32 result = 1;
+inline bool RegistUserRsp::has_result() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void RegistUserRsp::set_has_result() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void RegistUserRsp::clear_has_result() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void RegistUserRsp::clear_result() {
+  result_ = 0u;
+  clear_has_result();
+}
+inline ::google::protobuf::uint32 RegistUserRsp::result() const {
+  return result_;
+}
+inline void RegistUserRsp::set_result(::google::protobuf::uint32 value) {
   set_has_result();
   result_ = value;
 }
