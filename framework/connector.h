@@ -11,7 +11,7 @@ using namespace std;
 class Connector
 {
 public:
-	Connector(const string& sName, Processor* pProcessor, int32_t iSessionNum = 4);
+	Connector(const string& sName, Processor* pProcessor);
 	~Connector();
 
 	int Init(const string& sConnectHost, int32_t iConnectPort);
@@ -20,7 +20,7 @@ public:
 
 	void OnSessionClose(Session* pSession);	
 
-	int Connect(int iIdx);
+	int Connect();
 
 	void SetProcessor(Processor* pProcessor)
 	{
@@ -30,9 +30,7 @@ public:
 private:
 	string m_sConnectHost;
 	int32_t m_iConnectPort;
-	Session** m_ppSession;
-	int32_t m_iSessionNum;
-	int32_t m_iCurIterNo; 
+	Session* m_pSession;
 	Processor* m_pProcessor;
 	string m_sName;
 };

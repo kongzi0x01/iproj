@@ -41,6 +41,14 @@ public final class ResponseCode {
      * </pre>
      */
     ERR_SYSTEM(3, 103),
+    /**
+     * <code>ERR_USERNAME_EXISTS = 104;</code>
+     *
+     * <pre>
+     *用户名已存在
+     * </pre>
+     */
+    ERR_USERNAME_EXISTS(4, 104),
     ;
 
     /**
@@ -71,6 +79,14 @@ public final class ResponseCode {
      * </pre>
      */
     public static final int ERR_SYSTEM_VALUE = 103;
+    /**
+     * <code>ERR_USERNAME_EXISTS = 104;</code>
+     *
+     * <pre>
+     *用户名已存在
+     * </pre>
+     */
+    public static final int ERR_USERNAME_EXISTS_VALUE = 104;
 
 
     public final int getNumber() { return value; }
@@ -81,6 +97,7 @@ public final class ResponseCode {
         case 101: return ERR_NOT_FOUND_USER;
         case 102: return ERR_WROND_PASSWORD;
         case 103: return ERR_SYSTEM;
+        case 104: return ERR_USERNAME_EXISTS;
         default: return null;
       }
     }
@@ -141,9 +158,10 @@ public final class ResponseCode {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\023response_code.proto\022\004line*W\n\rRESPONSE_" +
+      "\n\023response_code.proto\022\004line*p\n\rRESPONSE_" +
       "CODE\022\006\n\002OK\020\000\022\026\n\022ERR_NOT_FOUND_USER\020e\022\026\n\022" +
-      "ERR_WROND_PASSWORD\020f\022\016\n\nERR_SYSTEM\020g"
+      "ERR_WROND_PASSWORD\020f\022\016\n\nERR_SYSTEM\020g\022\027\n\023" +
+      "ERR_USERNAME_EXISTS\020h"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

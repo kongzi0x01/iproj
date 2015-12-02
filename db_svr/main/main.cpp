@@ -30,10 +30,13 @@ int main()
 	//初始化数据库
 	string db = "Iproj";
 	string host = "127.0.0.1";
-	int port = 3360;
+	int port = 3306;
 	string user = "fuzi";
 	string password = "123456";
-	DbMgr::Instance().Init(host, port, db, user, password);
+	if(!DbMgr::Instance().Init(host, port, db, user, password))
+	{
+		return -1;
+	}
 	
 	LOG_DEBUG("server start...");
 	
@@ -57,5 +60,6 @@ int main()
 int RegistCmdHandle()
 {
 	REGIST_CMD_HANDLE(line::LoginReq, LoginReqHandle);
+	REGIST_CMD_HANDLE(line::RegistUserReq, RegistUserReqHandle);
 	return 0;
 }

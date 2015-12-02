@@ -5,7 +5,7 @@
 #include <log4cplus/logger.h>
 #include <log4cplus/loggingmacros.h>
 
-static log4cplus::Logger logger = log4cplus::Logger::getInstance("Server");
+static log4cplus::Logger logger = log4cplus::Logger::getRoot();
 #define LOG_TRACE(a) LOG4CPLUS_TRACE(logger, a)
 #define LOG_DEBUG(a) LOG4CPLUS_DEBUG(logger, a)
 #define LOG_INFO(a) LOG4CPLUS_INFO(logger, a)

@@ -5,7 +5,8 @@ message UserData
 {
 	optional uint64 user_id = 1;
 	optional string user_name = 2;
-	optional uint64 lover_id = 3;
+	optional string encrypted_psw = 3;
+	optional uint64 lover_id = 4;
 }
 
 //登录请求

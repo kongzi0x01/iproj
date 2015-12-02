@@ -36,13 +36,28 @@ public final class Line {
     com.google.protobuf.ByteString
         getUserNameBytes();
 
-    // optional uint64 lover_id = 3;
+    // optional string encrypted_psw = 3;
     /**
-     * <code>optional uint64 lover_id = 3;</code>
+     * <code>optional string encrypted_psw = 3;</code>
+     */
+    boolean hasEncryptedPsw();
+    /**
+     * <code>optional string encrypted_psw = 3;</code>
+     */
+    java.lang.String getEncryptedPsw();
+    /**
+     * <code>optional string encrypted_psw = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getEncryptedPswBytes();
+
+    // optional uint64 lover_id = 4;
+    /**
+     * <code>optional uint64 lover_id = 4;</code>
      */
     boolean hasLoverId();
     /**
-     * <code>optional uint64 lover_id = 3;</code>
+     * <code>optional uint64 lover_id = 4;</code>
      */
     long getLoverId();
   }
@@ -111,8 +126,13 @@ public final class Line {
               userName_ = input.readBytes();
               break;
             }
-            case 24: {
+            case 26: {
               bitField0_ |= 0x00000004;
+              encryptedPsw_ = input.readBytes();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
               loverId_ = input.readUInt64();
               break;
             }
@@ -215,17 +235,60 @@ public final class Line {
       }
     }
 
-    // optional uint64 lover_id = 3;
-    public static final int LOVER_ID_FIELD_NUMBER = 3;
-    private long loverId_;
+    // optional string encrypted_psw = 3;
+    public static final int ENCRYPTED_PSW_FIELD_NUMBER = 3;
+    private java.lang.Object encryptedPsw_;
     /**
-     * <code>optional uint64 lover_id = 3;</code>
+     * <code>optional string encrypted_psw = 3;</code>
      */
-    public boolean hasLoverId() {
+    public boolean hasEncryptedPsw() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional uint64 lover_id = 3;</code>
+     * <code>optional string encrypted_psw = 3;</code>
+     */
+    public java.lang.String getEncryptedPsw() {
+      java.lang.Object ref = encryptedPsw_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          encryptedPsw_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string encrypted_psw = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getEncryptedPswBytes() {
+      java.lang.Object ref = encryptedPsw_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        encryptedPsw_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional uint64 lover_id = 4;
+    public static final int LOVER_ID_FIELD_NUMBER = 4;
+    private long loverId_;
+    /**
+     * <code>optional uint64 lover_id = 4;</code>
+     */
+    public boolean hasLoverId() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional uint64 lover_id = 4;</code>
      */
     public long getLoverId() {
       return loverId_;
@@ -234,6 +297,7 @@ public final class Line {
     private void initFields() {
       userId_ = 0L;
       userName_ = "";
+      encryptedPsw_ = "";
       loverId_ = 0L;
     }
     private byte memoizedIsInitialized = -1;
@@ -255,7 +319,10 @@ public final class Line {
         output.writeBytes(2, getUserNameBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeUInt64(3, loverId_);
+        output.writeBytes(3, getEncryptedPswBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeUInt64(4, loverId_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -276,7 +343,11 @@ public final class Line {
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, loverId_);
+          .computeBytesSize(3, getEncryptedPswBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, loverId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -402,8 +473,10 @@ public final class Line {
         bitField0_ = (bitField0_ & ~0x00000001);
         userName_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
-        loverId_ = 0L;
+        encryptedPsw_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
+        loverId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -443,6 +516,10 @@ public final class Line {
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
+        result.encryptedPsw_ = encryptedPsw_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
         result.loverId_ = loverId_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -466,6 +543,11 @@ public final class Line {
         if (other.hasUserName()) {
           bitField0_ |= 0x00000002;
           userName_ = other.userName_;
+          onChanged();
+        }
+        if (other.hasEncryptedPsw()) {
+          bitField0_ |= 0x00000004;
+          encryptedPsw_ = other.encryptedPsw_;
           onChanged();
         }
         if (other.hasLoverId()) {
@@ -605,34 +687,108 @@ public final class Line {
         return this;
       }
 
-      // optional uint64 lover_id = 3;
-      private long loverId_ ;
+      // optional string encrypted_psw = 3;
+      private java.lang.Object encryptedPsw_ = "";
       /**
-       * <code>optional uint64 lover_id = 3;</code>
+       * <code>optional string encrypted_psw = 3;</code>
        */
-      public boolean hasLoverId() {
+      public boolean hasEncryptedPsw() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>optional uint64 lover_id = 3;</code>
+       * <code>optional string encrypted_psw = 3;</code>
+       */
+      public java.lang.String getEncryptedPsw() {
+        java.lang.Object ref = encryptedPsw_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          encryptedPsw_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string encrypted_psw = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getEncryptedPswBytes() {
+        java.lang.Object ref = encryptedPsw_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          encryptedPsw_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string encrypted_psw = 3;</code>
+       */
+      public Builder setEncryptedPsw(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        encryptedPsw_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string encrypted_psw = 3;</code>
+       */
+      public Builder clearEncryptedPsw() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        encryptedPsw_ = getDefaultInstance().getEncryptedPsw();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string encrypted_psw = 3;</code>
+       */
+      public Builder setEncryptedPswBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        encryptedPsw_ = value;
+        onChanged();
+        return this;
+      }
+
+      // optional uint64 lover_id = 4;
+      private long loverId_ ;
+      /**
+       * <code>optional uint64 lover_id = 4;</code>
+       */
+      public boolean hasLoverId() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional uint64 lover_id = 4;</code>
        */
       public long getLoverId() {
         return loverId_;
       }
       /**
-       * <code>optional uint64 lover_id = 3;</code>
+       * <code>optional uint64 lover_id = 4;</code>
        */
       public Builder setLoverId(long value) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         loverId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 lover_id = 3;</code>
+       * <code>optional uint64 lover_id = 4;</code>
        */
       public Builder clearLoverId() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         loverId_ = 0L;
         onChanged();
         return this;
@@ -2809,13 +2965,14 @@ public final class Line {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\nline.proto\022\004line\"@\n\010UserData\022\017\n\007user_i" +
-      "d\030\001 \001(\004\022\021\n\tuser_name\030\002 \001(\t\022\020\n\010lover_id\030\003" +
-      " \001(\004\"4\n\010LoginReq\022\021\n\tuser_name\030\001 \001(\t\022\025\n\re" +
-      "ncrypted_psw\030\002 \001(\t\"\032\n\010LoginRsp\022\016\n\006result" +
-      "\030\001 \001(\r\"9\n\rRegistUserReq\022\021\n\tuser_name\030\001 \001" +
-      "(\t\022\025\n\rencrypted_psw\030\002 \001(\t\"\037\n\rRegistUserR" +
-      "sp\022\016\n\006result\030\001 \001(\r"
+      "\n\nline.proto\022\004line\"W\n\010UserData\022\017\n\007user_i" +
+      "d\030\001 \001(\004\022\021\n\tuser_name\030\002 \001(\t\022\025\n\rencrypted_" +
+      "psw\030\003 \001(\t\022\020\n\010lover_id\030\004 \001(\004\"4\n\010LoginReq\022" +
+      "\021\n\tuser_name\030\001 \001(\t\022\025\n\rencrypted_psw\030\002 \001(" +
+      "\t\"\032\n\010LoginRsp\022\016\n\006result\030\001 \001(\r\"9\n\rRegistU" +
+      "serReq\022\021\n\tuser_name\030\001 \001(\t\022\025\n\rencrypted_p" +
+      "sw\030\002 \001(\t\"\037\n\rRegistUserRsp\022\016\n\006result\030\001 \001(" +
+      "\r"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -2827,7 +2984,7 @@ public final class Line {
           internal_static_line_UserData_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_line_UserData_descriptor,
-              new java.lang.String[] { "UserId", "UserName", "LoverId", });
+              new java.lang.String[] { "UserId", "UserName", "EncryptedPsw", "LoverId", });
           internal_static_line_LoginReq_descriptor =
             getDescriptor().getMessageTypes().get(1);
           internal_static_line_LoginReq_fieldAccessorTable = new

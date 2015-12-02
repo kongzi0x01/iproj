@@ -13,7 +13,7 @@ from google.protobuf import descriptor_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='line.proto',
   package='line',
-  serialized_pb='\n\nline.proto\x12\x04line\"@\n\x08UserData\x12\x0f\n\x07user_id\x18\x01 \x01(\x04\x12\x11\n\tuser_name\x18\x02 \x01(\t\x12\x10\n\x08lover_id\x18\x03 \x01(\x04\"4\n\x08LoginReq\x12\x11\n\tuser_name\x18\x01 \x01(\t\x12\x15\n\rencrypted_psw\x18\x02 \x01(\t\"\x1a\n\x08LoginRsp\x12\x0e\n\x06result\x18\x01 \x01(\r\"9\n\rRegistUserReq\x12\x11\n\tuser_name\x18\x01 \x01(\t\x12\x15\n\rencrypted_psw\x18\x02 \x01(\t\"\x1f\n\rRegistUserRsp\x12\x0e\n\x06result\x18\x01 \x01(\r')
+  serialized_pb='\n\nline.proto\x12\x04line\"W\n\x08UserData\x12\x0f\n\x07user_id\x18\x01 \x01(\x04\x12\x11\n\tuser_name\x18\x02 \x01(\t\x12\x15\n\rencrypted_psw\x18\x03 \x01(\t\x12\x10\n\x08lover_id\x18\x04 \x01(\x04\"4\n\x08LoginReq\x12\x11\n\tuser_name\x18\x01 \x01(\t\x12\x15\n\rencrypted_psw\x18\x02 \x01(\t\"\x1a\n\x08LoginRsp\x12\x0e\n\x06result\x18\x01 \x01(\r\"9\n\rRegistUserReq\x12\x11\n\tuser_name\x18\x01 \x01(\t\x12\x15\n\rencrypted_psw\x18\x02 \x01(\t\"\x1f\n\rRegistUserRsp\x12\x0e\n\x06result\x18\x01 \x01(\r')
 
 
 
@@ -40,8 +40,15 @@ _USERDATA = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='lover_id', full_name='line.UserData.lover_id', index=2,
-      number=3, type=4, cpp_type=4, label=1,
+      name='encrypted_psw', full_name='line.UserData.encrypted_psw', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='lover_id', full_name='line.UserData.lover_id', index=3,
+      number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -56,7 +63,7 @@ _USERDATA = _descriptor.Descriptor(
   is_extendable=False,
   extension_ranges=[],
   serialized_start=20,
-  serialized_end=84,
+  serialized_end=107,
 )
 
 
@@ -90,8 +97,8 @@ _LOGINREQ = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=86,
-  serialized_end=138,
+  serialized_start=109,
+  serialized_end=161,
 )
 
 
@@ -118,8 +125,8 @@ _LOGINRSP = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=140,
-  serialized_end=166,
+  serialized_start=163,
+  serialized_end=189,
 )
 
 
@@ -153,8 +160,8 @@ _REGISTUSERREQ = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=168,
-  serialized_end=225,
+  serialized_start=191,
+  serialized_end=248,
 )
 
 
@@ -181,8 +188,8 @@ _REGISTUSERRSP = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=227,
-  serialized_end=258,
+  serialized_start=250,
+  serialized_end=281,
 )
 
 DESCRIPTOR.message_types_by_name['UserData'] = _USERDATA

@@ -14,7 +14,7 @@ from google.protobuf import descriptor_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='response_code.proto',
   package='line',
-  serialized_pb='\n\x13response_code.proto\x12\x04line*W\n\rRESPONSE_CODE\x12\x06\n\x02OK\x10\x00\x12\x16\n\x12\x45RR_NOT_FOUND_USER\x10\x65\x12\x16\n\x12\x45RR_WROND_PASSWORD\x10\x66\x12\x0e\n\nERR_SYSTEM\x10g')
+  serialized_pb='\n\x13response_code.proto\x12\x04line*p\n\rRESPONSE_CODE\x12\x06\n\x02OK\x10\x00\x12\x16\n\x12\x45RR_NOT_FOUND_USER\x10\x65\x12\x16\n\x12\x45RR_WROND_PASSWORD\x10\x66\x12\x0e\n\nERR_SYSTEM\x10g\x12\x17\n\x13\x45RR_USERNAME_EXISTS\x10h')
 
 _RESPONSE_CODE = _descriptor.EnumDescriptor(
   name='RESPONSE_CODE',
@@ -38,11 +38,15 @@ _RESPONSE_CODE = _descriptor.EnumDescriptor(
       name='ERR_SYSTEM', index=3, number=103,
       options=None,
       type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ERR_USERNAME_EXISTS', index=4, number=104,
+      options=None,
+      type=None),
   ],
   containing_type=None,
   options=None,
   serialized_start=29,
-  serialized_end=116,
+  serialized_end=141,
 )
 
 RESPONSE_CODE = enum_type_wrapper.EnumTypeWrapper(_RESPONSE_CODE)
@@ -50,6 +54,7 @@ OK = 0
 ERR_NOT_FOUND_USER = 101
 ERR_WROND_PASSWORD = 102
 ERR_SYSTEM = 103
+ERR_USERNAME_EXISTS = 104
 
 
 

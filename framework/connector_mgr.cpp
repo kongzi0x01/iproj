@@ -17,7 +17,7 @@ ConnectorMgr::~ConnectorMgr()
 	m_mapConnector.clear();
 }
 
-int ConnectorMgr::AddConnector(const string& sConnectorName, const string& sHost, int32_t iPort, Processor* pProcessor, int iConnNum)
+int ConnectorMgr::AddConnector(const string& sConnectorName, const string& sHost, int32_t iPort, Processor* pProcessor)
 {
 	ConnectorMap::iterator iter = m_mapConnector.find(sConnectorName);
 	if ( iter != m_mapConnector.end() )
@@ -27,7 +27,7 @@ int ConnectorMgr::AddConnector(const string& sConnectorName, const string& sHost
 		return -1;
 	}
 
-	Connector* pConnector = new Connector(sConnectorName, pProcessor, iConnNum);
+	Connector* pConnector = new Connector(sConnectorName, pProcessor);
 	if ( pConnector->Init(sHost, iPort) < 0 )
 		return -1;
 

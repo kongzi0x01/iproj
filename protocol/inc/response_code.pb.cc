@@ -58,9 +58,10 @@ void protobuf_AddDesc_response_5fcode_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\023response_code.proto\022\004line*W\n\rRESPONSE_"
+    "\n\023response_code.proto\022\004line*p\n\rRESPONSE_"
     "CODE\022\006\n\002OK\020\000\022\026\n\022ERR_NOT_FOUND_USER\020e\022\026\n\022"
-    "ERR_WROND_PASSWORD\020f\022\016\n\nERR_SYSTEM\020g", 116);
+    "ERR_WROND_PASSWORD\020f\022\016\n\nERR_SYSTEM\020g\022\027\n\023"
+    "ERR_USERNAME_EXISTS\020h", 141);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "response_code.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_response_5fcode_2eproto);
@@ -82,6 +83,7 @@ bool RESPONSE_CODE_IsValid(int value) {
     case 101:
     case 102:
     case 103:
+    case 104:
       return true;
     default:
       return false;

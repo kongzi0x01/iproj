@@ -3,7 +3,8 @@ package line;
 enum RESPONSE_CODE
 {
 	OK = 0;
-	ERR_NOT_FOUND_USER = 101;	//找不到该用户
-	ERR_WROND_PASSWORD = 102;	//密码错误
-	ERR_SYSTEM = 103;			//系统出错
+	ERR_NOT_FOUND_USER = 101;			//找不到该用户
+	ERR_WROND_PASSWORD = 102;			//密码错误
+	ERR_SYSTEM = 103;					//系统出错
+	ERR_USERNAME_EXISTS = 104;			//用户名已存在
 }

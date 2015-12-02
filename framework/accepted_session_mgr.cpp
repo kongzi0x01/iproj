@@ -36,11 +36,13 @@ bool AcceptedSessionMgr::AddSession(Session* pSession)
 		LOG_DEBUG( "accepted session all ready exists " );
 		return false;
 	}
-	
+	LOG_DEBUG("******add new accepted session . addr :" << pSession);
 	uint64_t iIdent = GetNewIdent();
 	m_Ident2SessionMap[iIdent] = pSession;
 	m_Session2IdentMap[pSession] = iIdent;
 	m_iCurAcceptedSessionNum--;
+	
+	LOG_DEBUG("GetCurAcceptedNum() : " << GetCurAcceptedNum());
 	return true;
 }
 
@@ -52,6 +54,7 @@ bool AcceptedSessionMgr::DelSession(uint64_t ident)
 		LOG_DEBUG( "AcceptedSessionMgr::DelSession: session not exists " );
 		return false;
 	}
+	LOG_DEBUG("DelSession session. ident : " << ident);
 	m_Ident2SessionMap.erase(iter);
 	m_Session2IdentMap.erase(iter->second);
 	m_iCurAcceptedSessionNum--;
@@ -60,14 +63,18 @@ bool AcceptedSessionMgr::DelSession(uint64_t ident)
 
 bool AcceptedSessionMgr::DelSession(Session* pSession)
 {
+	LOG_DEBUG("******del accepted session . addr :" << pSession);
 	Session2IdentMap::iterator iter = m_Session2IdentMap.find(pSession);
 	if(m_Session2IdentMap.end() == iter)
 	{
 		LOG_DEBUG( "AcceptedSessionMgr::DelSession: session not exists " );
 		return false;
 	}
+	LOG_DEBUG("DelSession session. ident : " << iter->first);
 	m_Ident2SessionMap.erase(iter->second);
 	m_Session2IdentMap.erase(iter);
+	
+	LOG_DEBUG("GetCurAcceptedNum() : " << GetCurAcceptedNum());
 	return true;
 }
 
@@ -79,6 +86,8 @@ Session* AcceptedSessionMgr::GetSessionByIdent(uint64_t ident)
 		LOG_DEBUG( "AcceptedSessionMgr::GetSessionByIdent: session not exists " );
 		return NULL;
 	}
+	
+	LOG_DEBUG("GetCurAcceptedNum() : " << GetCurAcceptedNum());
 	return iter->second;
 }
 

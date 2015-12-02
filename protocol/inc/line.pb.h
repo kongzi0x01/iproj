@@ -114,10 +114,22 @@ class UserData : public ::google::protobuf::Message {
   inline ::std::string* release_user_name();
   inline void set_allocated_user_name(::std::string* user_name);
 
-  // optional uint64 lover_id = 3;
+  // optional string encrypted_psw = 3;
+  inline bool has_encrypted_psw() const;
+  inline void clear_encrypted_psw();
+  static const int kEncryptedPswFieldNumber = 3;
+  inline const ::std::string& encrypted_psw() const;
+  inline void set_encrypted_psw(const ::std::string& value);
+  inline void set_encrypted_psw(const char* value);
+  inline void set_encrypted_psw(const char* value, size_t size);
+  inline ::std::string* mutable_encrypted_psw();
+  inline ::std::string* release_encrypted_psw();
+  inline void set_allocated_encrypted_psw(::std::string* encrypted_psw);
+
+  // optional uint64 lover_id = 4;
   inline bool has_lover_id() const;
   inline void clear_lover_id();
-  static const int kLoverIdFieldNumber = 3;
+  static const int kLoverIdFieldNumber = 4;
   inline ::google::protobuf::uint64 lover_id() const;
   inline void set_lover_id(::google::protobuf::uint64 value);
 
@@ -127,6 +139,8 @@ class UserData : public ::google::protobuf::Message {
   inline void clear_has_user_id();
   inline void set_has_user_name();
   inline void clear_has_user_name();
+  inline void set_has_encrypted_psw();
+  inline void clear_has_encrypted_psw();
   inline void set_has_lover_id();
   inline void clear_has_lover_id();
 
@@ -134,10 +148,11 @@ class UserData : public ::google::protobuf::Message {
 
   ::google::protobuf::uint64 user_id_;
   ::std::string* user_name_;
+  ::std::string* encrypted_psw_;
   ::google::protobuf::uint64 lover_id_;
 
   mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(3 + 31) / 32];
+  ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
 
   friend void  protobuf_AddDesc_line_2eproto();
   friend void protobuf_AssignDesc_line_2eproto();
@@ -613,15 +628,85 @@ inline void UserData::set_allocated_user_name(::std::string* user_name) {
   }
 }
 
-// optional uint64 lover_id = 3;
-inline bool UserData::has_lover_id() const {
+// optional string encrypted_psw = 3;
+inline bool UserData::has_encrypted_psw() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
-inline void UserData::set_has_lover_id() {
+inline void UserData::set_has_encrypted_psw() {
   _has_bits_[0] |= 0x00000004u;
 }
-inline void UserData::clear_has_lover_id() {
+inline void UserData::clear_has_encrypted_psw() {
   _has_bits_[0] &= ~0x00000004u;
+}
+inline void UserData::clear_encrypted_psw() {
+  if (encrypted_psw_ != &::google::protobuf::internal::kEmptyString) {
+    encrypted_psw_->clear();
+  }
+  clear_has_encrypted_psw();
+}
+inline const ::std::string& UserData::encrypted_psw() const {
+  return *encrypted_psw_;
+}
+inline void UserData::set_encrypted_psw(const ::std::string& value) {
+  set_has_encrypted_psw();
+  if (encrypted_psw_ == &::google::protobuf::internal::kEmptyString) {
+    encrypted_psw_ = new ::std::string;
+  }
+  encrypted_psw_->assign(value);
+}
+inline void UserData::set_encrypted_psw(const char* value) {
+  set_has_encrypted_psw();
+  if (encrypted_psw_ == &::google::protobuf::internal::kEmptyString) {
+    encrypted_psw_ = new ::std::string;
+  }
+  encrypted_psw_->assign(value);
+}
+inline void UserData::set_encrypted_psw(const char* value, size_t size) {
+  set_has_encrypted_psw();
+  if (encrypted_psw_ == &::google::protobuf::internal::kEmptyString) {
+    encrypted_psw_ = new ::std::string;
+  }
+  encrypted_psw_->assign(reinterpret_cast<const char*>(value), size);
+}
+inline ::std::string* UserData::mutable_encrypted_psw() {
+  set_has_encrypted_psw();
+  if (encrypted_psw_ == &::google::protobuf::internal::kEmptyString) {
+    encrypted_psw_ = new ::std::string;
+  }
+  return encrypted_psw_;
+}
+inline ::std::string* UserData::release_encrypted_psw() {
+  clear_has_encrypted_psw();
+  if (encrypted_psw_ == &::google::protobuf::internal::kEmptyString) {
+    return NULL;
+  } else {
+    ::std::string* temp = encrypted_psw_;
+    encrypted_psw_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    return temp;
+  }
+}
+inline void UserData::set_allocated_encrypted_psw(::std::string* encrypted_psw) {
+  if (encrypted_psw_ != &::google::protobuf::internal::kEmptyString) {
+    delete encrypted_psw_;
+  }
+  if (encrypted_psw) {
+    set_has_encrypted_psw();
+    encrypted_psw_ = encrypted_psw;
+  } else {
+    clear_has_encrypted_psw();
+    encrypted_psw_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  }
+}
+
+// optional uint64 lover_id = 4;
+inline bool UserData::has_lover_id() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void UserData::set_has_lover_id() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void UserData::clear_has_lover_id() {
+  _has_bits_[0] &= ~0x00000008u;
 }
 inline void UserData::clear_lover_id() {
   lover_id_ = GOOGLE_ULONGLONG(0);

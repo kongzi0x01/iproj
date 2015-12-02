@@ -46,9 +46,10 @@ void protobuf_AssignDesc_line_2eproto() {
       "line.proto");
   GOOGLE_CHECK(file != NULL);
   UserData_descriptor_ = file->message_type(0);
-  static const int UserData_offsets_[3] = {
+  static const int UserData_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UserData, user_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UserData, user_name_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UserData, encrypted_psw_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UserData, lover_id_),
   };
   UserData_reflection_ =
@@ -170,13 +171,14 @@ void protobuf_AddDesc_line_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\nline.proto\022\004line\"@\n\010UserData\022\017\n\007user_i"
-    "d\030\001 \001(\004\022\021\n\tuser_name\030\002 \001(\t\022\020\n\010lover_id\030\003"
-    " \001(\004\"4\n\010LoginReq\022\021\n\tuser_name\030\001 \001(\t\022\025\n\re"
-    "ncrypted_psw\030\002 \001(\t\"\032\n\010LoginRsp\022\016\n\006result"
-    "\030\001 \001(\r\"9\n\rRegistUserReq\022\021\n\tuser_name\030\001 \001"
-    "(\t\022\025\n\rencrypted_psw\030\002 \001(\t\"\037\n\rRegistUserR"
-    "sp\022\016\n\006result\030\001 \001(\r", 258);
+    "\n\nline.proto\022\004line\"W\n\010UserData\022\017\n\007user_i"
+    "d\030\001 \001(\004\022\021\n\tuser_name\030\002 \001(\t\022\025\n\rencrypted_"
+    "psw\030\003 \001(\t\022\020\n\010lover_id\030\004 \001(\004\"4\n\010LoginReq\022"
+    "\021\n\tuser_name\030\001 \001(\t\022\025\n\rencrypted_psw\030\002 \001("
+    "\t\"\032\n\010LoginRsp\022\016\n\006result\030\001 \001(\r\"9\n\rRegistU"
+    "serReq\022\021\n\tuser_name\030\001 \001(\t\022\025\n\rencrypted_p"
+    "sw\030\002 \001(\t\"\037\n\rRegistUserRsp\022\016\n\006result\030\001 \001("
+    "\r", 281);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "line.proto", &protobuf_RegisterTypes);
   UserData::default_instance_ = new UserData();
@@ -204,6 +206,7 @@ struct StaticDescriptorInitializer_line_2eproto {
 #ifndef _MSC_VER
 const int UserData::kUserIdFieldNumber;
 const int UserData::kUserNameFieldNumber;
+const int UserData::kEncryptedPswFieldNumber;
 const int UserData::kLoverIdFieldNumber;
 #endif  // !_MSC_VER
 
@@ -225,6 +228,7 @@ void UserData::SharedCtor() {
   _cached_size_ = 0;
   user_id_ = GOOGLE_ULONGLONG(0);
   user_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  encrypted_psw_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   lover_id_ = GOOGLE_ULONGLONG(0);
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
@@ -236,6 +240,9 @@ UserData::~UserData() {
 void UserData::SharedDtor() {
   if (user_name_ != &::google::protobuf::internal::kEmptyString) {
     delete user_name_;
+  }
+  if (encrypted_psw_ != &::google::protobuf::internal::kEmptyString) {
+    delete encrypted_psw_;
   }
   if (this != default_instance_) {
   }
@@ -268,6 +275,11 @@ void UserData::Clear() {
     if (has_user_name()) {
       if (user_name_ != &::google::protobuf::internal::kEmptyString) {
         user_name_->clear();
+      }
+    }
+    if (has_encrypted_psw()) {
+      if (encrypted_psw_ != &::google::protobuf::internal::kEmptyString) {
+        encrypted_psw_->clear();
       }
     }
     lover_id_ = GOOGLE_ULONGLONG(0);
@@ -310,12 +322,29 @@ bool UserData::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(24)) goto parse_lover_id;
+        if (input->ExpectTag(26)) goto parse_encrypted_psw;
         break;
       }
 
-      // optional uint64 lover_id = 3;
+      // optional string encrypted_psw = 3;
       case 3: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
+         parse_encrypted_psw:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_encrypted_psw()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8String(
+            this->encrypted_psw().data(), this->encrypted_psw().length(),
+            ::google::protobuf::internal::WireFormat::PARSE);
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(32)) goto parse_lover_id;
+        break;
+      }
+
+      // optional uint64 lover_id = 4;
+      case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_lover_id:
@@ -362,9 +391,18 @@ void UserData::SerializeWithCachedSizes(
       2, this->user_name(), output);
   }
 
-  // optional uint64 lover_id = 3;
+  // optional string encrypted_psw = 3;
+  if (has_encrypted_psw()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
+      this->encrypted_psw().data(), this->encrypted_psw().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE);
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      3, this->encrypted_psw(), output);
+  }
+
+  // optional uint64 lover_id = 4;
   if (has_lover_id()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(3, this->lover_id(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(4, this->lover_id(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -390,9 +428,19 @@ void UserData::SerializeWithCachedSizes(
         2, this->user_name(), target);
   }
 
-  // optional uint64 lover_id = 3;
+  // optional string encrypted_psw = 3;
+  if (has_encrypted_psw()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
+      this->encrypted_psw().data(), this->encrypted_psw().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE);
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->encrypted_psw(), target);
+  }
+
+  // optional uint64 lover_id = 4;
   if (has_lover_id()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(3, this->lover_id(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(4, this->lover_id(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -420,7 +468,14 @@ int UserData::ByteSize() const {
           this->user_name());
     }
 
-    // optional uint64 lover_id = 3;
+    // optional string encrypted_psw = 3;
+    if (has_encrypted_psw()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->encrypted_psw());
+    }
+
+    // optional uint64 lover_id = 4;
     if (has_lover_id()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::UInt64Size(
@@ -460,6 +515,9 @@ void UserData::MergeFrom(const UserData& from) {
     if (from.has_user_name()) {
       set_user_name(from.user_name());
     }
+    if (from.has_encrypted_psw()) {
+      set_encrypted_psw(from.encrypted_psw());
+    }
     if (from.has_lover_id()) {
       set_lover_id(from.lover_id());
     }
@@ -488,6 +546,7 @@ void UserData::Swap(UserData* other) {
   if (other != this) {
     std::swap(user_id_, other->user_id_);
     std::swap(user_name_, other->user_name_);
+    std::swap(encrypted_psw_, other->encrypted_psw_);
     std::swap(lover_id_, other->lover_id_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);

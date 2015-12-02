@@ -47,6 +47,8 @@ int RegistCmdHandle()
 {
 	REGIST_CMD_HANDLE(line::LoginReq, LoginReqHandle);
 	REGIST_CMD_HANDLE(line::LoginRsp, LoginRspHandle);
+	REGIST_CMD_HANDLE(line::RegistUserReq, RegistUserReqHandle);
+	REGIST_CMD_HANDLE(line::RegistUserRsp, RegistUserRspHandle);
 	
 	return 0;
 }

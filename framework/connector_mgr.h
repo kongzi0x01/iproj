@@ -17,7 +17,7 @@ public:
 	ConnectorMgr();
 	~ConnectorMgr();
 
-	int AddConnector(const string& sConnectorName, const string& sHost, int32_t iPort, Processor* pProcessor, int iSessionNum = 4);
+	int AddConnector(const string& sConnectorName, const string& sHost, int32_t iPort, Processor* pProcessor);
 	
 	int Send(const string& sConnectorName, const char* pszData, uint32_t uSize);
 

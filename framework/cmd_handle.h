@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include "header.pb.h"
 #include "session.h"
-
+#include "response_code.pb.h"
 class Session;
 
 class CmdHandle

@@ -23,7 +23,11 @@ int Processor::Deal(Session& session)
 	{
 		return -1;
 	}
-	return HandleRequest(req.GetData(), req.GetDataSize(), session);
+	if( HandleRequest(req.GetData(), req.GetDataSize(), session) < 0)
+	{
+		return -1;
+	}
+	req.RemoveData(req.GetDataSize());
 }
 
 int Processor::HandleRequest(const char* pszRequest, uint32_t uSize, Session& session)

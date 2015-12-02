@@ -9,12 +9,16 @@ port = 8989
 conn = Connector(ip, port)
 conn.set_header(10001, "line.LoginReq")
 
-login_req = line_pb2.LoginReq()
-login_req.user_name = "jack"
-login_req.encrypted_psw = "ASDF"
+i = 10000
+while(i > 0):
+	login_req = line_pb2.LoginReq()
+	login_req.user_name = "jack"
+	login_req.encrypted_psw = "ASDF"
 
-conn.send(login_req)
+	conn.send(login_req)
 
-rsp = line_pb2.LoginRsp()
-conn.recv(rsp)
-print "rsp.result :",rsp.result
+	rsp = line_pb2.LoginRsp()
+	conn.recv(rsp)
+	print i, "rsp.result :",rsp.result
+	i = i -1
+

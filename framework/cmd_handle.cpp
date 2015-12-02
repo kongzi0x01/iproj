@@ -1,7 +1,7 @@
 #include "cmd_handle.h"
 #include "proto_util.h"
 #include "server.h"
-#include "server.h"
+#include "logger_macro.h"
 
 CmdHandle::CmdHandle()
 {
@@ -15,10 +15,13 @@ int CmdHandle::SendMsgBack(google::protobuf::Message* pCmdMsg)
 }
 
 int CmdHandle::SendMsgToSessionByIdent(google::protobuf::Message* pCmdMsg, uint64_t ident)
-{
-	m_pSession->Close();
-	
+{	
 	Session* pSession = Server::Instance().GetAcceptedSessionMgr()->GetSessionByIdent(ident);
+	if(!pSession)
+	{
+		LOG_ERROR("GetSessionByIdent failded! ident : " << ident);
+		return -1;
+	}
 	SetSourceSession(pSession);
 	return ProtoUtil::SendToSession(m_pHeader, pCmdMsg, m_pSession);
 }
