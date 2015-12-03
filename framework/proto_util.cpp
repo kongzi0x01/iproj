@@ -6,66 +6,12 @@
 #include <stdlib.h>
 using namespace google::protobuf;
 
-/*ProtoBasic::ProtoBasic(uint32_t uPackLen, uint32_t uHeaderLen)
-{
-	this->uPackLen = uPackLen;
-	this->uHeaderLen = uHeaderLen;
-}
-
-int ProtoBasic::Decode(const char* pszData, uint32_t uSize)
-{
-	if ( uSize < sizeof(ProtoBasic) )
-	{
-		//LOG_DEBUG("DecodeBasic error, size : " << uSize);
-		return -1;
-	}
-
-	uPackLen = *((uint32_t*)pszData);
-	uHeaderLen = *((uint32_t*)(pszData+sizeof(uint32_t)));
-	LOG_DEBUG( "uPackLen : " << uPackLen << ", uHeaderLen : " << uHeaderLen );	
-	return 0;	
-}
-*/
 int ProtoUtil::SendToSession(Header* pHeader, Message* pMsg, Session* pSession)
 {
 	string sData;
 	MakeData(pHeader, pMsg, sData);
 	return pSession->Send(sData.data(), sData.size());
 }
-
-/*int ProtoUtil::Code(const char* pszHeader, uint32_t uHeaderLen, const char* pszCmd, uint32_t uCmdLen, string& sOut)
-{
-	ProtoBasic basic;
-	uint16_t uBasicLen = sizeof(basic);
-	basic.uHeaderLen = uHeaderLen;
-	basic.uPackLen = uHeaderLen + uCmdLen + uBasicLen;	
-
-	sOut.clear();
-	sOut.append((const char*)(&basic), uBasicLen);	
-	sOut.append(pszHeader, uHeaderLen);
-	sOut.append(pszCmd, uCmdLen);
-	return 0;
-}*/
-
-/*int ProtoUtil::Decode(const char* pszPackData, uint32_t uPackLen, string& sOutHeader, string& sOutCmd)
-{
-	ProtoBasic basic;
-	uint16_t uBasicLen = sizeof(basic);
-	//memcpy(&basic, pszPackData, uBasicLen);	
-	basic.uPackLen = *((uint32_t*)pszPackData);
-	basic.uHeaderLen = *((uint32_t*)(pszPackData+sizeof(uint32_t)));
-
-	if ( basic.uHeaderLen >= uPackLen - uBasicLen )
-		return -1;
-
-	sOutHeader.assign(pszPackData+uBasicLen, basic.uHeaderLen);	
-	
-	const char* pszCmd = pszPackData + uBasicLen + basic.uHeaderLen;
-	uint32_t uCmdLen = uPackLen - basic.uHeaderLen - uBasicLen;
-	sOutCmd.assign(pszCmd, uCmdLen);
-	
-	return 0;
-}*/
 
 Message* ProtoUtil::CreateMessage(const string& sFullName)
 {
