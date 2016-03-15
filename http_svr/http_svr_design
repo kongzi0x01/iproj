@@ -1,0 +1,2 @@
+http_svr的通信协议可以考虑为
+IP:port/{"msg_code":1;"msg_param1":one;"msg_param2":two;...}
