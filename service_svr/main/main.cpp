@@ -10,6 +10,8 @@
 #include <string>
 #include <log4cplus/configurator.h>
 
+#include "http_mgr.h"
+
 using namespace log4cplus;
 
 int RegistCmdHandle();
@@ -18,6 +20,8 @@ int main()
 {
 	string sListenAddr = "";
 	int iListenPort = 8989;
+	string httpAddr("0.0.0.0");
+	uint16_t httpPort = 9090;
 	
 	//注册消息响应函数
 	RegistCmdHandle();
@@ -26,6 +30,10 @@ int main()
 	PropertyConfigurator::doConfigure("../conf/log4cplus.conf");
 	
 	LOG_DEBUG("server start...");
+	
+	//启动HTTP服务器
+	HttpMgr::Instance().Init(httpAddr, httpPort);
+	HttpMgr::Instance().StartService();
 	
 	Accepter accepter;
 	int ret = 0;
