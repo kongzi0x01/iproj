@@ -38,6 +38,11 @@ class LoginReq;
 class LoginRsp;
 class RegistUserReq;
 class RegistUserRsp;
+class VerifyCodeReq;
+class VerifyCodeRsp;
+class TouchPositionDownReq;
+class TouchPositionUpReq;
+class TouchPositionMatch;
 
 // ===================================================================
 
@@ -528,6 +533,446 @@ class RegistUserRsp : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static RegistUserRsp* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class VerifyCodeReq : public ::google::protobuf::Message {
+ public:
+  VerifyCodeReq();
+  virtual ~VerifyCodeReq();
+
+  VerifyCodeReq(const VerifyCodeReq& from);
+
+  inline VerifyCodeReq& operator=(const VerifyCodeReq& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const VerifyCodeReq& default_instance();
+
+  void Swap(VerifyCodeReq* other);
+
+  // implements Message ----------------------------------------------
+
+  VerifyCodeReq* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const VerifyCodeReq& from);
+  void MergeFrom(const VerifyCodeReq& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional string phone_number = 1;
+  inline bool has_phone_number() const;
+  inline void clear_phone_number();
+  static const int kPhoneNumberFieldNumber = 1;
+  inline const ::std::string& phone_number() const;
+  inline void set_phone_number(const ::std::string& value);
+  inline void set_phone_number(const char* value);
+  inline void set_phone_number(const char* value, size_t size);
+  inline ::std::string* mutable_phone_number();
+  inline ::std::string* release_phone_number();
+  inline void set_allocated_phone_number(::std::string* phone_number);
+
+  // optional string verify_code = 2;
+  inline bool has_verify_code() const;
+  inline void clear_verify_code();
+  static const int kVerifyCodeFieldNumber = 2;
+  inline const ::std::string& verify_code() const;
+  inline void set_verify_code(const ::std::string& value);
+  inline void set_verify_code(const char* value);
+  inline void set_verify_code(const char* value, size_t size);
+  inline ::std::string* mutable_verify_code();
+  inline ::std::string* release_verify_code();
+  inline void set_allocated_verify_code(::std::string* verify_code);
+
+  // @@protoc_insertion_point(class_scope:line.VerifyCodeReq)
+ private:
+  inline void set_has_phone_number();
+  inline void clear_has_phone_number();
+  inline void set_has_verify_code();
+  inline void clear_has_verify_code();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::std::string* phone_number_;
+  ::std::string* verify_code_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
+
+  friend void  protobuf_AddDesc_line_2eproto();
+  friend void protobuf_AssignDesc_line_2eproto();
+  friend void protobuf_ShutdownFile_line_2eproto();
+
+  void InitAsDefaultInstance();
+  static VerifyCodeReq* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class VerifyCodeRsp : public ::google::protobuf::Message {
+ public:
+  VerifyCodeRsp();
+  virtual ~VerifyCodeRsp();
+
+  VerifyCodeRsp(const VerifyCodeRsp& from);
+
+  inline VerifyCodeRsp& operator=(const VerifyCodeRsp& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const VerifyCodeRsp& default_instance();
+
+  void Swap(VerifyCodeRsp* other);
+
+  // implements Message ----------------------------------------------
+
+  VerifyCodeRsp* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const VerifyCodeRsp& from);
+  void MergeFrom(const VerifyCodeRsp& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint32 result = 1;
+  inline bool has_result() const;
+  inline void clear_result();
+  static const int kResultFieldNumber = 1;
+  inline ::google::protobuf::uint32 result() const;
+  inline void set_result(::google::protobuf::uint32 value);
+
+  // @@protoc_insertion_point(class_scope:line.VerifyCodeRsp)
+ private:
+  inline void set_has_result();
+  inline void clear_has_result();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 result_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
+
+  friend void  protobuf_AddDesc_line_2eproto();
+  friend void protobuf_AssignDesc_line_2eproto();
+  friend void protobuf_ShutdownFile_line_2eproto();
+
+  void InitAsDefaultInstance();
+  static VerifyCodeRsp* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class TouchPositionDownReq : public ::google::protobuf::Message {
+ public:
+  TouchPositionDownReq();
+  virtual ~TouchPositionDownReq();
+
+  TouchPositionDownReq(const TouchPositionDownReq& from);
+
+  inline TouchPositionDownReq& operator=(const TouchPositionDownReq& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const TouchPositionDownReq& default_instance();
+
+  void Swap(TouchPositionDownReq* other);
+
+  // implements Message ----------------------------------------------
+
+  TouchPositionDownReq* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const TouchPositionDownReq& from);
+  void MergeFrom(const TouchPositionDownReq& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint32 application_width = 1;
+  inline bool has_application_width() const;
+  inline void clear_application_width();
+  static const int kApplicationWidthFieldNumber = 1;
+  inline ::google::protobuf::uint32 application_width() const;
+  inline void set_application_width(::google::protobuf::uint32 value);
+
+  // optional uint32 application_height = 2;
+  inline bool has_application_height() const;
+  inline void clear_application_height();
+  static const int kApplicationHeightFieldNumber = 2;
+  inline ::google::protobuf::uint32 application_height() const;
+  inline void set_application_height(::google::protobuf::uint32 value);
+
+  // optional uint32 touchx_in_app = 3;
+  inline bool has_touchx_in_app() const;
+  inline void clear_touchx_in_app();
+  static const int kTouchxInAppFieldNumber = 3;
+  inline ::google::protobuf::uint32 touchx_in_app() const;
+  inline void set_touchx_in_app(::google::protobuf::uint32 value);
+
+  // optional uint32 touchy_in_app = 4;
+  inline bool has_touchy_in_app() const;
+  inline void clear_touchy_in_app();
+  static const int kTouchyInAppFieldNumber = 4;
+  inline ::google::protobuf::uint32 touchy_in_app() const;
+  inline void set_touchy_in_app(::google::protobuf::uint32 value);
+
+  // @@protoc_insertion_point(class_scope:line.TouchPositionDownReq)
+ private:
+  inline void set_has_application_width();
+  inline void clear_has_application_width();
+  inline void set_has_application_height();
+  inline void clear_has_application_height();
+  inline void set_has_touchx_in_app();
+  inline void clear_has_touchx_in_app();
+  inline void set_has_touchy_in_app();
+  inline void clear_has_touchy_in_app();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 application_width_;
+  ::google::protobuf::uint32 application_height_;
+  ::google::protobuf::uint32 touchx_in_app_;
+  ::google::protobuf::uint32 touchy_in_app_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
+
+  friend void  protobuf_AddDesc_line_2eproto();
+  friend void protobuf_AssignDesc_line_2eproto();
+  friend void protobuf_ShutdownFile_line_2eproto();
+
+  void InitAsDefaultInstance();
+  static TouchPositionDownReq* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class TouchPositionUpReq : public ::google::protobuf::Message {
+ public:
+  TouchPositionUpReq();
+  virtual ~TouchPositionUpReq();
+
+  TouchPositionUpReq(const TouchPositionUpReq& from);
+
+  inline TouchPositionUpReq& operator=(const TouchPositionUpReq& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const TouchPositionUpReq& default_instance();
+
+  void Swap(TouchPositionUpReq* other);
+
+  // implements Message ----------------------------------------------
+
+  TouchPositionUpReq* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const TouchPositionUpReq& from);
+  void MergeFrom(const TouchPositionUpReq& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:line.TouchPositionUpReq)
+ private:
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[1];
+
+  friend void  protobuf_AddDesc_line_2eproto();
+  friend void protobuf_AssignDesc_line_2eproto();
+  friend void protobuf_ShutdownFile_line_2eproto();
+
+  void InitAsDefaultInstance();
+  static TouchPositionUpReq* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class TouchPositionMatch : public ::google::protobuf::Message {
+ public:
+  TouchPositionMatch();
+  virtual ~TouchPositionMatch();
+
+  TouchPositionMatch(const TouchPositionMatch& from);
+
+  inline TouchPositionMatch& operator=(const TouchPositionMatch& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const TouchPositionMatch& default_instance();
+
+  void Swap(TouchPositionMatch* other);
+
+  // implements Message ----------------------------------------------
+
+  TouchPositionMatch* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const TouchPositionMatch& from);
+  void MergeFrom(const TouchPositionMatch& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:line.TouchPositionMatch)
+ private:
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[1];
+
+  friend void  protobuf_AddDesc_line_2eproto();
+  friend void protobuf_AssignDesc_line_2eproto();
+  friend void protobuf_ShutdownFile_line_2eproto();
+
+  void InitAsDefaultInstance();
+  static TouchPositionMatch* default_instance_;
 };
 // ===================================================================
 
@@ -1059,6 +1504,276 @@ inline void RegistUserRsp::set_result(::google::protobuf::uint32 value) {
   set_has_result();
   result_ = value;
 }
+
+// -------------------------------------------------------------------
+
+// VerifyCodeReq
+
+// optional string phone_number = 1;
+inline bool VerifyCodeReq::has_phone_number() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void VerifyCodeReq::set_has_phone_number() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void VerifyCodeReq::clear_has_phone_number() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void VerifyCodeReq::clear_phone_number() {
+  if (phone_number_ != &::google::protobuf::internal::kEmptyString) {
+    phone_number_->clear();
+  }
+  clear_has_phone_number();
+}
+inline const ::std::string& VerifyCodeReq::phone_number() const {
+  return *phone_number_;
+}
+inline void VerifyCodeReq::set_phone_number(const ::std::string& value) {
+  set_has_phone_number();
+  if (phone_number_ == &::google::protobuf::internal::kEmptyString) {
+    phone_number_ = new ::std::string;
+  }
+  phone_number_->assign(value);
+}
+inline void VerifyCodeReq::set_phone_number(const char* value) {
+  set_has_phone_number();
+  if (phone_number_ == &::google::protobuf::internal::kEmptyString) {
+    phone_number_ = new ::std::string;
+  }
+  phone_number_->assign(value);
+}
+inline void VerifyCodeReq::set_phone_number(const char* value, size_t size) {
+  set_has_phone_number();
+  if (phone_number_ == &::google::protobuf::internal::kEmptyString) {
+    phone_number_ = new ::std::string;
+  }
+  phone_number_->assign(reinterpret_cast<const char*>(value), size);
+}
+inline ::std::string* VerifyCodeReq::mutable_phone_number() {
+  set_has_phone_number();
+  if (phone_number_ == &::google::protobuf::internal::kEmptyString) {
+    phone_number_ = new ::std::string;
+  }
+  return phone_number_;
+}
+inline ::std::string* VerifyCodeReq::release_phone_number() {
+  clear_has_phone_number();
+  if (phone_number_ == &::google::protobuf::internal::kEmptyString) {
+    return NULL;
+  } else {
+    ::std::string* temp = phone_number_;
+    phone_number_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    return temp;
+  }
+}
+inline void VerifyCodeReq::set_allocated_phone_number(::std::string* phone_number) {
+  if (phone_number_ != &::google::protobuf::internal::kEmptyString) {
+    delete phone_number_;
+  }
+  if (phone_number) {
+    set_has_phone_number();
+    phone_number_ = phone_number;
+  } else {
+    clear_has_phone_number();
+    phone_number_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  }
+}
+
+// optional string verify_code = 2;
+inline bool VerifyCodeReq::has_verify_code() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void VerifyCodeReq::set_has_verify_code() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void VerifyCodeReq::clear_has_verify_code() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void VerifyCodeReq::clear_verify_code() {
+  if (verify_code_ != &::google::protobuf::internal::kEmptyString) {
+    verify_code_->clear();
+  }
+  clear_has_verify_code();
+}
+inline const ::std::string& VerifyCodeReq::verify_code() const {
+  return *verify_code_;
+}
+inline void VerifyCodeReq::set_verify_code(const ::std::string& value) {
+  set_has_verify_code();
+  if (verify_code_ == &::google::protobuf::internal::kEmptyString) {
+    verify_code_ = new ::std::string;
+  }
+  verify_code_->assign(value);
+}
+inline void VerifyCodeReq::set_verify_code(const char* value) {
+  set_has_verify_code();
+  if (verify_code_ == &::google::protobuf::internal::kEmptyString) {
+    verify_code_ = new ::std::string;
+  }
+  verify_code_->assign(value);
+}
+inline void VerifyCodeReq::set_verify_code(const char* value, size_t size) {
+  set_has_verify_code();
+  if (verify_code_ == &::google::protobuf::internal::kEmptyString) {
+    verify_code_ = new ::std::string;
+  }
+  verify_code_->assign(reinterpret_cast<const char*>(value), size);
+}
+inline ::std::string* VerifyCodeReq::mutable_verify_code() {
+  set_has_verify_code();
+  if (verify_code_ == &::google::protobuf::internal::kEmptyString) {
+    verify_code_ = new ::std::string;
+  }
+  return verify_code_;
+}
+inline ::std::string* VerifyCodeReq::release_verify_code() {
+  clear_has_verify_code();
+  if (verify_code_ == &::google::protobuf::internal::kEmptyString) {
+    return NULL;
+  } else {
+    ::std::string* temp = verify_code_;
+    verify_code_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    return temp;
+  }
+}
+inline void VerifyCodeReq::set_allocated_verify_code(::std::string* verify_code) {
+  if (verify_code_ != &::google::protobuf::internal::kEmptyString) {
+    delete verify_code_;
+  }
+  if (verify_code) {
+    set_has_verify_code();
+    verify_code_ = verify_code;
+  } else {
+    clear_has_verify_code();
+    verify_code_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  }
+}
+
+// -------------------------------------------------------------------
+
+// VerifyCodeRsp
+
+// optional uint32 result = 1;
+inline bool VerifyCodeRsp::has_result() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void VerifyCodeRsp::set_has_result() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void VerifyCodeRsp::clear_has_result() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void VerifyCodeRsp::clear_result() {
+  result_ = 0u;
+  clear_has_result();
+}
+inline ::google::protobuf::uint32 VerifyCodeRsp::result() const {
+  return result_;
+}
+inline void VerifyCodeRsp::set_result(::google::protobuf::uint32 value) {
+  set_has_result();
+  result_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// TouchPositionDownReq
+
+// optional uint32 application_width = 1;
+inline bool TouchPositionDownReq::has_application_width() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void TouchPositionDownReq::set_has_application_width() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void TouchPositionDownReq::clear_has_application_width() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void TouchPositionDownReq::clear_application_width() {
+  application_width_ = 0u;
+  clear_has_application_width();
+}
+inline ::google::protobuf::uint32 TouchPositionDownReq::application_width() const {
+  return application_width_;
+}
+inline void TouchPositionDownReq::set_application_width(::google::protobuf::uint32 value) {
+  set_has_application_width();
+  application_width_ = value;
+}
+
+// optional uint32 application_height = 2;
+inline bool TouchPositionDownReq::has_application_height() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void TouchPositionDownReq::set_has_application_height() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void TouchPositionDownReq::clear_has_application_height() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void TouchPositionDownReq::clear_application_height() {
+  application_height_ = 0u;
+  clear_has_application_height();
+}
+inline ::google::protobuf::uint32 TouchPositionDownReq::application_height() const {
+  return application_height_;
+}
+inline void TouchPositionDownReq::set_application_height(::google::protobuf::uint32 value) {
+  set_has_application_height();
+  application_height_ = value;
+}
+
+// optional uint32 touchx_in_app = 3;
+inline bool TouchPositionDownReq::has_touchx_in_app() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void TouchPositionDownReq::set_has_touchx_in_app() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void TouchPositionDownReq::clear_has_touchx_in_app() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void TouchPositionDownReq::clear_touchx_in_app() {
+  touchx_in_app_ = 0u;
+  clear_has_touchx_in_app();
+}
+inline ::google::protobuf::uint32 TouchPositionDownReq::touchx_in_app() const {
+  return touchx_in_app_;
+}
+inline void TouchPositionDownReq::set_touchx_in_app(::google::protobuf::uint32 value) {
+  set_has_touchx_in_app();
+  touchx_in_app_ = value;
+}
+
+// optional uint32 touchy_in_app = 4;
+inline bool TouchPositionDownReq::has_touchy_in_app() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void TouchPositionDownReq::set_has_touchy_in_app() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void TouchPositionDownReq::clear_has_touchy_in_app() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void TouchPositionDownReq::clear_touchy_in_app() {
+  touchy_in_app_ = 0u;
+  clear_has_touchy_in_app();
+}
+inline ::google::protobuf::uint32 TouchPositionDownReq::touchy_in_app() const {
+  return touchy_in_app_;
+}
+inline void TouchPositionDownReq::set_touchy_in_app(::google::protobuf::uint32 value) {
+  set_has_touchy_in_app();
+  touchy_in_app_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// TouchPositionUpReq
+
+// -------------------------------------------------------------------
+
+// TouchPositionMatch
 
 
 // @@protoc_insertion_point(namespace_scope)

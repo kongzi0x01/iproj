@@ -2931,6 +2931,2318 @@ public final class Line {
     // @@protoc_insertion_point(class_scope:line.RegistUserRsp)
   }
 
+  public interface VerifyCodeReqOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // optional string phone_number = 1;
+    /**
+     * <code>optional string phone_number = 1;</code>
+     */
+    boolean hasPhoneNumber();
+    /**
+     * <code>optional string phone_number = 1;</code>
+     */
+    java.lang.String getPhoneNumber();
+    /**
+     * <code>optional string phone_number = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getPhoneNumberBytes();
+
+    // optional string verify_code = 2;
+    /**
+     * <code>optional string verify_code = 2;</code>
+     */
+    boolean hasVerifyCode();
+    /**
+     * <code>optional string verify_code = 2;</code>
+     */
+    java.lang.String getVerifyCode();
+    /**
+     * <code>optional string verify_code = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getVerifyCodeBytes();
+  }
+  /**
+   * Protobuf type {@code line.VerifyCodeReq}
+   */
+  public static final class VerifyCodeReq extends
+      com.google.protobuf.GeneratedMessage
+      implements VerifyCodeReqOrBuilder {
+    // Use VerifyCodeReq.newBuilder() to construct.
+    private VerifyCodeReq(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private VerifyCodeReq(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final VerifyCodeReq defaultInstance;
+    public static VerifyCodeReq getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public VerifyCodeReq getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private VerifyCodeReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              phoneNumber_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              verifyCode_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return line.Line.internal_static_line_VerifyCodeReq_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return line.Line.internal_static_line_VerifyCodeReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              line.Line.VerifyCodeReq.class, line.Line.VerifyCodeReq.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<VerifyCodeReq> PARSER =
+        new com.google.protobuf.AbstractParser<VerifyCodeReq>() {
+      public VerifyCodeReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new VerifyCodeReq(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<VerifyCodeReq> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // optional string phone_number = 1;
+    public static final int PHONE_NUMBER_FIELD_NUMBER = 1;
+    private java.lang.Object phoneNumber_;
+    /**
+     * <code>optional string phone_number = 1;</code>
+     */
+    public boolean hasPhoneNumber() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional string phone_number = 1;</code>
+     */
+    public java.lang.String getPhoneNumber() {
+      java.lang.Object ref = phoneNumber_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          phoneNumber_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string phone_number = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPhoneNumberBytes() {
+      java.lang.Object ref = phoneNumber_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        phoneNumber_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional string verify_code = 2;
+    public static final int VERIFY_CODE_FIELD_NUMBER = 2;
+    private java.lang.Object verifyCode_;
+    /**
+     * <code>optional string verify_code = 2;</code>
+     */
+    public boolean hasVerifyCode() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional string verify_code = 2;</code>
+     */
+    public java.lang.String getVerifyCode() {
+      java.lang.Object ref = verifyCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          verifyCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string verify_code = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getVerifyCodeBytes() {
+      java.lang.Object ref = verifyCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        verifyCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      phoneNumber_ = "";
+      verifyCode_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getPhoneNumberBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getVerifyCodeBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getPhoneNumberBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getVerifyCodeBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static line.Line.VerifyCodeReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static line.Line.VerifyCodeReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static line.Line.VerifyCodeReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static line.Line.VerifyCodeReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static line.Line.VerifyCodeReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static line.Line.VerifyCodeReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static line.Line.VerifyCodeReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static line.Line.VerifyCodeReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static line.Line.VerifyCodeReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static line.Line.VerifyCodeReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(line.Line.VerifyCodeReq prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code line.VerifyCodeReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements line.Line.VerifyCodeReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return line.Line.internal_static_line_VerifyCodeReq_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return line.Line.internal_static_line_VerifyCodeReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                line.Line.VerifyCodeReq.class, line.Line.VerifyCodeReq.Builder.class);
+      }
+
+      // Construct using line.Line.VerifyCodeReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        phoneNumber_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        verifyCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return line.Line.internal_static_line_VerifyCodeReq_descriptor;
+      }
+
+      public line.Line.VerifyCodeReq getDefaultInstanceForType() {
+        return line.Line.VerifyCodeReq.getDefaultInstance();
+      }
+
+      public line.Line.VerifyCodeReq build() {
+        line.Line.VerifyCodeReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public line.Line.VerifyCodeReq buildPartial() {
+        line.Line.VerifyCodeReq result = new line.Line.VerifyCodeReq(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.phoneNumber_ = phoneNumber_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.verifyCode_ = verifyCode_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof line.Line.VerifyCodeReq) {
+          return mergeFrom((line.Line.VerifyCodeReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(line.Line.VerifyCodeReq other) {
+        if (other == line.Line.VerifyCodeReq.getDefaultInstance()) return this;
+        if (other.hasPhoneNumber()) {
+          bitField0_ |= 0x00000001;
+          phoneNumber_ = other.phoneNumber_;
+          onChanged();
+        }
+        if (other.hasVerifyCode()) {
+          bitField0_ |= 0x00000002;
+          verifyCode_ = other.verifyCode_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        line.Line.VerifyCodeReq parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (line.Line.VerifyCodeReq) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // optional string phone_number = 1;
+      private java.lang.Object phoneNumber_ = "";
+      /**
+       * <code>optional string phone_number = 1;</code>
+       */
+      public boolean hasPhoneNumber() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional string phone_number = 1;</code>
+       */
+      public java.lang.String getPhoneNumber() {
+        java.lang.Object ref = phoneNumber_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          phoneNumber_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string phone_number = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPhoneNumberBytes() {
+        java.lang.Object ref = phoneNumber_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          phoneNumber_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string phone_number = 1;</code>
+       */
+      public Builder setPhoneNumber(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        phoneNumber_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string phone_number = 1;</code>
+       */
+      public Builder clearPhoneNumber() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        phoneNumber_ = getDefaultInstance().getPhoneNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string phone_number = 1;</code>
+       */
+      public Builder setPhoneNumberBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        phoneNumber_ = value;
+        onChanged();
+        return this;
+      }
+
+      // optional string verify_code = 2;
+      private java.lang.Object verifyCode_ = "";
+      /**
+       * <code>optional string verify_code = 2;</code>
+       */
+      public boolean hasVerifyCode() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string verify_code = 2;</code>
+       */
+      public java.lang.String getVerifyCode() {
+        java.lang.Object ref = verifyCode_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          verifyCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string verify_code = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getVerifyCodeBytes() {
+        java.lang.Object ref = verifyCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          verifyCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string verify_code = 2;</code>
+       */
+      public Builder setVerifyCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        verifyCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string verify_code = 2;</code>
+       */
+      public Builder clearVerifyCode() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        verifyCode_ = getDefaultInstance().getVerifyCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string verify_code = 2;</code>
+       */
+      public Builder setVerifyCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        verifyCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:line.VerifyCodeReq)
+    }
+
+    static {
+      defaultInstance = new VerifyCodeReq(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:line.VerifyCodeReq)
+  }
+
+  public interface VerifyCodeRspOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // optional uint32 result = 1;
+    /**
+     * <code>optional uint32 result = 1;</code>
+     *
+     * <pre>
+     *正常则为0
+     * </pre>
+     */
+    boolean hasResult();
+    /**
+     * <code>optional uint32 result = 1;</code>
+     *
+     * <pre>
+     *正常则为0
+     * </pre>
+     */
+    int getResult();
+  }
+  /**
+   * Protobuf type {@code line.VerifyCodeRsp}
+   */
+  public static final class VerifyCodeRsp extends
+      com.google.protobuf.GeneratedMessage
+      implements VerifyCodeRspOrBuilder {
+    // Use VerifyCodeRsp.newBuilder() to construct.
+    private VerifyCodeRsp(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private VerifyCodeRsp(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final VerifyCodeRsp defaultInstance;
+    public static VerifyCodeRsp getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public VerifyCodeRsp getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private VerifyCodeRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              result_ = input.readUInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return line.Line.internal_static_line_VerifyCodeRsp_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return line.Line.internal_static_line_VerifyCodeRsp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              line.Line.VerifyCodeRsp.class, line.Line.VerifyCodeRsp.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<VerifyCodeRsp> PARSER =
+        new com.google.protobuf.AbstractParser<VerifyCodeRsp>() {
+      public VerifyCodeRsp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new VerifyCodeRsp(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<VerifyCodeRsp> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // optional uint32 result = 1;
+    public static final int RESULT_FIELD_NUMBER = 1;
+    private int result_;
+    /**
+     * <code>optional uint32 result = 1;</code>
+     *
+     * <pre>
+     *正常则为0
+     * </pre>
+     */
+    public boolean hasResult() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional uint32 result = 1;</code>
+     *
+     * <pre>
+     *正常则为0
+     * </pre>
+     */
+    public int getResult() {
+      return result_;
+    }
+
+    private void initFields() {
+      result_ = 0;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeUInt32(1, result_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, result_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static line.Line.VerifyCodeRsp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static line.Line.VerifyCodeRsp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static line.Line.VerifyCodeRsp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static line.Line.VerifyCodeRsp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static line.Line.VerifyCodeRsp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static line.Line.VerifyCodeRsp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static line.Line.VerifyCodeRsp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static line.Line.VerifyCodeRsp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static line.Line.VerifyCodeRsp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static line.Line.VerifyCodeRsp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(line.Line.VerifyCodeRsp prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code line.VerifyCodeRsp}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements line.Line.VerifyCodeRspOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return line.Line.internal_static_line_VerifyCodeRsp_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return line.Line.internal_static_line_VerifyCodeRsp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                line.Line.VerifyCodeRsp.class, line.Line.VerifyCodeRsp.Builder.class);
+      }
+
+      // Construct using line.Line.VerifyCodeRsp.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        result_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return line.Line.internal_static_line_VerifyCodeRsp_descriptor;
+      }
+
+      public line.Line.VerifyCodeRsp getDefaultInstanceForType() {
+        return line.Line.VerifyCodeRsp.getDefaultInstance();
+      }
+
+      public line.Line.VerifyCodeRsp build() {
+        line.Line.VerifyCodeRsp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public line.Line.VerifyCodeRsp buildPartial() {
+        line.Line.VerifyCodeRsp result = new line.Line.VerifyCodeRsp(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.result_ = result_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof line.Line.VerifyCodeRsp) {
+          return mergeFrom((line.Line.VerifyCodeRsp)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(line.Line.VerifyCodeRsp other) {
+        if (other == line.Line.VerifyCodeRsp.getDefaultInstance()) return this;
+        if (other.hasResult()) {
+          setResult(other.getResult());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        line.Line.VerifyCodeRsp parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (line.Line.VerifyCodeRsp) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // optional uint32 result = 1;
+      private int result_ ;
+      /**
+       * <code>optional uint32 result = 1;</code>
+       *
+       * <pre>
+       *正常则为0
+       * </pre>
+       */
+      public boolean hasResult() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional uint32 result = 1;</code>
+       *
+       * <pre>
+       *正常则为0
+       * </pre>
+       */
+      public int getResult() {
+        return result_;
+      }
+      /**
+       * <code>optional uint32 result = 1;</code>
+       *
+       * <pre>
+       *正常则为0
+       * </pre>
+       */
+      public Builder setResult(int value) {
+        bitField0_ |= 0x00000001;
+        result_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 result = 1;</code>
+       *
+       * <pre>
+       *正常则为0
+       * </pre>
+       */
+      public Builder clearResult() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        result_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:line.VerifyCodeRsp)
+    }
+
+    static {
+      defaultInstance = new VerifyCodeRsp(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:line.VerifyCodeRsp)
+  }
+
+  public interface TouchPositionDownReqOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // optional uint32 application_width = 1;
+    /**
+     * <code>optional uint32 application_width = 1;</code>
+     */
+    boolean hasApplicationWidth();
+    /**
+     * <code>optional uint32 application_width = 1;</code>
+     */
+    int getApplicationWidth();
+
+    // optional uint32 application_height = 2;
+    /**
+     * <code>optional uint32 application_height = 2;</code>
+     */
+    boolean hasApplicationHeight();
+    /**
+     * <code>optional uint32 application_height = 2;</code>
+     */
+    int getApplicationHeight();
+
+    // optional uint32 touchx_in_app = 3;
+    /**
+     * <code>optional uint32 touchx_in_app = 3;</code>
+     */
+    boolean hasTouchxInApp();
+    /**
+     * <code>optional uint32 touchx_in_app = 3;</code>
+     */
+    int getTouchxInApp();
+
+    // optional uint32 touchy_in_app = 4;
+    /**
+     * <code>optional uint32 touchy_in_app = 4;</code>
+     */
+    boolean hasTouchyInApp();
+    /**
+     * <code>optional uint32 touchy_in_app = 4;</code>
+     */
+    int getTouchyInApp();
+  }
+  /**
+   * Protobuf type {@code line.TouchPositionDownReq}
+   */
+  public static final class TouchPositionDownReq extends
+      com.google.protobuf.GeneratedMessage
+      implements TouchPositionDownReqOrBuilder {
+    // Use TouchPositionDownReq.newBuilder() to construct.
+    private TouchPositionDownReq(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private TouchPositionDownReq(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final TouchPositionDownReq defaultInstance;
+    public static TouchPositionDownReq getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public TouchPositionDownReq getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TouchPositionDownReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              applicationWidth_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              applicationHeight_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              touchxInApp_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              touchyInApp_ = input.readUInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return line.Line.internal_static_line_TouchPositionDownReq_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return line.Line.internal_static_line_TouchPositionDownReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              line.Line.TouchPositionDownReq.class, line.Line.TouchPositionDownReq.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<TouchPositionDownReq> PARSER =
+        new com.google.protobuf.AbstractParser<TouchPositionDownReq>() {
+      public TouchPositionDownReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TouchPositionDownReq(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TouchPositionDownReq> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // optional uint32 application_width = 1;
+    public static final int APPLICATION_WIDTH_FIELD_NUMBER = 1;
+    private int applicationWidth_;
+    /**
+     * <code>optional uint32 application_width = 1;</code>
+     */
+    public boolean hasApplicationWidth() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional uint32 application_width = 1;</code>
+     */
+    public int getApplicationWidth() {
+      return applicationWidth_;
+    }
+
+    // optional uint32 application_height = 2;
+    public static final int APPLICATION_HEIGHT_FIELD_NUMBER = 2;
+    private int applicationHeight_;
+    /**
+     * <code>optional uint32 application_height = 2;</code>
+     */
+    public boolean hasApplicationHeight() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional uint32 application_height = 2;</code>
+     */
+    public int getApplicationHeight() {
+      return applicationHeight_;
+    }
+
+    // optional uint32 touchx_in_app = 3;
+    public static final int TOUCHX_IN_APP_FIELD_NUMBER = 3;
+    private int touchxInApp_;
+    /**
+     * <code>optional uint32 touchx_in_app = 3;</code>
+     */
+    public boolean hasTouchxInApp() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional uint32 touchx_in_app = 3;</code>
+     */
+    public int getTouchxInApp() {
+      return touchxInApp_;
+    }
+
+    // optional uint32 touchy_in_app = 4;
+    public static final int TOUCHY_IN_APP_FIELD_NUMBER = 4;
+    private int touchyInApp_;
+    /**
+     * <code>optional uint32 touchy_in_app = 4;</code>
+     */
+    public boolean hasTouchyInApp() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional uint32 touchy_in_app = 4;</code>
+     */
+    public int getTouchyInApp() {
+      return touchyInApp_;
+    }
+
+    private void initFields() {
+      applicationWidth_ = 0;
+      applicationHeight_ = 0;
+      touchxInApp_ = 0;
+      touchyInApp_ = 0;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeUInt32(1, applicationWidth_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeUInt32(2, applicationHeight_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeUInt32(3, touchxInApp_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeUInt32(4, touchyInApp_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, applicationWidth_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, applicationHeight_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, touchxInApp_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, touchyInApp_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static line.Line.TouchPositionDownReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static line.Line.TouchPositionDownReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static line.Line.TouchPositionDownReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static line.Line.TouchPositionDownReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static line.Line.TouchPositionDownReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static line.Line.TouchPositionDownReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static line.Line.TouchPositionDownReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static line.Line.TouchPositionDownReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static line.Line.TouchPositionDownReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static line.Line.TouchPositionDownReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(line.Line.TouchPositionDownReq prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code line.TouchPositionDownReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements line.Line.TouchPositionDownReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return line.Line.internal_static_line_TouchPositionDownReq_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return line.Line.internal_static_line_TouchPositionDownReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                line.Line.TouchPositionDownReq.class, line.Line.TouchPositionDownReq.Builder.class);
+      }
+
+      // Construct using line.Line.TouchPositionDownReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        applicationWidth_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        applicationHeight_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        touchxInApp_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        touchyInApp_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return line.Line.internal_static_line_TouchPositionDownReq_descriptor;
+      }
+
+      public line.Line.TouchPositionDownReq getDefaultInstanceForType() {
+        return line.Line.TouchPositionDownReq.getDefaultInstance();
+      }
+
+      public line.Line.TouchPositionDownReq build() {
+        line.Line.TouchPositionDownReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public line.Line.TouchPositionDownReq buildPartial() {
+        line.Line.TouchPositionDownReq result = new line.Line.TouchPositionDownReq(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.applicationWidth_ = applicationWidth_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.applicationHeight_ = applicationHeight_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.touchxInApp_ = touchxInApp_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.touchyInApp_ = touchyInApp_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof line.Line.TouchPositionDownReq) {
+          return mergeFrom((line.Line.TouchPositionDownReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(line.Line.TouchPositionDownReq other) {
+        if (other == line.Line.TouchPositionDownReq.getDefaultInstance()) return this;
+        if (other.hasApplicationWidth()) {
+          setApplicationWidth(other.getApplicationWidth());
+        }
+        if (other.hasApplicationHeight()) {
+          setApplicationHeight(other.getApplicationHeight());
+        }
+        if (other.hasTouchxInApp()) {
+          setTouchxInApp(other.getTouchxInApp());
+        }
+        if (other.hasTouchyInApp()) {
+          setTouchyInApp(other.getTouchyInApp());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        line.Line.TouchPositionDownReq parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (line.Line.TouchPositionDownReq) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // optional uint32 application_width = 1;
+      private int applicationWidth_ ;
+      /**
+       * <code>optional uint32 application_width = 1;</code>
+       */
+      public boolean hasApplicationWidth() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional uint32 application_width = 1;</code>
+       */
+      public int getApplicationWidth() {
+        return applicationWidth_;
+      }
+      /**
+       * <code>optional uint32 application_width = 1;</code>
+       */
+      public Builder setApplicationWidth(int value) {
+        bitField0_ |= 0x00000001;
+        applicationWidth_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 application_width = 1;</code>
+       */
+      public Builder clearApplicationWidth() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        applicationWidth_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // optional uint32 application_height = 2;
+      private int applicationHeight_ ;
+      /**
+       * <code>optional uint32 application_height = 2;</code>
+       */
+      public boolean hasApplicationHeight() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional uint32 application_height = 2;</code>
+       */
+      public int getApplicationHeight() {
+        return applicationHeight_;
+      }
+      /**
+       * <code>optional uint32 application_height = 2;</code>
+       */
+      public Builder setApplicationHeight(int value) {
+        bitField0_ |= 0x00000002;
+        applicationHeight_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 application_height = 2;</code>
+       */
+      public Builder clearApplicationHeight() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        applicationHeight_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // optional uint32 touchx_in_app = 3;
+      private int touchxInApp_ ;
+      /**
+       * <code>optional uint32 touchx_in_app = 3;</code>
+       */
+      public boolean hasTouchxInApp() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional uint32 touchx_in_app = 3;</code>
+       */
+      public int getTouchxInApp() {
+        return touchxInApp_;
+      }
+      /**
+       * <code>optional uint32 touchx_in_app = 3;</code>
+       */
+      public Builder setTouchxInApp(int value) {
+        bitField0_ |= 0x00000004;
+        touchxInApp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 touchx_in_app = 3;</code>
+       */
+      public Builder clearTouchxInApp() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        touchxInApp_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // optional uint32 touchy_in_app = 4;
+      private int touchyInApp_ ;
+      /**
+       * <code>optional uint32 touchy_in_app = 4;</code>
+       */
+      public boolean hasTouchyInApp() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional uint32 touchy_in_app = 4;</code>
+       */
+      public int getTouchyInApp() {
+        return touchyInApp_;
+      }
+      /**
+       * <code>optional uint32 touchy_in_app = 4;</code>
+       */
+      public Builder setTouchyInApp(int value) {
+        bitField0_ |= 0x00000008;
+        touchyInApp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 touchy_in_app = 4;</code>
+       */
+      public Builder clearTouchyInApp() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        touchyInApp_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:line.TouchPositionDownReq)
+    }
+
+    static {
+      defaultInstance = new TouchPositionDownReq(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:line.TouchPositionDownReq)
+  }
+
+  public interface TouchPositionUpReqOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code line.TouchPositionUpReq}
+   */
+  public static final class TouchPositionUpReq extends
+      com.google.protobuf.GeneratedMessage
+      implements TouchPositionUpReqOrBuilder {
+    // Use TouchPositionUpReq.newBuilder() to construct.
+    private TouchPositionUpReq(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private TouchPositionUpReq(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final TouchPositionUpReq defaultInstance;
+    public static TouchPositionUpReq getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public TouchPositionUpReq getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TouchPositionUpReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return line.Line.internal_static_line_TouchPositionUpReq_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return line.Line.internal_static_line_TouchPositionUpReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              line.Line.TouchPositionUpReq.class, line.Line.TouchPositionUpReq.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<TouchPositionUpReq> PARSER =
+        new com.google.protobuf.AbstractParser<TouchPositionUpReq>() {
+      public TouchPositionUpReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TouchPositionUpReq(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TouchPositionUpReq> getParserForType() {
+      return PARSER;
+    }
+
+    private void initFields() {
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static line.Line.TouchPositionUpReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static line.Line.TouchPositionUpReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static line.Line.TouchPositionUpReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static line.Line.TouchPositionUpReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static line.Line.TouchPositionUpReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static line.Line.TouchPositionUpReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static line.Line.TouchPositionUpReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static line.Line.TouchPositionUpReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static line.Line.TouchPositionUpReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static line.Line.TouchPositionUpReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(line.Line.TouchPositionUpReq prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code line.TouchPositionUpReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements line.Line.TouchPositionUpReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return line.Line.internal_static_line_TouchPositionUpReq_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return line.Line.internal_static_line_TouchPositionUpReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                line.Line.TouchPositionUpReq.class, line.Line.TouchPositionUpReq.Builder.class);
+      }
+
+      // Construct using line.Line.TouchPositionUpReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return line.Line.internal_static_line_TouchPositionUpReq_descriptor;
+      }
+
+      public line.Line.TouchPositionUpReq getDefaultInstanceForType() {
+        return line.Line.TouchPositionUpReq.getDefaultInstance();
+      }
+
+      public line.Line.TouchPositionUpReq build() {
+        line.Line.TouchPositionUpReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public line.Line.TouchPositionUpReq buildPartial() {
+        line.Line.TouchPositionUpReq result = new line.Line.TouchPositionUpReq(this);
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof line.Line.TouchPositionUpReq) {
+          return mergeFrom((line.Line.TouchPositionUpReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(line.Line.TouchPositionUpReq other) {
+        if (other == line.Line.TouchPositionUpReq.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        line.Line.TouchPositionUpReq parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (line.Line.TouchPositionUpReq) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:line.TouchPositionUpReq)
+    }
+
+    static {
+      defaultInstance = new TouchPositionUpReq(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:line.TouchPositionUpReq)
+  }
+
+  public interface TouchPositionMatchOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code line.TouchPositionMatch}
+   */
+  public static final class TouchPositionMatch extends
+      com.google.protobuf.GeneratedMessage
+      implements TouchPositionMatchOrBuilder {
+    // Use TouchPositionMatch.newBuilder() to construct.
+    private TouchPositionMatch(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private TouchPositionMatch(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final TouchPositionMatch defaultInstance;
+    public static TouchPositionMatch getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public TouchPositionMatch getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TouchPositionMatch(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return line.Line.internal_static_line_TouchPositionMatch_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return line.Line.internal_static_line_TouchPositionMatch_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              line.Line.TouchPositionMatch.class, line.Line.TouchPositionMatch.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<TouchPositionMatch> PARSER =
+        new com.google.protobuf.AbstractParser<TouchPositionMatch>() {
+      public TouchPositionMatch parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TouchPositionMatch(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TouchPositionMatch> getParserForType() {
+      return PARSER;
+    }
+
+    private void initFields() {
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static line.Line.TouchPositionMatch parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static line.Line.TouchPositionMatch parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static line.Line.TouchPositionMatch parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static line.Line.TouchPositionMatch parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static line.Line.TouchPositionMatch parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static line.Line.TouchPositionMatch parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static line.Line.TouchPositionMatch parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static line.Line.TouchPositionMatch parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static line.Line.TouchPositionMatch parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static line.Line.TouchPositionMatch parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(line.Line.TouchPositionMatch prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code line.TouchPositionMatch}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements line.Line.TouchPositionMatchOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return line.Line.internal_static_line_TouchPositionMatch_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return line.Line.internal_static_line_TouchPositionMatch_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                line.Line.TouchPositionMatch.class, line.Line.TouchPositionMatch.Builder.class);
+      }
+
+      // Construct using line.Line.TouchPositionMatch.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return line.Line.internal_static_line_TouchPositionMatch_descriptor;
+      }
+
+      public line.Line.TouchPositionMatch getDefaultInstanceForType() {
+        return line.Line.TouchPositionMatch.getDefaultInstance();
+      }
+
+      public line.Line.TouchPositionMatch build() {
+        line.Line.TouchPositionMatch result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public line.Line.TouchPositionMatch buildPartial() {
+        line.Line.TouchPositionMatch result = new line.Line.TouchPositionMatch(this);
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof line.Line.TouchPositionMatch) {
+          return mergeFrom((line.Line.TouchPositionMatch)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(line.Line.TouchPositionMatch other) {
+        if (other == line.Line.TouchPositionMatch.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        line.Line.TouchPositionMatch parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (line.Line.TouchPositionMatch) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:line.TouchPositionMatch)
+    }
+
+    static {
+      defaultInstance = new TouchPositionMatch(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:line.TouchPositionMatch)
+  }
+
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_line_UserData_descriptor;
   private static
@@ -2956,6 +5268,31 @@ public final class Line {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_line_RegistUserRsp_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_line_VerifyCodeReq_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_line_VerifyCodeReq_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_line_VerifyCodeRsp_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_line_VerifyCodeRsp_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_line_TouchPositionDownReq_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_line_TouchPositionDownReq_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_line_TouchPositionUpReq_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_line_TouchPositionUpReq_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_line_TouchPositionMatch_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_line_TouchPositionMatch_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2972,7 +5309,13 @@ public final class Line {
       "\t\"\032\n\010LoginRsp\022\016\n\006result\030\001 \001(\r\"9\n\rRegistU" +
       "serReq\022\021\n\tuser_name\030\001 \001(\t\022\025\n\rencrypted_p" +
       "sw\030\002 \001(\t\"\037\n\rRegistUserRsp\022\016\n\006result\030\001 \001(" +
-      "\r"
+      "\r\":\n\rVerifyCodeReq\022\024\n\014phone_number\030\001 \001(\t" +
+      "\022\023\n\013verify_code\030\002 \001(\t\"\037\n\rVerifyCodeRsp\022\016" +
+      "\n\006result\030\001 \001(\r\"{\n\024TouchPositionDownReq\022\031",
+      "\n\021application_width\030\001 \001(\r\022\032\n\022application" +
+      "_height\030\002 \001(\r\022\025\n\rtouchx_in_app\030\003 \001(\r\022\025\n\r" +
+      "touchy_in_app\030\004 \001(\r\"\024\n\022TouchPositionUpRe" +
+      "q\"\024\n\022TouchPositionMatch"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -3009,6 +5352,36 @@ public final class Line {
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_line_RegistUserRsp_descriptor,
               new java.lang.String[] { "Result", });
+          internal_static_line_VerifyCodeReq_descriptor =
+            getDescriptor().getMessageTypes().get(5);
+          internal_static_line_VerifyCodeReq_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_line_VerifyCodeReq_descriptor,
+              new java.lang.String[] { "PhoneNumber", "VerifyCode", });
+          internal_static_line_VerifyCodeRsp_descriptor =
+            getDescriptor().getMessageTypes().get(6);
+          internal_static_line_VerifyCodeRsp_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_line_VerifyCodeRsp_descriptor,
+              new java.lang.String[] { "Result", });
+          internal_static_line_TouchPositionDownReq_descriptor =
+            getDescriptor().getMessageTypes().get(7);
+          internal_static_line_TouchPositionDownReq_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_line_TouchPositionDownReq_descriptor,
+              new java.lang.String[] { "ApplicationWidth", "ApplicationHeight", "TouchxInApp", "TouchyInApp", });
+          internal_static_line_TouchPositionUpReq_descriptor =
+            getDescriptor().getMessageTypes().get(8);
+          internal_static_line_TouchPositionUpReq_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_line_TouchPositionUpReq_descriptor,
+              new java.lang.String[] { });
+          internal_static_line_TouchPositionMatch_descriptor =
+            getDescriptor().getMessageTypes().get(9);
+          internal_static_line_TouchPositionMatch_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_line_TouchPositionMatch_descriptor,
+              new java.lang.String[] { });
           return null;
         }
       };

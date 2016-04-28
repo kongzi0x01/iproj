@@ -13,7 +13,7 @@ from google.protobuf import descriptor_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='line.proto',
   package='line',
-  serialized_pb='\n\nline.proto\x12\x04line\"W\n\x08UserData\x12\x0f\n\x07user_id\x18\x01 \x01(\x04\x12\x11\n\tuser_name\x18\x02 \x01(\t\x12\x15\n\rencrypted_psw\x18\x03 \x01(\t\x12\x10\n\x08lover_id\x18\x04 \x01(\x04\"4\n\x08LoginReq\x12\x11\n\tuser_name\x18\x01 \x01(\t\x12\x15\n\rencrypted_psw\x18\x02 \x01(\t\"\x1a\n\x08LoginRsp\x12\x0e\n\x06result\x18\x01 \x01(\r\"9\n\rRegistUserReq\x12\x11\n\tuser_name\x18\x01 \x01(\t\x12\x15\n\rencrypted_psw\x18\x02 \x01(\t\"\x1f\n\rRegistUserRsp\x12\x0e\n\x06result\x18\x01 \x01(\r')
+  serialized_pb='\n\nline.proto\x12\x04line\"W\n\x08UserData\x12\x0f\n\x07user_id\x18\x01 \x01(\x04\x12\x11\n\tuser_name\x18\x02 \x01(\t\x12\x15\n\rencrypted_psw\x18\x03 \x01(\t\x12\x10\n\x08lover_id\x18\x04 \x01(\x04\"4\n\x08LoginReq\x12\x11\n\tuser_name\x18\x01 \x01(\t\x12\x15\n\rencrypted_psw\x18\x02 \x01(\t\"\x1a\n\x08LoginRsp\x12\x0e\n\x06result\x18\x01 \x01(\r\"9\n\rRegistUserReq\x12\x11\n\tuser_name\x18\x01 \x01(\t\x12\x15\n\rencrypted_psw\x18\x02 \x01(\t\"\x1f\n\rRegistUserRsp\x12\x0e\n\x06result\x18\x01 \x01(\r\":\n\rVerifyCodeReq\x12\x14\n\x0cphone_number\x18\x01 \x01(\t\x12\x13\n\x0bverify_code\x18\x02 \x01(\t\"\x1f\n\rVerifyCodeRsp\x12\x0e\n\x06result\x18\x01 \x01(\r\"{\n\x14TouchPositionDownReq\x12\x19\n\x11\x61pplication_width\x18\x01 \x01(\r\x12\x1a\n\x12\x61pplication_height\x18\x02 \x01(\r\x12\x15\n\rtouchx_in_app\x18\x03 \x01(\r\x12\x15\n\rtouchy_in_app\x18\x04 \x01(\r\"\x14\n\x12TouchPositionUpReq\"\x14\n\x12TouchPositionMatch')
 
 
 
@@ -192,11 +192,170 @@ _REGISTUSERRSP = _descriptor.Descriptor(
   serialized_end=281,
 )
 
+
+_VERIFYCODEREQ = _descriptor.Descriptor(
+  name='VerifyCodeReq',
+  full_name='line.VerifyCodeReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='phone_number', full_name='line.VerifyCodeReq.phone_number', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='verify_code', full_name='line.VerifyCodeReq.verify_code', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=283,
+  serialized_end=341,
+)
+
+
+_VERIFYCODERSP = _descriptor.Descriptor(
+  name='VerifyCodeRsp',
+  full_name='line.VerifyCodeRsp',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='result', full_name='line.VerifyCodeRsp.result', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=343,
+  serialized_end=374,
+)
+
+
+_TOUCHPOSITIONDOWNREQ = _descriptor.Descriptor(
+  name='TouchPositionDownReq',
+  full_name='line.TouchPositionDownReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='application_width', full_name='line.TouchPositionDownReq.application_width', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='application_height', full_name='line.TouchPositionDownReq.application_height', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='touchx_in_app', full_name='line.TouchPositionDownReq.touchx_in_app', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='touchy_in_app', full_name='line.TouchPositionDownReq.touchy_in_app', index=3,
+      number=4, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=376,
+  serialized_end=499,
+)
+
+
+_TOUCHPOSITIONUPREQ = _descriptor.Descriptor(
+  name='TouchPositionUpReq',
+  full_name='line.TouchPositionUpReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=501,
+  serialized_end=521,
+)
+
+
+_TOUCHPOSITIONMATCH = _descriptor.Descriptor(
+  name='TouchPositionMatch',
+  full_name='line.TouchPositionMatch',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=523,
+  serialized_end=543,
+)
+
 DESCRIPTOR.message_types_by_name['UserData'] = _USERDATA
 DESCRIPTOR.message_types_by_name['LoginReq'] = _LOGINREQ
 DESCRIPTOR.message_types_by_name['LoginRsp'] = _LOGINRSP
 DESCRIPTOR.message_types_by_name['RegistUserReq'] = _REGISTUSERREQ
 DESCRIPTOR.message_types_by_name['RegistUserRsp'] = _REGISTUSERRSP
+DESCRIPTOR.message_types_by_name['VerifyCodeReq'] = _VERIFYCODEREQ
+DESCRIPTOR.message_types_by_name['VerifyCodeRsp'] = _VERIFYCODERSP
+DESCRIPTOR.message_types_by_name['TouchPositionDownReq'] = _TOUCHPOSITIONDOWNREQ
+DESCRIPTOR.message_types_by_name['TouchPositionUpReq'] = _TOUCHPOSITIONUPREQ
+DESCRIPTOR.message_types_by_name['TouchPositionMatch'] = _TOUCHPOSITIONMATCH
 
 class UserData(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
@@ -227,6 +386,36 @@ class RegistUserRsp(_message.Message):
   DESCRIPTOR = _REGISTUSERRSP
 
   # @@protoc_insertion_point(class_scope:line.RegistUserRsp)
+
+class VerifyCodeReq(_message.Message):
+  __metaclass__ = _reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _VERIFYCODEREQ
+
+  # @@protoc_insertion_point(class_scope:line.VerifyCodeReq)
+
+class VerifyCodeRsp(_message.Message):
+  __metaclass__ = _reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _VERIFYCODERSP
+
+  # @@protoc_insertion_point(class_scope:line.VerifyCodeRsp)
+
+class TouchPositionDownReq(_message.Message):
+  __metaclass__ = _reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _TOUCHPOSITIONDOWNREQ
+
+  # @@protoc_insertion_point(class_scope:line.TouchPositionDownReq)
+
+class TouchPositionUpReq(_message.Message):
+  __metaclass__ = _reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _TOUCHPOSITIONUPREQ
+
+  # @@protoc_insertion_point(class_scope:line.TouchPositionUpReq)
+
+class TouchPositionMatch(_message.Message):
+  __metaclass__ = _reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _TOUCHPOSITIONMATCH
+
+  # @@protoc_insertion_point(class_scope:line.TouchPositionMatch)
 
 
 # @@protoc_insertion_point(module_scope)

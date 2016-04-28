@@ -32,3 +32,30 @@ message RegistUserRsp
 {
 	optional uint32 result = 1;	//正常则为0
 }
+
+message VerifyCodeReq
+{
+	optional string phone_number = 1;
+	optional string verify_code = 2;
+}
+
+message VerifyCodeRsp
+{
+	optional uint32 result = 1; //正常则为0
+}
+
+message TouchPositionDownReq
+{
+	optional uint32 application_width = 1;
+	optional uint32 application_height = 2;
+	optional uint32 touchx_in_app = 3;
+	optional uint32 touchy_in_app = 4;
+}
+
+message TouchPositionUpReq
+{
+}
+
+message TouchPositionMatch
+{
+}

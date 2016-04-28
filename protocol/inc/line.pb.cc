@@ -35,6 +35,21 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* RegistUserRsp_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   RegistUserRsp_reflection_ = NULL;
+const ::google::protobuf::Descriptor* VerifyCodeReq_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  VerifyCodeReq_reflection_ = NULL;
+const ::google::protobuf::Descriptor* VerifyCodeRsp_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  VerifyCodeRsp_reflection_ = NULL;
+const ::google::protobuf::Descriptor* TouchPositionDownReq_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  TouchPositionDownReq_reflection_ = NULL;
+const ::google::protobuf::Descriptor* TouchPositionUpReq_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  TouchPositionUpReq_reflection_ = NULL;
+const ::google::protobuf::Descriptor* TouchPositionMatch_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  TouchPositionMatch_reflection_ = NULL;
 
 }  // namespace
 
@@ -125,6 +140,83 @@ void protobuf_AssignDesc_line_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(RegistUserRsp));
+  VerifyCodeReq_descriptor_ = file->message_type(5);
+  static const int VerifyCodeReq_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(VerifyCodeReq, phone_number_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(VerifyCodeReq, verify_code_),
+  };
+  VerifyCodeReq_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      VerifyCodeReq_descriptor_,
+      VerifyCodeReq::default_instance_,
+      VerifyCodeReq_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(VerifyCodeReq, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(VerifyCodeReq, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(VerifyCodeReq));
+  VerifyCodeRsp_descriptor_ = file->message_type(6);
+  static const int VerifyCodeRsp_offsets_[1] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(VerifyCodeRsp, result_),
+  };
+  VerifyCodeRsp_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      VerifyCodeRsp_descriptor_,
+      VerifyCodeRsp::default_instance_,
+      VerifyCodeRsp_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(VerifyCodeRsp, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(VerifyCodeRsp, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(VerifyCodeRsp));
+  TouchPositionDownReq_descriptor_ = file->message_type(7);
+  static const int TouchPositionDownReq_offsets_[4] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TouchPositionDownReq, application_width_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TouchPositionDownReq, application_height_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TouchPositionDownReq, touchx_in_app_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TouchPositionDownReq, touchy_in_app_),
+  };
+  TouchPositionDownReq_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      TouchPositionDownReq_descriptor_,
+      TouchPositionDownReq::default_instance_,
+      TouchPositionDownReq_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TouchPositionDownReq, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TouchPositionDownReq, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(TouchPositionDownReq));
+  TouchPositionUpReq_descriptor_ = file->message_type(8);
+  static const int TouchPositionUpReq_offsets_[1] = {
+  };
+  TouchPositionUpReq_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      TouchPositionUpReq_descriptor_,
+      TouchPositionUpReq::default_instance_,
+      TouchPositionUpReq_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TouchPositionUpReq, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TouchPositionUpReq, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(TouchPositionUpReq));
+  TouchPositionMatch_descriptor_ = file->message_type(9);
+  static const int TouchPositionMatch_offsets_[1] = {
+  };
+  TouchPositionMatch_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      TouchPositionMatch_descriptor_,
+      TouchPositionMatch::default_instance_,
+      TouchPositionMatch_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TouchPositionMatch, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TouchPositionMatch, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(TouchPositionMatch));
 }
 
 namespace {
@@ -147,6 +239,16 @@ void protobuf_RegisterTypes(const ::std::string&) {
     RegistUserReq_descriptor_, &RegistUserReq::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     RegistUserRsp_descriptor_, &RegistUserRsp::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    VerifyCodeReq_descriptor_, &VerifyCodeReq::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    VerifyCodeRsp_descriptor_, &VerifyCodeRsp::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    TouchPositionDownReq_descriptor_, &TouchPositionDownReq::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    TouchPositionUpReq_descriptor_, &TouchPositionUpReq::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    TouchPositionMatch_descriptor_, &TouchPositionMatch::default_instance());
 }
 
 }  // namespace
@@ -162,6 +264,16 @@ void protobuf_ShutdownFile_line_2eproto() {
   delete RegistUserReq_reflection_;
   delete RegistUserRsp::default_instance_;
   delete RegistUserRsp_reflection_;
+  delete VerifyCodeReq::default_instance_;
+  delete VerifyCodeReq_reflection_;
+  delete VerifyCodeRsp::default_instance_;
+  delete VerifyCodeRsp_reflection_;
+  delete TouchPositionDownReq::default_instance_;
+  delete TouchPositionDownReq_reflection_;
+  delete TouchPositionUpReq::default_instance_;
+  delete TouchPositionUpReq_reflection_;
+  delete TouchPositionMatch::default_instance_;
+  delete TouchPositionMatch_reflection_;
 }
 
 void protobuf_AddDesc_line_2eproto() {
@@ -178,7 +290,13 @@ void protobuf_AddDesc_line_2eproto() {
     "\t\"\032\n\010LoginRsp\022\016\n\006result\030\001 \001(\r\"9\n\rRegistU"
     "serReq\022\021\n\tuser_name\030\001 \001(\t\022\025\n\rencrypted_p"
     "sw\030\002 \001(\t\"\037\n\rRegistUserRsp\022\016\n\006result\030\001 \001("
-    "\r", 281);
+    "\r\":\n\rVerifyCodeReq\022\024\n\014phone_number\030\001 \001(\t"
+    "\022\023\n\013verify_code\030\002 \001(\t\"\037\n\rVerifyCodeRsp\022\016"
+    "\n\006result\030\001 \001(\r\"{\n\024TouchPositionDownReq\022\031"
+    "\n\021application_width\030\001 \001(\r\022\032\n\022application"
+    "_height\030\002 \001(\r\022\025\n\rtouchx_in_app\030\003 \001(\r\022\025\n\r"
+    "touchy_in_app\030\004 \001(\r\"\024\n\022TouchPositionUpRe"
+    "q\"\024\n\022TouchPositionMatch", 543);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "line.proto", &protobuf_RegisterTypes);
   UserData::default_instance_ = new UserData();
@@ -186,11 +304,21 @@ void protobuf_AddDesc_line_2eproto() {
   LoginRsp::default_instance_ = new LoginRsp();
   RegistUserReq::default_instance_ = new RegistUserReq();
   RegistUserRsp::default_instance_ = new RegistUserRsp();
+  VerifyCodeReq::default_instance_ = new VerifyCodeReq();
+  VerifyCodeRsp::default_instance_ = new VerifyCodeRsp();
+  TouchPositionDownReq::default_instance_ = new TouchPositionDownReq();
+  TouchPositionUpReq::default_instance_ = new TouchPositionUpReq();
+  TouchPositionMatch::default_instance_ = new TouchPositionMatch();
   UserData::default_instance_->InitAsDefaultInstance();
   LoginReq::default_instance_->InitAsDefaultInstance();
   LoginRsp::default_instance_->InitAsDefaultInstance();
   RegistUserReq::default_instance_->InitAsDefaultInstance();
   RegistUserRsp::default_instance_->InitAsDefaultInstance();
+  VerifyCodeReq::default_instance_->InitAsDefaultInstance();
+  VerifyCodeRsp::default_instance_->InitAsDefaultInstance();
+  TouchPositionDownReq::default_instance_->InitAsDefaultInstance();
+  TouchPositionUpReq::default_instance_->InitAsDefaultInstance();
+  TouchPositionMatch::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_line_2eproto);
 }
 
@@ -1539,6 +1667,1136 @@ void RegistUserRsp::Swap(RegistUserRsp* other) {
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = RegistUserRsp_descriptor_;
   metadata.reflection = RegistUserRsp_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int VerifyCodeReq::kPhoneNumberFieldNumber;
+const int VerifyCodeReq::kVerifyCodeFieldNumber;
+#endif  // !_MSC_VER
+
+VerifyCodeReq::VerifyCodeReq()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+}
+
+void VerifyCodeReq::InitAsDefaultInstance() {
+}
+
+VerifyCodeReq::VerifyCodeReq(const VerifyCodeReq& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+}
+
+void VerifyCodeReq::SharedCtor() {
+  _cached_size_ = 0;
+  phone_number_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  verify_code_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+VerifyCodeReq::~VerifyCodeReq() {
+  SharedDtor();
+}
+
+void VerifyCodeReq::SharedDtor() {
+  if (phone_number_ != &::google::protobuf::internal::kEmptyString) {
+    delete phone_number_;
+  }
+  if (verify_code_ != &::google::protobuf::internal::kEmptyString) {
+    delete verify_code_;
+  }
+  if (this != default_instance_) {
+  }
+}
+
+void VerifyCodeReq::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* VerifyCodeReq::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return VerifyCodeReq_descriptor_;
+}
+
+const VerifyCodeReq& VerifyCodeReq::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_line_2eproto();
+  return *default_instance_;
+}
+
+VerifyCodeReq* VerifyCodeReq::default_instance_ = NULL;
+
+VerifyCodeReq* VerifyCodeReq::New() const {
+  return new VerifyCodeReq;
+}
+
+void VerifyCodeReq::Clear() {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (has_phone_number()) {
+      if (phone_number_ != &::google::protobuf::internal::kEmptyString) {
+        phone_number_->clear();
+      }
+    }
+    if (has_verify_code()) {
+      if (verify_code_ != &::google::protobuf::internal::kEmptyString) {
+        verify_code_->clear();
+      }
+    }
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool VerifyCodeReq::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
+  ::google::protobuf::uint32 tag;
+  while ((tag = input->ReadTag()) != 0) {
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional string phone_number = 1;
+      case 1: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_phone_number()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8String(
+            this->phone_number().data(), this->phone_number().length(),
+            ::google::protobuf::internal::WireFormat::PARSE);
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(18)) goto parse_verify_code;
+        break;
+      }
+
+      // optional string verify_code = 2;
+      case 2: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
+         parse_verify_code:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_verify_code()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8String(
+            this->verify_code().data(), this->verify_code().length(),
+            ::google::protobuf::internal::WireFormat::PARSE);
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectAtEnd()) return true;
+        break;
+      }
+
+      default: {
+      handle_uninterpreted:
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          return true;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+  return true;
+#undef DO_
+}
+
+void VerifyCodeReq::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // optional string phone_number = 1;
+  if (has_phone_number()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
+      this->phone_number().data(), this->phone_number().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE);
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      1, this->phone_number(), output);
+  }
+
+  // optional string verify_code = 2;
+  if (has_verify_code()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
+      this->verify_code().data(), this->verify_code().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE);
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      2, this->verify_code(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+}
+
+::google::protobuf::uint8* VerifyCodeReq::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // optional string phone_number = 1;
+  if (has_phone_number()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
+      this->phone_number().data(), this->phone_number().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE);
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->phone_number(), target);
+  }
+
+  // optional string verify_code = 2;
+  if (has_verify_code()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
+      this->verify_code().data(), this->verify_code().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE);
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->verify_code(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  return target;
+}
+
+int VerifyCodeReq::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional string phone_number = 1;
+    if (has_phone_number()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->phone_number());
+    }
+
+    // optional string verify_code = 2;
+    if (has_verify_code()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->verify_code());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void VerifyCodeReq::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const VerifyCodeReq* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const VerifyCodeReq*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void VerifyCodeReq::MergeFrom(const VerifyCodeReq& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_phone_number()) {
+      set_phone_number(from.phone_number());
+    }
+    if (from.has_verify_code()) {
+      set_verify_code(from.verify_code());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void VerifyCodeReq::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void VerifyCodeReq::CopyFrom(const VerifyCodeReq& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool VerifyCodeReq::IsInitialized() const {
+
+  return true;
+}
+
+void VerifyCodeReq::Swap(VerifyCodeReq* other) {
+  if (other != this) {
+    std::swap(phone_number_, other->phone_number_);
+    std::swap(verify_code_, other->verify_code_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata VerifyCodeReq::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = VerifyCodeReq_descriptor_;
+  metadata.reflection = VerifyCodeReq_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int VerifyCodeRsp::kResultFieldNumber;
+#endif  // !_MSC_VER
+
+VerifyCodeRsp::VerifyCodeRsp()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+}
+
+void VerifyCodeRsp::InitAsDefaultInstance() {
+}
+
+VerifyCodeRsp::VerifyCodeRsp(const VerifyCodeRsp& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+}
+
+void VerifyCodeRsp::SharedCtor() {
+  _cached_size_ = 0;
+  result_ = 0u;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+VerifyCodeRsp::~VerifyCodeRsp() {
+  SharedDtor();
+}
+
+void VerifyCodeRsp::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void VerifyCodeRsp::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* VerifyCodeRsp::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return VerifyCodeRsp_descriptor_;
+}
+
+const VerifyCodeRsp& VerifyCodeRsp::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_line_2eproto();
+  return *default_instance_;
+}
+
+VerifyCodeRsp* VerifyCodeRsp::default_instance_ = NULL;
+
+VerifyCodeRsp* VerifyCodeRsp::New() const {
+  return new VerifyCodeRsp;
+}
+
+void VerifyCodeRsp::Clear() {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    result_ = 0u;
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool VerifyCodeRsp::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
+  ::google::protobuf::uint32 tag;
+  while ((tag = input->ReadTag()) != 0) {
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional uint32 result = 1;
+      case 1: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &result_)));
+          set_has_result();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectAtEnd()) return true;
+        break;
+      }
+
+      default: {
+      handle_uninterpreted:
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          return true;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+  return true;
+#undef DO_
+}
+
+void VerifyCodeRsp::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // optional uint32 result = 1;
+  if (has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->result(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+}
+
+::google::protobuf::uint8* VerifyCodeRsp::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // optional uint32 result = 1;
+  if (has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->result(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  return target;
+}
+
+int VerifyCodeRsp::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional uint32 result = 1;
+    if (has_result()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->result());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void VerifyCodeRsp::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const VerifyCodeRsp* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const VerifyCodeRsp*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void VerifyCodeRsp::MergeFrom(const VerifyCodeRsp& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_result()) {
+      set_result(from.result());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void VerifyCodeRsp::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void VerifyCodeRsp::CopyFrom(const VerifyCodeRsp& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool VerifyCodeRsp::IsInitialized() const {
+
+  return true;
+}
+
+void VerifyCodeRsp::Swap(VerifyCodeRsp* other) {
+  if (other != this) {
+    std::swap(result_, other->result_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata VerifyCodeRsp::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = VerifyCodeRsp_descriptor_;
+  metadata.reflection = VerifyCodeRsp_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int TouchPositionDownReq::kApplicationWidthFieldNumber;
+const int TouchPositionDownReq::kApplicationHeightFieldNumber;
+const int TouchPositionDownReq::kTouchxInAppFieldNumber;
+const int TouchPositionDownReq::kTouchyInAppFieldNumber;
+#endif  // !_MSC_VER
+
+TouchPositionDownReq::TouchPositionDownReq()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+}
+
+void TouchPositionDownReq::InitAsDefaultInstance() {
+}
+
+TouchPositionDownReq::TouchPositionDownReq(const TouchPositionDownReq& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+}
+
+void TouchPositionDownReq::SharedCtor() {
+  _cached_size_ = 0;
+  application_width_ = 0u;
+  application_height_ = 0u;
+  touchx_in_app_ = 0u;
+  touchy_in_app_ = 0u;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+TouchPositionDownReq::~TouchPositionDownReq() {
+  SharedDtor();
+}
+
+void TouchPositionDownReq::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void TouchPositionDownReq::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* TouchPositionDownReq::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return TouchPositionDownReq_descriptor_;
+}
+
+const TouchPositionDownReq& TouchPositionDownReq::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_line_2eproto();
+  return *default_instance_;
+}
+
+TouchPositionDownReq* TouchPositionDownReq::default_instance_ = NULL;
+
+TouchPositionDownReq* TouchPositionDownReq::New() const {
+  return new TouchPositionDownReq;
+}
+
+void TouchPositionDownReq::Clear() {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    application_width_ = 0u;
+    application_height_ = 0u;
+    touchx_in_app_ = 0u;
+    touchy_in_app_ = 0u;
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool TouchPositionDownReq::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
+  ::google::protobuf::uint32 tag;
+  while ((tag = input->ReadTag()) != 0) {
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional uint32 application_width = 1;
+      case 1: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &application_width_)));
+          set_has_application_width();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(16)) goto parse_application_height;
+        break;
+      }
+
+      // optional uint32 application_height = 2;
+      case 2: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_application_height:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &application_height_)));
+          set_has_application_height();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(24)) goto parse_touchx_in_app;
+        break;
+      }
+
+      // optional uint32 touchx_in_app = 3;
+      case 3: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_touchx_in_app:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &touchx_in_app_)));
+          set_has_touchx_in_app();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(32)) goto parse_touchy_in_app;
+        break;
+      }
+
+      // optional uint32 touchy_in_app = 4;
+      case 4: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_touchy_in_app:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &touchy_in_app_)));
+          set_has_touchy_in_app();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectAtEnd()) return true;
+        break;
+      }
+
+      default: {
+      handle_uninterpreted:
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          return true;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+  return true;
+#undef DO_
+}
+
+void TouchPositionDownReq::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // optional uint32 application_width = 1;
+  if (has_application_width()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->application_width(), output);
+  }
+
+  // optional uint32 application_height = 2;
+  if (has_application_height()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->application_height(), output);
+  }
+
+  // optional uint32 touchx_in_app = 3;
+  if (has_touchx_in_app()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->touchx_in_app(), output);
+  }
+
+  // optional uint32 touchy_in_app = 4;
+  if (has_touchy_in_app()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->touchy_in_app(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+}
+
+::google::protobuf::uint8* TouchPositionDownReq::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // optional uint32 application_width = 1;
+  if (has_application_width()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->application_width(), target);
+  }
+
+  // optional uint32 application_height = 2;
+  if (has_application_height()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->application_height(), target);
+  }
+
+  // optional uint32 touchx_in_app = 3;
+  if (has_touchx_in_app()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->touchx_in_app(), target);
+  }
+
+  // optional uint32 touchy_in_app = 4;
+  if (has_touchy_in_app()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->touchy_in_app(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  return target;
+}
+
+int TouchPositionDownReq::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional uint32 application_width = 1;
+    if (has_application_width()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->application_width());
+    }
+
+    // optional uint32 application_height = 2;
+    if (has_application_height()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->application_height());
+    }
+
+    // optional uint32 touchx_in_app = 3;
+    if (has_touchx_in_app()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->touchx_in_app());
+    }
+
+    // optional uint32 touchy_in_app = 4;
+    if (has_touchy_in_app()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->touchy_in_app());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void TouchPositionDownReq::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const TouchPositionDownReq* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const TouchPositionDownReq*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void TouchPositionDownReq::MergeFrom(const TouchPositionDownReq& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_application_width()) {
+      set_application_width(from.application_width());
+    }
+    if (from.has_application_height()) {
+      set_application_height(from.application_height());
+    }
+    if (from.has_touchx_in_app()) {
+      set_touchx_in_app(from.touchx_in_app());
+    }
+    if (from.has_touchy_in_app()) {
+      set_touchy_in_app(from.touchy_in_app());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void TouchPositionDownReq::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void TouchPositionDownReq::CopyFrom(const TouchPositionDownReq& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TouchPositionDownReq::IsInitialized() const {
+
+  return true;
+}
+
+void TouchPositionDownReq::Swap(TouchPositionDownReq* other) {
+  if (other != this) {
+    std::swap(application_width_, other->application_width_);
+    std::swap(application_height_, other->application_height_);
+    std::swap(touchx_in_app_, other->touchx_in_app_);
+    std::swap(touchy_in_app_, other->touchy_in_app_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata TouchPositionDownReq::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = TouchPositionDownReq_descriptor_;
+  metadata.reflection = TouchPositionDownReq_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+#endif  // !_MSC_VER
+
+TouchPositionUpReq::TouchPositionUpReq()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+}
+
+void TouchPositionUpReq::InitAsDefaultInstance() {
+}
+
+TouchPositionUpReq::TouchPositionUpReq(const TouchPositionUpReq& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+}
+
+void TouchPositionUpReq::SharedCtor() {
+  _cached_size_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+TouchPositionUpReq::~TouchPositionUpReq() {
+  SharedDtor();
+}
+
+void TouchPositionUpReq::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void TouchPositionUpReq::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* TouchPositionUpReq::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return TouchPositionUpReq_descriptor_;
+}
+
+const TouchPositionUpReq& TouchPositionUpReq::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_line_2eproto();
+  return *default_instance_;
+}
+
+TouchPositionUpReq* TouchPositionUpReq::default_instance_ = NULL;
+
+TouchPositionUpReq* TouchPositionUpReq::New() const {
+  return new TouchPositionUpReq;
+}
+
+void TouchPositionUpReq::Clear() {
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool TouchPositionUpReq::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
+  ::google::protobuf::uint32 tag;
+  while ((tag = input->ReadTag()) != 0) {
+    if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+        ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+      return true;
+    }
+    DO_(::google::protobuf::internal::WireFormat::SkipField(
+          input, tag, mutable_unknown_fields()));
+  }
+  return true;
+#undef DO_
+}
+
+void TouchPositionUpReq::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+}
+
+::google::protobuf::uint8* TouchPositionUpReq::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  return target;
+}
+
+int TouchPositionUpReq::ByteSize() const {
+  int total_size = 0;
+
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void TouchPositionUpReq::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const TouchPositionUpReq* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const TouchPositionUpReq*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void TouchPositionUpReq::MergeFrom(const TouchPositionUpReq& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void TouchPositionUpReq::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void TouchPositionUpReq::CopyFrom(const TouchPositionUpReq& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TouchPositionUpReq::IsInitialized() const {
+
+  return true;
+}
+
+void TouchPositionUpReq::Swap(TouchPositionUpReq* other) {
+  if (other != this) {
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata TouchPositionUpReq::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = TouchPositionUpReq_descriptor_;
+  metadata.reflection = TouchPositionUpReq_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+#endif  // !_MSC_VER
+
+TouchPositionMatch::TouchPositionMatch()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+}
+
+void TouchPositionMatch::InitAsDefaultInstance() {
+}
+
+TouchPositionMatch::TouchPositionMatch(const TouchPositionMatch& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+}
+
+void TouchPositionMatch::SharedCtor() {
+  _cached_size_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+TouchPositionMatch::~TouchPositionMatch() {
+  SharedDtor();
+}
+
+void TouchPositionMatch::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void TouchPositionMatch::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* TouchPositionMatch::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return TouchPositionMatch_descriptor_;
+}
+
+const TouchPositionMatch& TouchPositionMatch::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_line_2eproto();
+  return *default_instance_;
+}
+
+TouchPositionMatch* TouchPositionMatch::default_instance_ = NULL;
+
+TouchPositionMatch* TouchPositionMatch::New() const {
+  return new TouchPositionMatch;
+}
+
+void TouchPositionMatch::Clear() {
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool TouchPositionMatch::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
+  ::google::protobuf::uint32 tag;
+  while ((tag = input->ReadTag()) != 0) {
+    if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+        ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+      return true;
+    }
+    DO_(::google::protobuf::internal::WireFormat::SkipField(
+          input, tag, mutable_unknown_fields()));
+  }
+  return true;
+#undef DO_
+}
+
+void TouchPositionMatch::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+}
+
+::google::protobuf::uint8* TouchPositionMatch::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  return target;
+}
+
+int TouchPositionMatch::ByteSize() const {
+  int total_size = 0;
+
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void TouchPositionMatch::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const TouchPositionMatch* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const TouchPositionMatch*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void TouchPositionMatch::MergeFrom(const TouchPositionMatch& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void TouchPositionMatch::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void TouchPositionMatch::CopyFrom(const TouchPositionMatch& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TouchPositionMatch::IsInitialized() const {
+
+  return true;
+}
+
+void TouchPositionMatch::Swap(TouchPositionMatch* other) {
+  if (other != this) {
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata TouchPositionMatch::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = TouchPositionMatch_descriptor_;
+  metadata.reflection = TouchPositionMatch_reflection_;
   return metadata;
 }
 
