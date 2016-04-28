@@ -4936,6 +4936,24 @@ public final class Line {
 
   public interface TouchPositionMatchOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
+
+    // optional uint32 result = 1;
+    /**
+     * <code>optional uint32 result = 1;</code>
+     *
+     * <pre>
+     *正常则为0
+     * </pre>
+     */
+    boolean hasResult();
+    /**
+     * <code>optional uint32 result = 1;</code>
+     *
+     * <pre>
+     *正常则为0
+     * </pre>
+     */
+    int getResult();
   }
   /**
    * Protobuf type {@code line.TouchPositionMatch}
@@ -4970,6 +4988,7 @@ public final class Line {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -4985,6 +5004,11 @@ public final class Line {
                                      extensionRegistry, tag)) {
                 done = true;
               }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              result_ = input.readUInt32();
               break;
             }
           }
@@ -5026,7 +5050,33 @@ public final class Line {
       return PARSER;
     }
 
+    private int bitField0_;
+    // optional uint32 result = 1;
+    public static final int RESULT_FIELD_NUMBER = 1;
+    private int result_;
+    /**
+     * <code>optional uint32 result = 1;</code>
+     *
+     * <pre>
+     *正常则为0
+     * </pre>
+     */
+    public boolean hasResult() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional uint32 result = 1;</code>
+     *
+     * <pre>
+     *正常则为0
+     * </pre>
+     */
+    public int getResult() {
+      return result_;
+    }
+
     private void initFields() {
+      result_ = 0;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -5040,6 +5090,9 @@ public final class Line {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeUInt32(1, result_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -5049,6 +5102,10 @@ public final class Line {
       if (size != -1) return size;
 
       size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, result_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
@@ -5165,6 +5222,8 @@ public final class Line {
 
       public Builder clear() {
         super.clear();
+        result_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -5191,6 +5250,13 @@ public final class Line {
 
       public line.Line.TouchPositionMatch buildPartial() {
         line.Line.TouchPositionMatch result = new line.Line.TouchPositionMatch(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.result_ = result_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -5206,6 +5272,9 @@ public final class Line {
 
       public Builder mergeFrom(line.Line.TouchPositionMatch other) {
         if (other == line.Line.TouchPositionMatch.getDefaultInstance()) return this;
+        if (other.hasResult()) {
+          setResult(other.getResult());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -5229,6 +5298,56 @@ public final class Line {
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+      private int bitField0_;
+
+      // optional uint32 result = 1;
+      private int result_ ;
+      /**
+       * <code>optional uint32 result = 1;</code>
+       *
+       * <pre>
+       *正常则为0
+       * </pre>
+       */
+      public boolean hasResult() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional uint32 result = 1;</code>
+       *
+       * <pre>
+       *正常则为0
+       * </pre>
+       */
+      public int getResult() {
+        return result_;
+      }
+      /**
+       * <code>optional uint32 result = 1;</code>
+       *
+       * <pre>
+       *正常则为0
+       * </pre>
+       */
+      public Builder setResult(int value) {
+        bitField0_ |= 0x00000001;
+        result_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 result = 1;</code>
+       *
+       * <pre>
+       *正常则为0
+       * </pre>
+       */
+      public Builder clearResult() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        result_ = 0;
+        onChanged();
         return this;
       }
 
@@ -5315,7 +5434,7 @@ public final class Line {
       "\n\021application_width\030\001 \001(\r\022\032\n\022application" +
       "_height\030\002 \001(\r\022\025\n\rtouchx_in_app\030\003 \001(\r\022\025\n\r" +
       "touchy_in_app\030\004 \001(\r\"\024\n\022TouchPositionUpRe" +
-      "q\"\024\n\022TouchPositionMatch"
+      "q\"$\n\022TouchPositionMatch\022\016\n\006result\030\001 \001(\r"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -5381,7 +5500,7 @@ public final class Line {
           internal_static_line_TouchPositionMatch_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_line_TouchPositionMatch_descriptor,
-              new java.lang.String[] { });
+              new java.lang.String[] { "Result", });
           return null;
         }
       };

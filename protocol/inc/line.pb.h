@@ -958,14 +958,24 @@ class TouchPositionMatch : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
+  // optional uint32 result = 1;
+  inline bool has_result() const;
+  inline void clear_result();
+  static const int kResultFieldNumber = 1;
+  inline ::google::protobuf::uint32 result() const;
+  inline void set_result(::google::protobuf::uint32 value);
+
   // @@protoc_insertion_point(class_scope:line.TouchPositionMatch)
  private:
+  inline void set_has_result();
+  inline void clear_has_result();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
+  ::google::protobuf::uint32 result_;
 
   mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[1];
+  ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
 
   friend void  protobuf_AddDesc_line_2eproto();
   friend void protobuf_AssignDesc_line_2eproto();
@@ -1774,6 +1784,28 @@ inline void TouchPositionDownReq::set_touchy_in_app(::google::protobuf::uint32 v
 // -------------------------------------------------------------------
 
 // TouchPositionMatch
+
+// optional uint32 result = 1;
+inline bool TouchPositionMatch::has_result() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void TouchPositionMatch::set_has_result() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void TouchPositionMatch::clear_has_result() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void TouchPositionMatch::clear_result() {
+  result_ = 0u;
+  clear_has_result();
+}
+inline ::google::protobuf::uint32 TouchPositionMatch::result() const {
+  return result_;
+}
+inline void TouchPositionMatch::set_result(::google::protobuf::uint32 value) {
+  set_has_result();
+  result_ = value;
+}
 
 
 // @@protoc_insertion_point(namespace_scope)

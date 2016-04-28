@@ -58,4 +58,5 @@ message TouchPositionUpReq
 
 message TouchPositionMatch
 {
+	optional uint32 result = 1; //正常则为0
 }

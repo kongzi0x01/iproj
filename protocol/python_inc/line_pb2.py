@@ -13,7 +13,7 @@ from google.protobuf import descriptor_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='line.proto',
   package='line',
-  serialized_pb='\n\nline.proto\x12\x04line\"W\n\x08UserData\x12\x0f\n\x07user_id\x18\x01 \x01(\x04\x12\x11\n\tuser_name\x18\x02 \x01(\t\x12\x15\n\rencrypted_psw\x18\x03 \x01(\t\x12\x10\n\x08lover_id\x18\x04 \x01(\x04\"4\n\x08LoginReq\x12\x11\n\tuser_name\x18\x01 \x01(\t\x12\x15\n\rencrypted_psw\x18\x02 \x01(\t\"\x1a\n\x08LoginRsp\x12\x0e\n\x06result\x18\x01 \x01(\r\"9\n\rRegistUserReq\x12\x11\n\tuser_name\x18\x01 \x01(\t\x12\x15\n\rencrypted_psw\x18\x02 \x01(\t\"\x1f\n\rRegistUserRsp\x12\x0e\n\x06result\x18\x01 \x01(\r\":\n\rVerifyCodeReq\x12\x14\n\x0cphone_number\x18\x01 \x01(\t\x12\x13\n\x0bverify_code\x18\x02 \x01(\t\"\x1f\n\rVerifyCodeRsp\x12\x0e\n\x06result\x18\x01 \x01(\r\"{\n\x14TouchPositionDownReq\x12\x19\n\x11\x61pplication_width\x18\x01 \x01(\r\x12\x1a\n\x12\x61pplication_height\x18\x02 \x01(\r\x12\x15\n\rtouchx_in_app\x18\x03 \x01(\r\x12\x15\n\rtouchy_in_app\x18\x04 \x01(\r\"\x14\n\x12TouchPositionUpReq\"\x14\n\x12TouchPositionMatch')
+  serialized_pb='\n\nline.proto\x12\x04line\"W\n\x08UserData\x12\x0f\n\x07user_id\x18\x01 \x01(\x04\x12\x11\n\tuser_name\x18\x02 \x01(\t\x12\x15\n\rencrypted_psw\x18\x03 \x01(\t\x12\x10\n\x08lover_id\x18\x04 \x01(\x04\"4\n\x08LoginReq\x12\x11\n\tuser_name\x18\x01 \x01(\t\x12\x15\n\rencrypted_psw\x18\x02 \x01(\t\"\x1a\n\x08LoginRsp\x12\x0e\n\x06result\x18\x01 \x01(\r\"9\n\rRegistUserReq\x12\x11\n\tuser_name\x18\x01 \x01(\t\x12\x15\n\rencrypted_psw\x18\x02 \x01(\t\"\x1f\n\rRegistUserRsp\x12\x0e\n\x06result\x18\x01 \x01(\r\":\n\rVerifyCodeReq\x12\x14\n\x0cphone_number\x18\x01 \x01(\t\x12\x13\n\x0bverify_code\x18\x02 \x01(\t\"\x1f\n\rVerifyCodeRsp\x12\x0e\n\x06result\x18\x01 \x01(\r\"{\n\x14TouchPositionDownReq\x12\x19\n\x11\x61pplication_width\x18\x01 \x01(\r\x12\x1a\n\x12\x61pplication_height\x18\x02 \x01(\r\x12\x15\n\rtouchx_in_app\x18\x03 \x01(\r\x12\x15\n\rtouchy_in_app\x18\x04 \x01(\r\"\x14\n\x12TouchPositionUpReq\"$\n\x12TouchPositionMatch\x12\x0e\n\x06result\x18\x01 \x01(\r')
 
 
 
@@ -333,6 +333,13 @@ _TOUCHPOSITIONMATCH = _descriptor.Descriptor(
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
+    _descriptor.FieldDescriptor(
+      name='result', full_name='line.TouchPositionMatch.result', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -343,7 +350,7 @@ _TOUCHPOSITIONMATCH = _descriptor.Descriptor(
   is_extendable=False,
   extension_ranges=[],
   serialized_start=523,
-  serialized_end=543,
+  serialized_end=559,
 )
 
 DESCRIPTOR.message_types_by_name['UserData'] = _USERDATA

@@ -205,6 +205,7 @@ void protobuf_AssignDesc_line_2eproto() {
       sizeof(TouchPositionUpReq));
   TouchPositionMatch_descriptor_ = file->message_type(9);
   static const int TouchPositionMatch_offsets_[1] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TouchPositionMatch, result_),
   };
   TouchPositionMatch_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -296,7 +297,7 @@ void protobuf_AddDesc_line_2eproto() {
     "\n\021application_width\030\001 \001(\r\022\032\n\022application"
     "_height\030\002 \001(\r\022\025\n\rtouchx_in_app\030\003 \001(\r\022\025\n\r"
     "touchy_in_app\030\004 \001(\r\"\024\n\022TouchPositionUpRe"
-    "q\"\024\n\022TouchPositionMatch", 543);
+    "q\"$\n\022TouchPositionMatch\022\016\n\006result\030\001 \001(\r", 559);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "line.proto", &protobuf_RegisterTypes);
   UserData::default_instance_ = new UserData();
@@ -2648,6 +2649,7 @@ void TouchPositionUpReq::Swap(TouchPositionUpReq* other) {
 // ===================================================================
 
 #ifndef _MSC_VER
+const int TouchPositionMatch::kResultFieldNumber;
 #endif  // !_MSC_VER
 
 TouchPositionMatch::TouchPositionMatch()
@@ -2666,6 +2668,7 @@ TouchPositionMatch::TouchPositionMatch(const TouchPositionMatch& from)
 
 void TouchPositionMatch::SharedCtor() {
   _cached_size_ = 0;
+  result_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -2700,6 +2703,9 @@ TouchPositionMatch* TouchPositionMatch::New() const {
 }
 
 void TouchPositionMatch::Clear() {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    result_ = 0u;
+  }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -2709,12 +2715,33 @@ bool TouchPositionMatch::MergePartialFromCodedStream(
 #define DO_(EXPRESSION) if (!(EXPRESSION)) return false
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
-    if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-        ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-      return true;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional uint32 result = 1;
+      case 1: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &result_)));
+          set_has_result();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectAtEnd()) return true;
+        break;
+      }
+
+      default: {
+      handle_uninterpreted:
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          return true;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
     }
-    DO_(::google::protobuf::internal::WireFormat::SkipField(
-          input, tag, mutable_unknown_fields()));
   }
   return true;
 #undef DO_
@@ -2722,6 +2749,11 @@ bool TouchPositionMatch::MergePartialFromCodedStream(
 
 void TouchPositionMatch::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
+  // optional uint32 result = 1;
+  if (has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->result(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -2730,6 +2762,11 @@ void TouchPositionMatch::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* TouchPositionMatch::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
+  // optional uint32 result = 1;
+  if (has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->result(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -2740,6 +2777,15 @@ void TouchPositionMatch::SerializeWithCachedSizes(
 int TouchPositionMatch::ByteSize() const {
   int total_size = 0;
 
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional uint32 result = 1;
+    if (has_result()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->result());
+    }
+
+  }
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -2765,6 +2811,11 @@ void TouchPositionMatch::MergeFrom(const ::google::protobuf::Message& from) {
 
 void TouchPositionMatch::MergeFrom(const TouchPositionMatch& from) {
   GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_result()) {
+      set_result(from.result());
+    }
+  }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
@@ -2787,6 +2838,8 @@ bool TouchPositionMatch::IsInitialized() const {
 
 void TouchPositionMatch::Swap(TouchPositionMatch* other) {
   if (other != this) {
+    std::swap(result_, other->result_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
   }
